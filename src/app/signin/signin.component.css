@@ -1,0 +1,10 @@
+input {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color:#322F37
+    
+  }
+  input:focus {
+    /* border-color: green; */
+    outline: 1px dotted #322F37
+  }

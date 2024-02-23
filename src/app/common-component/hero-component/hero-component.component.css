@@ -1,0 +1,13 @@
+nav{
+    position: absolute;
+    z-index: 9;
+    background: transparent;
+}
+button{
+    width: 153px;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px;
+    padding: 12px;
+    
+}

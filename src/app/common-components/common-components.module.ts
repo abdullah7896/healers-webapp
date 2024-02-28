@@ -7,13 +7,14 @@ import { HeroComponentComponent } from './hero-component/hero-component.componen
 
 @NgModule({
   declarations: [
-    HeroComponentComponent
+  
   ],
   imports: [
     CommonModule
+    
   ],
   exports:[
-    HeroComponentComponent
+    
   ]
 })
 export class CommonComponentsModule { }

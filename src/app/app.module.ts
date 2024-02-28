@@ -13,6 +13,7 @@ import { FooterComponentComponent } from './common-components/footer-component/f
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { FooterComponentComponent } from './common-components/footer-component/f
     AppRoutingModule,
     VendorModule,
     FooterComponentComponent,
+    
     
     
     

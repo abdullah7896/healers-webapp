@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'appcomp', component:AppComponent},
   {path:'', component:LandingPageComponent},
   {path:'signIn',component:SigninComponent},
-  {path:'landing2',component:LandingPagEComponent},
+  {path:'vendors',component:LandingPagEComponent},
   {path:'vendorsignin',component:VendorsigninComponent},
  
   

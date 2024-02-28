@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LandingPageComponent {
   constructor(private router: Router) { }
   navigatetootherpage(){
-    this.router.navigate(['/landing2']);
+    this.router.navigate(['/vendors']);
   }
 
 }

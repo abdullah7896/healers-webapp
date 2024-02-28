@@ -23,7 +23,6 @@ import { FooterComponentComponent } from './common-components/footer-component/f
     BrowserModule,
     AppRoutingModule,
     VendorModule,
-    HeroComponentComponent,
     FooterComponentComponent
   ],
 

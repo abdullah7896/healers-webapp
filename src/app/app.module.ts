@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { HeroComponentComponent } from './common-component/hero-component/hero-component.component';
-import { FooterComponentComponent } from './common-component/footer-component/footer-component.component';
-import { CommonComponentComponent } from './common-component/common-component.component';
+
+import { VendorModule } from './vendor/vendor.module';
+import { CommonComponentsModule } from './common-components/common-components.module';
+import { HeroComponentComponent } from './common-components/hero-component/hero-component.component';
+import { FooterComponentComponent } from './common-components/footer-component/footer-component.component';
+
 
 
 @NgModule({
@@ -15,16 +18,17 @@ import { CommonComponentComponent } from './common-component/common-component.co
     AppComponent,
     SigninComponent,
     LandingPageComponent,
-    HeroComponentComponent,
-    FooterComponentComponent,
-    CommonComponentComponent,
-   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    VendorModule,
+    HeroComponentComponent,
+    FooterComponentComponent
   ],
+
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

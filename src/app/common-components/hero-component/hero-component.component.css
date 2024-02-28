@@ -9,5 +9,6 @@ button{
     border-radius: 8px;
     border: 2px;
     padding: 12px;
+    border-style: solid;
     
 }

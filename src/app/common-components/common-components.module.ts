@@ -8,8 +8,8 @@ import { ChooseUsComponent } from './choose-us/choose-us.component';
 
 @NgModule({
   declarations: [
-  
-  
+    FooterComponentComponent,
+    HeroComponentComponent,
     ChooseUsComponent
   ],
   imports: [
@@ -17,7 +17,9 @@ import { ChooseUsComponent } from './choose-us/choose-us.component';
     
   ],
   exports:[
-    
+    FooterComponentComponent,
+    HeroComponentComponent,
+    ChooseUsComponent
   ]
 })
 export class CommonComponentsModule { }

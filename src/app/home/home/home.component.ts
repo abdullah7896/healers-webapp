@@ -10,6 +10,10 @@ export class HomeComponent {
   navigatetootherpage(){
     this.router.navigate(['/vendors']);
   }
+  navigatetoconsumerlandingpage(){
+    this.router.navigate(['/consumer']);
+  }
+
   //   navigatetootherpage() {
 //     const navigationExtras: NavigationExtras = {
 //       fragment: 'section1'

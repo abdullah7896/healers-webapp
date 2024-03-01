@@ -7,6 +7,7 @@ import { VendorModule } from './vendor/vendor.module';
 import { CommonComponentsModule } from './common-components/common-components.module';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
+import { ConsumerModule } from './consumer/consumer.module';
 
 
 
@@ -15,8 +16,6 @@ import { HomeModule } from './home/home.module';
   declarations: [
     AppComponent,
     SigninComponent,
-    
-  
   ],
   imports: [
     BrowserModule,
@@ -24,12 +23,8 @@ import { HomeModule } from './home/home.module';
     VendorModule,
     CommonModule,
     CommonComponentsModule,
-    HomeModule
-   
-    
-    
-    
-    
+    ConsumerModule,
+    HomeModule 
   ],
 
   providers: [],

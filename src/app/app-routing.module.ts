@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { VendorsigninComponent } from './vendor/vendorsignin/vendorsignin.component';
 import { HomeComponent } from './home/home/home.component';
 import { VendorLandingPageComponent } from './vendor/vendor-landing-page/vendor-landing-page.component';
+import { ConsumerLandingPageComponent } from './consumer/consumer-landing-page/consumer-landing-page.component';
 
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'signIn',component:SigninComponent},
   {path:'vendors',component:VendorLandingPageComponent},
   {path:'vendorsignin',component:VendorsigninComponent},
+  {path:'consumer',component:ConsumerLandingPageComponent},
   {path:'',component:HomeComponent}
   
  

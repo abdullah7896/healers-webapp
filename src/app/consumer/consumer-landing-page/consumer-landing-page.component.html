@@ -1,4 +1,146 @@
+<!-- hero section -->
+<div class="relative overflow-hidden bg-cover bg-no-repeat h-[700px] bg-[0.5rem]">
+    <nav class="relative flex w-full items-center justify-between bg-white py-2 shadow-sm shadow-neutral-700/10 dark:bg-neutral-800 dark:shadow-black/30 lg:flex-wrap lg:justify-start"
+        data-te-navbar-ref>
+        <!-- Container wrapper -->
+        <div class="flex w-full flex-wrap items-center justify-between px-6">
+            <div class="flex items-center">
+                <!-- Navbar Brand -->
+                <a class="text-primary dark:text-primary-400" >
+                    <img src="assets/logo white.png" alt="" class="w-[236px] h-[46.91px] ml-[80px]" >
+                </a>
+            </div>
+            <!-- Right elements --> 
+             <div class="my-1 flex items-center lg:my-0 lg:ml-auto">
+                <a (click)="  navigateTosigninconsumer()" 
+                    class=" text-[#FFFFFF] mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-primary-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
+                    data-te-ripple-init data-te-ripple-color="light"  >
+                    Log In
+             </a>
+                <button type="button" data-te-ripple-init data-te-ripple-color="light"  class="text-[#FFFFFF] ">
+                    Sign up for Now
+                </button>
+            </div>
+
+        </div>
+
+    </nav>
+     <video class="min-w-full min-h-full absolute object-cover" src="assets/healers vedio.mp4" type="video/mp4" autoplay
+        muted loop></video>
+
+    <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
+        <div class="flex h-full items-center justify-center">
+            <div class="px-6 text-center text-white md:px-12 mb-[133px]">
+                <h1 class="mt-2 mb-16 text-[47px] font-bold   w-[465px] h-[64px] text-center size-[72px]" >
+                    Find an ideal healing experience. <br />
+                </h1>
+
+                <p
+                  class=" text-center text-[13px] leading-[87px] tracking-[-0.2px] font-extralight opacity-[70%]">
+                  Explore a world of wellness options and embark on your journey to healing.</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- four icons section  -->
+<section class=" body-font ">
+    <div class="container  mx-auto flex flex-wrap">
+        <div class="lg:w-1/2 w-full mb-10 lg:mb-0 overflow-hidden ">
+            <img alt="feature" class="object-cover object-center" src="assets/Bitmap.jpg">
+        </div>
+        <div class="flex  flex-wrap lg:py-6 -mb-10 lg:w-1/2 ml-[-100px] lg:text-left text-center">
+            <h2 class="  font-medium mb-3 text-[48px]">Your Path to Holistic Wellness </h2>
+            <p class="leading-[32px] text-[19px] opacity-[70%]">People choose us because we serve <br> the best for
+                everyone.</p>
+            <div class="flex flex-col mb-10 lg:items-start items-center">
+
+                <div class="flex">
+                    <img src="assets/Icon.png" alt="" class="">
+                    <h2 class="  font-bold mb-3 text-[21px] ml-[13px]">Diverse Healing Modalities</h2>
+
+                </div>
+                <p class="leading-[29px] text-[17px] ml-[95px] mt-[-39px] opacity-[70%] tracking-[-0.2px]">Explore
+                    varied healing options for your holistic well-being.</p>
+
+            </div>
+            <div class="flex flex-col mb-10 lg:items-start items-center">
+
+                <div class="flex">
+                    <img src="assets/Icon.png" alt="">
+                    <h2 class="font-bold mb-3 text-[21px] ml-[13px]">Instant Notifications</h2>
+
+                </div>
+                <p class="leading-[29px]  text-[17px]  ml-[95px] mt-[-39px] opacity-[70%] tracking-[-0.2px]">Receive
+                    instant notifications for appointment reminders.</p>
+
+            </div>
+            <div class="flex flex-col mb-10 lg:items-start items-center">
+
+                <div class="flex">
+                    <img src="assets/Icon.png" alt="">
+                    <h2 class="  font-bold mb-3 text-[21px] ml-[13px]">Expert Practitioners</h2>
+                </div>
+                <p class="leading-[29px] text-[17px]  ml-[95px] mt-[-39px] opacity-[70%] tracking-[-0.2px]">Connect with
+                    skilled practitioners for personalized wellness guidance.</p>
+
+            </div>
+            <div class="flex flex-col mb-10 lg:items-start items-center">
+
+                <div class="flex">
+                    <img src="assets/Icon.png" alt="">
+                    <h2 class=" font-bold mb-3 text-[21px] ml-[13px]">Personalized Experiences</h2>
+                </div>
+                <p class="leading-[29px]  text-[17px]  ml-[95px] mt-[-39px] opacity-[70%] tracking-[-0.2px]">Tailored
+                    services to meet your unique wellness needs.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- four images se3ction -->
+<section class="">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col  w-full mb-20">
+            <h1 class="text-2xl font-bold  mb-4  tracking-widest">Explore Categories</h1>
+            
+        </div>
+        <div class="flex flex-wrap -m-4">
+            <div class="p-4 lg:w-1/2">
+                <div
+                    class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                    <img alt="team" class="flex-shrink-0 rounded-lg object-cover object-center sm:mb-0 mb-4"
+                        src="assets/frame 1.png">
+
+                </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+                <div
+                    class="h-full ml-[-308px] flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left w-[392px] h-[150px]">
+                    <img alt="team" class="flex-shrink-0 rounded-lg  object-cover object-center sm:mb-0 mb-4"
+                        src="assets/fram 2.jpg">
+
+                </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+                <div
+                    class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                    <img alt="team" class="flex-shrink-0 rounded-lg  object-cover object-center sm:mb-0 mb-4"
+                        src="assets/fram 3.jpg">
+
+
+                </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+                <div
+                    class="h-full  ml-[-308px]  flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                    <img alt="team" class="flex-shrink-0 rounded-lg  object-cover object-center sm:mb-0 mb-4"
+                        src="assets/frame 4.jpg">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <app-mobile-app-section></app-mobile-app-section>
 <app-footer-component></app-footer-component>
-
-

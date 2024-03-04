@@ -16,6 +16,7 @@ const routes: Routes = [
   {path:'vendors',component:VendorLandingPageComponent},
   {path:'vendorsignin',component:VendorsigninComponent},
   {path:'consumer',component:ConsumerLandingPageComponent},
+  {path:'consumersignin', component:SigninComponent},
   {path:'',component:HomeComponent}
   
  

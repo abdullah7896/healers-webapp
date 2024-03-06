@@ -1,0 +1,50 @@
+name: Deploy to ECS
+
+on:
+  push:
+    branches:
+      - development  
+
+jobs:
+  deploy: 
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Login to Amazon ECR
+      run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 533267136043.dkr.ecr.us-east-1.amazonaws.com
+
+    - name: Set TIMESTAMP
+      id: set-timestamp
+      run: echo "::set-output name=TIMESTAMP::$(date +'%Y_%m_%d_%H_%M')"
+
+    - name: Build and push Docker image to ECR
+      run: |
+        TIMESTAMP=${{ steps.set-timestamp.outputs.TIMESTAMP }}
+        docker build  -t 533267136043.dkr.ecr.us-east-1.amazonaws.com/healers-frontend-dev:"$TIMESTAMP" --build-arg src\environments\environment.dev.ts .
+        docker push 533267136043.dkr.ecr.us-east-1.amazonaws.com/healers-frontend-dev:"$TIMESTAMP"
+
+    - name: Update task definition
+      id: task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: 'healers-dev-frontend-taskdefinition.json'
+        container-name: 'ngnx-dev-container'
+        image: '533267136043.dkr.ecr.us-east-1.amazonaws.com/healers-frontend-dev:${{ steps.set-timestamp.outputs.TIMESTAMP }}'
+
+    - name: Deploy Amazon ECS task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: '${{ steps.task-def.outputs.task-definition }}'
+        service: 'healers-dev-frontend-service'
+        cluster: 'healers-frontend-dev-cluster'
+        wait-for-service-stability: true 

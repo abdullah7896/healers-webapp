@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { VendorsigninComponent } from './vendorsignin/vendorsignin.component';
 import { CommonComponentsModule } from '../common-components/common-components.module';
 import { VendorLandingPageComponent } from './vendor-landing-page/vendor-landing-page.component';
+import { VendorSignUpComponent } from './vendor-sign-up/vendor-sign-up.component';
 
 
 
@@ -13,7 +14,9 @@ import { VendorLandingPageComponent } from './vendor-landing-page/vendor-landing
   declarations: [
     
     VendorsigninComponent,
-  VendorLandingPageComponent
+  VendorLandingPageComponent,
+ 
+  VendorSignUpComponent
     
   ],
   imports: [

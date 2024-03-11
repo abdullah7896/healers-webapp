@@ -10,4 +10,7 @@ export class ConsumerLandingPageComponent {
   navigateTosigninconsumer(){
     this.router.navigate(['/consumersignin']); 
   }
+  navigatetosignup(){
+    this.router.navigate(['/consumersignup']); 
+  }
 }

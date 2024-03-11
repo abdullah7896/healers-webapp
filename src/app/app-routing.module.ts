@@ -7,6 +7,8 @@ import { VendorsigninComponent } from './vendor/vendorsignin/vendorsignin.compon
 import { HomeComponent } from './home/home/home.component';
 import { VendorLandingPageComponent } from './vendor/vendor-landing-page/vendor-landing-page.component';
 import { ConsumerLandingPageComponent } from './consumer/consumer-landing-page/consumer-landing-page.component';
+import { SignUpComponent } from './consumer/sign-up/sign-up.component';
+import { VendorSignUpComponent } from './vendor/vendor-sign-up/vendor-sign-up.component';
 
 
 
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:'vendorsignin',component:VendorsigninComponent},
   {path:'consumer',component:ConsumerLandingPageComponent},
   {path:'consumersignin', component:SigninComponent},
+  {path:'consumersignup', component:SignUpComponent},
+  {path:'Vendorsignup', component:VendorSignUpComponent},
   {path:'',component:HomeComponent}
   
  

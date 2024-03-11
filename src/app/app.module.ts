@@ -8,6 +8,8 @@ import { CommonComponentsModule } from './common-components/common-components.mo
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { ConsumerModule } from './consumer/consumer.module';
+import { SignUpComponent } from './consumer/sign-up/sign-up.component';
+
 
 
 
@@ -16,6 +18,8 @@ import { ConsumerModule } from './consumer/consumer.module';
   declarations: [
     AppComponent,
     SigninComponent,
+  
+    
   ],
   imports: [
     BrowserModule,

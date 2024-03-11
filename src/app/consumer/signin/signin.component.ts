@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
+  
+  forgetPasswordVisible = false;
 
+toggleForgetPassword() {
+  this.forgetPasswordVisible = !this.forgetPasswordVisible;
+}
+
+showOtpSection: boolean = false;
+showForgetSection: boolean = true;
+
+onSubmit() {
+   this.showOtpSection = true;
+  this.showForgetSection = false;
+}
+
+ 
+ 
 }

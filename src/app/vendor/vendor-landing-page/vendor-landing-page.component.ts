@@ -10,4 +10,7 @@ export class VendorLandingPageComponent {
   navigateTosignin(){
     this.router.navigate(['/vendorsignin']); 
   }
+  navigateTovendorsignup(){
+    this.router.navigate(['/Vendorsignup']); 
+  }
 }

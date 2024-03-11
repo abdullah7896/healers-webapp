@@ -1,7 +1,7 @@
 input {
     outline: 0;
     border-width: 0 0 2px;
-    border-radius: 4px;
+    
     border-color:#00000042
     
   }
@@ -9,4 +9,3 @@ input {
     /* border-color: green; */
     outline: 1px dotted #00000042
   }
-  

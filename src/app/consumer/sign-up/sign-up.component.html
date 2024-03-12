@@ -81,8 +81,8 @@
                     </div>
 
                     <p class="mt-10  text-sm text-gray-500">
-                        <a class=" font-semibold leading-6 mr-[268px] text-indigo-600 hover:text-indigo-500"><span
-                                class="text-[#161C2D]">Don’t have an account?</span> Sign In</a>
+                        <button class=" font-semibold leading-6 mr-[268px] text-indigo-600 hover:text-indigo-500" (click)="navigatetosignin()"><span
+                                class="text-[#161C2D]">Don’t have an account?</span> Sign In</button>
                     </p>
                 </div>
             </div>
@@ -107,13 +107,13 @@
                            
                         <button type="submit" 
                         class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[-31px]"
-                        style="background: rgba(242, 133, 0, 1); ">Submit</button>
+                        style="background: rgba(242, 133, 0, 1); " (click)="navigatetopreferences()"> Verify Email</button>
                     </div>
                    
                 </div>
-                <a class="text-[#006CF0] text-[14px] font-medium ml-[30px] underline">
-                    <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to sign up
-                </a>
+                <button class="text-[#006CF0] text-[14px] font-medium ml-[30px] underline">
+                    <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;" (click)="navigatetosignin()"> Back to sign up
+                </button>
                </section> 
         </div>
       

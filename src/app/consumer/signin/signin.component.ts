@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
-  
+  constructor(private router: Router) { }
   forgetPasswordVisible = false;
 
 toggleForgetPassword() {
@@ -19,6 +20,9 @@ showForgetSection: boolean = true;
 onSubmit() {
    this.showOtpSection = true;
   this.showForgetSection = false;
+}
+naviagtetosignup(){
+  this.router.navigate(['/consumersignup']);
 }
 
  

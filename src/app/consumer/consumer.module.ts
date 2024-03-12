@@ -4,6 +4,7 @@ import { ConsumerLandingPageComponent } from './consumer-landing-page/consumer-l
 import { CommonComponentsModule } from '../common-components/common-components.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SigninComponent } from './signin/signin.component';
+import { ConsumerPreferencesComponent } from './consumer-preferences/consumer-preferences.component';
 
 
 
@@ -14,6 +15,7 @@ import { SigninComponent } from './signin/signin.component';
   declarations: [
     ConsumerLandingPageComponent,
     SignUpComponent,
+    ConsumerPreferencesComponent,
     
     
     

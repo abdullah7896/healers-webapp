@@ -1,0 +1,52 @@
+<!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
+<nav
+    class="relative flex w-full flex-wrap items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4">
+    <div class="flex w-full flex-wrap items-center justify-between px-3">
+
+        <div class="flex">
+
+            <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0 h-[47px] w-[236px ml-[45px]">
+                <img class="me-2" src="assets/logo.svg.svg" alt="TE Logo" loading="lazy" />
+            </a>
+
+        </div>
+        <ul class="list-style-none ms-auto flex flex-row ps-0 md:ps-4" data-twe-navbar-nav-ref >
+            <a class="hidden-arrow mr flex items-center text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80"
+                id="dropdownMenuButton1" role="button" data-twe-dropdown-toggle-ref aria-expanded="false">
+
+                <span class="[&>svg]:h-6 [&>svg]:w-6 ">
+                    <img src="assets/bell.png.png" alt="">
+                </span>
+
+             
+            </a>
+            <li class="px-2" data-twe-nav-item-ref>
+                <a class="flex  transition duration-200 mt-[4px]"
+                    data-twe-nav-link-ref><img src="https://tecdn.b-cdn.net/img/new/avatars/1.jpg" class="rounded-full "
+                        style="height: 25px; width: 25px" alt="TE Avatar" loading="lazy" />
+                    <strong class="ms-1 hidden sm:block">John Adams</strong>
+                </a>
+            </li>
+            <li class="relative px-2" data-twe-dropdown-ref data-twe-dropdown-alignment="end">
+
+                <a class="hidden-arrow mr flex items-center text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80"
+                    id="dropdownMenuButton1" role="button" data-twe-dropdown-toggle-ref aria-expanded="false">
+
+                    <span class="[&>svg]:h-6 [&>svg]:w-6 mt-[4px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                </a>
+
+                <ul class="absolute z-[1000] float-left hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-surface-dark data-[twe-dropdown-show]:block"
+                    aria-labelledby="dropdownMenuButton1" data-twe-dropdown-menu-ref>
+
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>

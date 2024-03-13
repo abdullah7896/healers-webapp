@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./consumer-preferences.component.css']
 })
 export class ConsumerPreferencesComponent {
+  gendersection= false;
+
+  togglegendersection() {
+    this.gendersection = !this.gendersection;
+  }
+  genderbutton=false;
+  clickbutton(){
+    this.genderbutton = !this.genderbutton;
+  }
+
+
 
 }

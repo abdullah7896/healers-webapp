@@ -8,7 +8,8 @@ import { CommonComponentsModule } from './common-components/common-components.mo
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { ConsumerModule } from './consumer/consumer.module';
-import { SignUpComponent } from './consumer/sign-up/sign-up.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +29,9 @@ import { SignUpComponent } from './consumer/sign-up/sign-up.component';
     CommonModule,
     CommonComponentsModule,
     ConsumerModule,
-    HomeModule 
+    HomeModule ,
+    HttpClientModule,
+    FormsModule
   ],
 
   providers: [],

@@ -31,24 +31,24 @@
                 <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
                     <form class="space-y-6 mt-[-24px]" action="#" method="POST">
                         <div>
-                            <label for="email" class="block text-sm font-medium leading-6 text-[#00000042]">First
+                            <label for="firstName" class="block text-sm font-medium leading-6 text-[#00000042]">First
                                 Name</label>
                             <div class="mt-2">
-                                <input placeholder="" type="text" style="width: 400px;" />
+                                <input placeholder="" type="text" style="width: 400px;"[(ngModel)]="consumerSignUp.firstName" name="firstName" />
                             </div>
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-medium leading-6 text-[#00000042]">Last
+                            <label for="lastName" class="block text-sm font-medium leading-6 text-[#00000042]">Last
                                 Name</label>
                             <div class="mt-2">
-                                <input placeholder="" type="text" style="width: 400px;" />
+                                <input placeholder="" type="text" style="width: 400px;" [(ngModel)]="consumerSignUp.lastName" name="lastName"/>
                             </div>
                         </div>
                         <div>
                             <label for="email"
                                 class="block text-sm font-medium leading-6 text-[#00000042]">Email</label>
                             <div class="mt-2">
-                                <input placeholder="Email" type="text" style="width: 400px;" />
+                                <input placeholder="Email" type="text" style="width: 400px;"[(ngModel)]="consumerSignUp.email" name="email" />
                             </div>
                         </div>
                         <div>
@@ -58,7 +58,7 @@
 
                             </div>
                             <div class="mt-2">
-                                <input placeholder="Password" type="password" style="width: 400px;" class="w-400px" />
+                                <input placeholder="Password" type="password" style="width: 400px;" class="w-400px" [(ngModel)]="consumerSignUp.password" name="password"/>
                             </div>
                         </div>
 
@@ -73,7 +73,7 @@
                     </form>
                     <button type="submit"
                         class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
-                        style="background: rgba(242, 133, 0, 1); " (click)="toggleForgetPassword() ">Sign Up</button>
+                        style="background: rgba(242, 133, 0, 1); " (click)="ConsumerSignUp() ">Sign Up</button>
 
                 </div>
                 <div class="mr-[-96px]">

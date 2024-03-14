@@ -10,7 +10,7 @@
         <div>
           <label for="email" class="block text-sm font-medium leading-6   text-color">Email</label>
           <div class="mt-2">
-            <input placeholder="Email" type="text" class="w-[370px]" />
+            <input placeholder="Email" type="text" class="w-[370px]" [(ngModel)]="loginData.email" name="email" />
           </div>
         </div>
 
@@ -20,7 +20,7 @@
 
           </div>
           <div class="mt-2">
-            <input placeholder="Password" type="password" class="w-[370px] " />
+            <input placeholder="Password" type="password" class="w-[370px] " [(ngModel)]="loginData.password" name="password" />
           </div>
         </div>
 
@@ -32,7 +32,7 @@
         </div> -->
         <div>
           <button type="submit"
-            class="flex w-[378px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:   bg-[#006A6A] ">
+            class="flex w-[378px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:   bg-[#006A6A] "(click)="onSubmit()">
             Sign in</button>
         </div>
         <div class="">
@@ -60,13 +60,13 @@
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                 <input type="email" name="email" id="email"
                   class=" border w-[450px] text-sm  focus:ring-primary-600 focus:border-primary-600 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="user@gmail.com" required="">
+                  placeholder="user@gmail.com" required="" [(ngModel)]="userEmail" name="email">
               </div>
   
             </form>
             <button type="submit"
               class="flex w-[450px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
-              (click)="onSubmit()">Submit</button>
+              (click)="ForgotPassword()">Submit</button>
               <button class="text-[#006CF0] text-[14px] font-medium py-4 underline " (click)="navigatetosignup()">
                 <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
                 login
@@ -100,7 +100,7 @@
           Password</label>
 
         <div class="mt-2">
-          <input type="password" style="width: 436px;" />
+          <input type="password" style="width: 436px;" [(ngModel)]="confirmForgotPassword.password" name="password"/>
         </div>
       </div>
       <div>
@@ -146,7 +146,9 @@
         </div>
       </div>
       <button type="submit"
-        class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A] w-[388px]">Update
+        class="flex w-full justify-center rounded-md px-3 py-1.5 
+          text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 
+          focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A] w-[388px]" (click)="ConfirmForgotPassword()">Update
         password</button>
       <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline ml-[-3px] mt-[23px]" (click)="navigatetosignup()">
         <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"

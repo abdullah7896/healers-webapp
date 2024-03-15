@@ -17,6 +17,12 @@ export class apiService extends BaseHttpService{
     };
     ConsumerSignUp(consumerSignUp: any):Observable<any>{
         return this.post(`${this.apiEndPoints.URL_ConsumerSignUp}`,consumerSignUp)
-    }
+    };
+    GetAllCategory():Observable<any>{
+        return this.get(`${this.apiEndPoints.URL_GetAllCategory}`)
+    };
+    PrectitionerSignUp(prectitionerSignUp: any):Observable<any>{
+        return this.post(`${this.apiEndPoints.URL_PrectitionerSignUp}`,prectitionerSignUp)
+    };
 
 }

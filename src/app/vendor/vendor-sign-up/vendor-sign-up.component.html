@@ -7,29 +7,39 @@
                     <p class="mt-[46px]">Enter your credentials to access your account</p>
                 </div>
                 <div>
-                    <label for="name" class="block text-sm font-medium leading-6 text-color">Full name</label>
+                    <label for="fullName" class="block text-sm font-medium leading-6 text-color">Full name</label>
                     <div class="mt-2">
-                        <input placeholder="Name" type="text" class="w-[400px]" />
+                        <input placeholder="Full Name" type="text" class="w-[400px]"  [(ngModel)]="fullName"
+                        name="fullName"/>
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-color">Email</label>
                     <div class="mt-2">
-                        <input placeholder="Email" type="text" class="w-[400px]" />
+                        <input placeholder="Email" type="text" class="w-[400px]" 
+                        [(ngModel)]="prectitionerSignUp.email" name="email"/>
                     </div>
                 </div>
                 <div>
                     <label for="Category" class="block text-sm font-medium leading-6 text-color">Choose
                         Category</label>
                     <div class="mt-2">
-                        <input placeholder="Category" type="" class="w-[400px]" />
+                        <ng-multiselect-dropdown 
+                            [data]="categories" 
+                            [(ngModel)]="selectedCategoryIds"
+                            [settings]="dropdownSettings" 
+                            [placeholder]="placeholder"
+                            (onSelect)="onCategorySelect($event)"
+                            (onDeSelect)="onCategoryUnselect($event)"
+                            ></ng-multiselect-dropdown>
+                        </div>
                     </div>
-                </div>
                 <div>
-                    <label for="Contact" class="block text-sm font-medium leading-6 text-color">Contact
+                    <label for="phoneNumber" class="block text-sm font-medium leading-6 text-color">Contact
                         No</label>
                     <div class="mt-2">
-                        <input placeholder="Contact" type="number" class="w-[400px]" />
+                        <input placeholder="Contact Number" type="number" class="w-[400px]" 
+                        [(ngModel)]="prectitionerSignUp.phoneNumber" name="phoneNumber"/>
                     </div>
                 </div>
 
@@ -39,7 +49,8 @@
 
                     </div>
                     <div class="mt-2">
-                        <input placeholder="Password" type="password" class="w-[400px]" />
+                        <input placeholder="Password" type="password" class="w-[400px]"
+                                [(ngModel)]="prectitionerSignUp.password" name="password" />
                     </div>
                 </div>
 
@@ -53,7 +64,7 @@
                 <div>
                     <button type="submit"
                         class="flex w-[105%] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] "
-                        (click)="toggleotpsection() ">
+                        (click)="PrectitionerSignUp() ">
                         Sign up</button>
                 </div>
             </form>

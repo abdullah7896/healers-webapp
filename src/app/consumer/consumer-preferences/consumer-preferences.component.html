@@ -1,6 +1,6 @@
 <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
 <nav
-    class=" relative flex w-full flex-wrap items-center justify-between  py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4   ">
+    class=" relative flex w-full flex-wrap items-center justify-between  py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4    ">
     <div class="flex w-full flex-wrap items-center justify-between px-3">
         <div class="flex">
             <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0 h-[47px] w-[236px ml-[45px]">
@@ -47,8 +47,8 @@
 </nav>
 <!-- hero sections   -->
 <section class=" body-font shadowsfor" *ngIf="!gendersection">
-    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-        <img class="  w-5/6 mb-10 object-cover object-center rounded-[16px] w-[1300px] h-[320px] " alt="hero"
+    <div class=" mx-auto flex px-5 pt-[27px] items-center justify-center flex-col">
+        <img class="  w-5/6 mb-10 object-cover object-center rounded-[16px] w-[90%] h-[320px] " alt="hero"
             src="assets/pref img.png">
         <div class="text-center lg:w-2/3 w-full">
             <h1 class="title-font sm:text-4xl text-[48px] mb-4 font-semibold text-[#18181B]">Let’s design your unique
@@ -72,61 +72,66 @@
 <section class="text-gray-600 body-font" *ngIf="gendersection">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex items-center mx-auto  pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-            <button
-                class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center  mb-[90px] justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]"
-                *ngIf="!genderbutton">
-                <img src="assets/gender white.png" alt="" (click)="clickbutton()">
-            </button>
-            <button *ngIf="genderbutton"
+            <button 
                 class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center  mb-[90px] justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
-                <img src="assets/gender 1.png" alt="">
+                <img src="assets/gender white.png" alt="">
             </button>
+            
             <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                 <h2 class="text-gray-900 text-[32px]  title-font font-medium mb-2">What is your gender?</h2>
                 <p class="leading-relaxed text-base text-[16px] font-normal">To provide you the best experience we need
                     to know your gender..</p>
                 <div
                     class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
-                    <img src="assets/male.png" alt="">
+                    <img src="assets/male.png" alt="" >
                 </div>
-                <div
+                <div 
                     class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
                     <img src="assets/Gender (1).png" alt="">
                 </div>
             </div>
         </div>
+    </div>
+</section>
+<section class="text-gray-600 body-font" *ngIf="gendersection">
+    <div class="container px-5 py-24 mx-auto">
 
         <div class="flex items-center  mx-auto  pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
             <button
                 class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
-                <img src="assets/profile.png" alt="">
+                <img src="assets/birth.png" alt="">
             </button>
-            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-                <h2 class="text-gray-900 text-[32px]  title-font font-medium mb-2">How old are you?</h2>
-                <p class="leading-relaxed text-base text-[16px] font-normal">This will help us create your personalized
+            <button
+                class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
+                <img src="assets/date of.png" alt="">
+            </button>
+            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0 ml-[26px]">
+                <h2 class="text-gray-900 text-[32px]  title-font font-medium mb-2 ml-[18px]">How old are you?</h2>
+                <p class="leading-relaxed text-base text-[16px] font-normal ml-[18px]">This will help us create your
+                    personalized
                     experience.</p>
                 <form class="flex mt-[20px]">
                     <form class="max-w-[8rem] ml-[23px] ">
                         <label for="countries"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
+                            class="block mb-2 text-sm font-medium ">Year</label>
                         <select id="countries"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>2000</option>
                         </select>
                     </form>
                     <form class="max-w-[8rem] ml-[23px] ">
                         <label for="countries"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Month</label>
+                            class="block mb-2 text-sm font-medium ">Month</label>
                         <select id="countries"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class=" border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>March</option>
                         </select>
                     </form>
                     <form class="max-w-[8rem] ml-[23px] ">
                         <label for="countries"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Day</label>
+                            class="block mb-2 text-sm font-medium ">Day</label>
                         <select id="countries"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class=" border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>31</option>
                         </select>
                     </form>
@@ -136,15 +141,19 @@
 
 
         </div>
+        
+    </div>
+</section>
+<section class="text-gray-600 body-font" *ngIf="gendersection">
+    <div class="container px-5 py-24 mx-auto">
         <div class="flex items-center mx-auto sm:flex-row flex-col">
             <button
                 class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
-                <img src="assets/birth.png" alt="">
+                <img src="assets/profile.png" alt="">
             </button>
             <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
 
             </div>
         </div>
-
     </div>
 </section>

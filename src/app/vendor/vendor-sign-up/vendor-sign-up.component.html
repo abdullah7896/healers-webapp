@@ -13,26 +13,26 @@
             <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm" *ngIf="!vendorsignup">
                 <form class="space-y-6 mt-[-21px]">
                     <div>
-                        <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Full name</label>
+                        <label for="name" class="block text-sm font-medium leading-6 text-color">Full name</label>
                         <div class="mt-2">
                             <input placeholder="Name" type="text" class="w-[400px]" />
                         </div>
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+                        <label for="email" class="block text-sm font-medium leading-6 text-color">Email</label>
                         <div class="mt-2">
                             <input placeholder="Email" type="text" class="w-[400px]" />
                         </div>
                     </div>
                     <div>
-                        <label for="Category" class="block text-sm font-medium leading-6 text-gray-900">Choose
+                        <label for="Category" class="block text-sm font-medium leading-6 text-color">Choose
                             Category</label>
                         <div class="mt-2">
                             <input placeholder="Category" type="text" class="w-[400px]" />
                         </div>
                     </div>
                     <div>
-                        <label for="Contact" class="block text-sm font-medium leading-6 text-gray-900">Contact
+                        <label for="Contact" class="block text-sm font-medium leading-6 text-color">Contact
                             No</label>
                         <div class="mt-2">
                             <input placeholder="Contact" type="text" class="w-[400px]" />
@@ -42,7 +42,7 @@
                     <div>
                         <div class="flex items-center justify-between">
                             <label for="password"
-                                class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                                class="block text-sm font-medium leading-6 text-color">Password</label>
 
                         </div>
                         <div class="mt-2">
@@ -59,7 +59,7 @@
                     </div>
                     <div>
                         <button type="submit"
-                            class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] "
+                            class="flex w-[105%] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] "
                             (click)="toggleotpsection() ">
                             Sign up</button>
                     </div>
@@ -71,7 +71,7 @@
             </div>
             <section class="ml-[47px] mt-[50px]" *ngIf="vendorsignup">
                 <div class="flex flex-col items-center justify-center ">
-                    <div class="w-full p-6  md:mt-0 sm:max-w-md sm:p-8 mr-[63px]">
+                    <div class="w-full p-6  md:mt-0 sm:max-w-md sm:p-8 ml-[-5px]">
                         <h1 class="mb-1 text-xl font-bold leading-tight tracking-tight md:text-2xl ">
                             Verify Email
                         </h1>
@@ -80,27 +80,27 @@
                         <form class="mt-4 space-y-4 lg:mt-5 md:space-y-5">
                             <div class="flex justify-center gap-4 mb-[3.5rem]">
                                 <input
-                                    class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                                    class="w-12 h-12 text-center border  shadow-sm "
                                     type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
                                     autocomplete="one-time-code" required>
                                 <input
-                                    class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                                    class="w-12 h-12 text-center border  shadow-sm "
                                     type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
                                     autocomplete="one-time-code" required>
                                 <input
-                                    class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                                    class="w-12 h-12 text-center border  shadow-sm "
                                     type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
                                     autocomplete="one-time-code" required>
                                 <input
-                                    class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                                    class="w-12 h-12 text-center border  shadow-sm"
                                     type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
                                     autocomplete="one-time-code" required>
                                 <input
-                                    class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                                    class="w-12 h-12 text-center border  shadow-sm "
                                     type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
                                     autocomplete="one-time-code" required>
                                 <input
-                                    class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                                    class="w-12 h-12 text-center border  shadow-sm "
                                     type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
                                     autocomplete="one-time-code" required>
                             </div>
@@ -108,13 +108,13 @@
                         </form>
 
                         <button type="submit"
-                            class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]">Submit</button>
-                       
+                            class="flex w-full  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]">Submit</button>
+                            <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]">
+                                <img src="assets/Icon-Wrapper.jpg" alt="Icon"
+                                    style="display:inline-block;vertical-align:middle;" > Back to sign up
+                            </button>
                     </div>
-                    <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline">
-                        <img src="assets/Icon-Wrapper.jpg" alt="Icon"
-                            style="display:inline-block;vertical-align:middle;" > Back to sign up
-                    </button>
+                   
                 </div>
             </section>
 

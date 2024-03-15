@@ -11,10 +11,6 @@ export class ConsumerPreferencesComponent {
   togglegendersection() {
     this.gendersection = !this.gendersection;
   }
-  genderbutton=false;
-  clickbutton(){
-    this.genderbutton = !this.genderbutton;
-  }
 
 
 

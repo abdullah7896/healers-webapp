@@ -1,229 +1,224 @@
-<img class="margin-right: auto; h-10  w-[176.18px] h-[159.4px] ml-[1183.82px] mt-[-8px]" src="assets/logo.svg.svg"
-  alt="Your Company">
-<div class="grid grid-cols-6 gap-4">
-  <div class="col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-6 md:w-32">
-
-    <div class="flex  flex-col" style="position: absolute; left: 12%; top: 150px">
-
-
-      <div class="mr-[78px] mt-[-62px]"  *ngIf="!forgetPasswordVisible">
-        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-          <p class="font-normal">Enter your credentials to access your account</p>
-        </div>
-        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form class="space-y-6" action="#" method="POST">
-            <div>
-              <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
-              <div class="mt-2">
-                <input placeholder="Email" type="text" style="width: 400px;" />
-              </div>
+<div class="flex max-w-full h-[100vh]">
+  <div class="flex w-[50%] justify-center items-center">
+    <div *ngIf="!forgetPasswordVisible">
+      <div class="">
+        <p class="text-[#262626] font-normal">Enter your credentials to access your account</p>
+      </div>
+      <div class=" mt-[23px] ">
+        <form class="space-y-6" action="" method="POST">
+          <div>
+            <label for="email" class="block text-sm leading-6 text-color">Email</label>
+            <div class="mt-2">
+              <input placeholder="Email" type="text" style="width: 400px;" />
             </div>
-            <div>
-              <div class="flex items-center justify-between">
-                <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-
-              </div>
-              <div class="mt-2">
-                <input placeholder="Password" type="text" style="width: 400px;" class="w-400px" />
-              </div>
-            </div>
-
-            <div class="flex items-center">
-              <input checked id="checked-checkbox" type="checkbox" value=""
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Keep me
-                signed in</label>
+          </div>
+          <div>
+            <div class="flex items-center justify-between">
+              <label for="password" class="block text-sm leading-6  text-color">Password</label>
 
             </div>
-          </form>
-          <button type="submit"
-            class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
-            style="background: rgba(242, 133, 0, 1); " [routerLink]="['/landingPage']">Sign In</button>
-          <div class="text-sm">
-            <button class="font-semibold text-indigo-600 hover:text-indigo-500 ml-[149px] mt-[33px]" (click)="toggleForgetPassword()">Forgot password?</button>
+            <div class="mt-2">
+              <input placeholder="Password" type="text" style="width: 400px;" class="w-400px" />
+            </div>
           </div>
 
+          <div class="flex items-center">
+            <input checked id="checked-checkbox" type="checkbox" value=""
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="checked-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Keep me
+              signed in</label>
 
-
-
-          <!-- section of forget sectionsss okay -->
-          
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- component -->
-         
-
-
-
-
-
-        </div>
-
-        
-
-        <div class="mr-[-96px]"  *ngIf="!forgetPasswordVisible" >
-          <div class="inline-flex items-center justify-center w-full">
-            <hr class="w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-            <span
-              class="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900">or</span>
           </div>
-          <div style="width: 476px; height: 32px; gap: 5px; display: flex; justify-content: center;">
-            <button type="button"
-              class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2"
-              style=" width: 350px; height: 32px; border: 1px; padding: 4px,20px,4px,20px; gap: 10px; border: 1px solid">
-              <img src="assets/icons8-google 1.svg" alt="">
-              Sign in with Google
-            </button>
-            <button type="button"
-              class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2"
-              style=" width: 350px; height: 32px; border: 1px solid; padding: 4px,20px,4px,20px; gap: 10px;">
-              <img src="assets/Facebook.png" alt="">
-              Sign in with Facebook
-            </button>
-          </div>
-
-          <p class="mt-10  text-sm text-gray-500">
-            <button class=" font-semibold leading-6 mr-[268px] text-indigo-600 hover:text-indigo-500" (click)="naviagtetosignup()"><span
-                class="text-[#161C2D]">Don’t have an account?</span>  Sign Up</button>
-          </p>
+        </form>
+        <button type="submit"
+          class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
+          style="background: rgba(242, 133, 0, 1); " [routerLink]="['/landingPage']">Sign In</button>
+        <div class="text-sm">
+          <button class="font-semibold text-indigo-600 hover:text-indigo-500 ml-[149px] mt-[33px]"
+            (click)="toggleForgetPassword()">Forgot password?</button>
         </div>
       </div>
-      <section class="ml-[47px] mt-[50px]"   *ngIf="forgetPasswordVisible">
-        <div class="flex flex-col items-center justify-center "  *ngIf="showForgetSection">
-            <div class="w-full p-6  md:mt-0 sm:max-w-md sm:p-8 mr-[63px]">
-                <h1 class="mb-1 text-xl font-bold leading-tight tracking-tight md:text-2xl " >
-                    Forgot password? 
-                </h1>
-                <p class="font-light">Don’ Worry ! It happens. Please enter your registered email below to reset your password.</p>
-                <form class="mt-4 space-y-4 lg:mt-5 md:space-y-5" action="#">
-                    <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                        <input type="email" name="email" id="email" class="bg-gray-50 border sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="user@gmail.com" required="">
-                    </div>
-                    
-                </form>
-                <button type="submit" 
-                class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px]"
-                style="background: rgba(242, 133, 0, 1); " [routerLink]="['/landingPage']" (click)="onSubmit()" >Submit</button>
-            </div>
-            <button class="text-[#006CF0] text-[14px] font-medium mr-[334px] underline">
-              <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to sign up
+
+
+
+      <div class="mr-[-96px]" *ngIf="!forgetPasswordVisible">
+
+        <div class="flex items-center w-[80%] mt-[12px] mb-[13px]">
+          <div class="grow border-b "></div>
+          <span class="shrink px-1 pb-1">or</span>
+          <div class="grow border-b "></div>
+        </div>
+
+        <div style="width: 476px; height: 32px; gap: 5px; display: flex; justify-content: center;">
+          <button type="button"
+            class="text-gray-900 bg-white  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium  text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 rounded-[50px]"
+            style=" width: 308px; height: 35px;   gap: 10px; ">
+            <img src="assets/icons8-google 1.svg" alt="">
+            Sign in with Google
+          </button>
+          <button type="button"
+            class="text-gray-900 bg-whiteborder border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium  text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 rounded-[50px]"
+            style=" width: 308px; height: 34px;   gap: 10px;">
+            <img src="assets/Facebook.png" alt="">
+            Sign in with Facebook
           </button>
         </div>
-       </section> 
-       <div class="mt-[-106px]" *ngIf="showOtpSection">
-        <div class="relative flex  flex-col justify-center overflow-hidden w-[400px] h-[205px] ml-[-21px]">
-          <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl mb-[-58px]">
-            <div class="mx-auto flex w-full max-w-md flex-col space-y-16">
-              <div class="flex flex-col space-y-2 mb-[-1]">
-                <div class="font-bold text-[16px]">
-                  <p>Forgot Password?</p>
-                </div>
-                <div class="flex flex-row text-sm  ">
-                  <p>Enter 6 digit OTP sent to <span class="font-bold">user@email.com</span> and update your password.
-                  </p>
-                </div>
-              </div>
 
-              <div>
-                <form class=" px-4 pt-[0.5rem] pb-[3.5rem]">
-                  <div class="flex justify-center gap-2 mb-6">
-                      <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                      
-                  </div>
-                 
-              </form>
+        <p class="mt-10  text-sm text-gray-500">
+          <button class=" font-normal leading-6 mr-[268px] text-indigo-600 hover:text-indigo-500"
+            (click)="naviagtetosignup()"><span class="text-[#161C2D]">Don’t have an account?</span> Sign Up</button>
+        </p>
+      </div>
+
+
+
+    </div>
+    <!-- this one is forget sections code -->
+    <section class="" *ngIf="forgetPasswordVisible">
+      <div class="flex flex-col items-center justify-center " *ngIf="showForgetSection">
+        <div class="md:mt-0 sm:max-w-md sm:p-8 mr-[20px]">
+          <h1 class="mb-1 text-xl font-bold leading-tight tracking-tight md:text-2xl ">
+            Forgot password?
+          </h1>
+          <p class="font-light">Don’ Worry ! It happens. Please enter your registered email below to reset your
+            password.</p>
+          <form class="mt-4 space-y-4 lg:mt-5 md:space-y-5" action="#">
+            <div>
+              <label for="email" class="block mb-2 text-sm text-color text-gray-900 dark:text-white">Email</label>
+              <input type="email" name="email" id="email"
+                class="bg-gray-50 border sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="user@gmail.com" required="">
+            </div>
+
+          </form>
+          <button type="submit"
+            class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px]"
+            style="background: rgba(242, 133, 0, 1); " [routerLink]="['/landingPage']"
+            (click)="onSubmit()">Submit</button>
+          <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]">
+            <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle; "> Back to
+            sign up
+          </button>
+        </div>
+
+      </div>
+    </section>
+    <!-- this one is otp sections -->
+    <div class="" *ngIf="showOtpSection">
+      <div class="relative flex  flex-col justify-center overflow-hidden w-[400px] h-[205px] ml-[-21px]">
+        <div class="relative  pt-10 pb-9 shadow-xl mb-[-58px]">
+          <div class="mx-auto flex  max-w-md flex-col space-y-16">
+            <div class="flex flex-col space-y-2 ml-[19px]">
+              <div class="font-bold text-[16px]">
+                <p>Forgot Password?</p>
               </div>
+              <div class="flex flex-row text-sm  ">
+                <p>Enter 6 digit OTP sent to <span class="font-bold">user@email.com</span> and update <br> your password.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <form class=" px-4 pt-[0.5rem] pb-[3.5rem]">
+                <div class="flex justify-center gap-2 mb-6">
+                  <input class="w-12 h-12 text-center border  shadow-sm "
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm "
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm "
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm "
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm "
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm "
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+
+                </div>
+
+              </form>
             </div>
           </div>
         </div>
-        
-        <div>
-          <label for="email" class="block text-[12px] font-normal  leading-6 text-[#00000060%] gap-[5.5px] ">New
-            Password</label>
+      </div>
 
-          <div class="mt-2">
-            <input type="text" style="width: 380px;" />
-          </div>
+      <div>
+        <label for="email" class="block text-[12px] font-normal  leading-6 text-[#00000060%] gap-[5.5px] text-color">New
+          Password</label>
+
+        <div class="mt-2">
+          <input type="text" style="width: 345px;" />
         </div>
+      </div>
+      <form>
         <div>
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between text-color">
             <label for="password" class="block text-[12px]  leading-6  border-[
             #00000042]  gap-[5.5px] w-[380px]">Correct
-              password</label>
+              password </label>
 
           </div>
           <div class="mt-2">
-            <input type="text" style="width: 380px;" class="w-400px" />
+            <input type="text" style="width: 345px;" class="w-400px" />
           </div>
         </div>
-        <div>
-          <p class="w-[203px] h-[22px] font-bold text-[14px] leading-[22px] mt-[23px] mb-[23px]">Your password must
-            contains:</p>
-            <div class="flex">
-              <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">
-                <input
-                  class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent disabled:opacity-60 rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
-                  type="checkbox" id="inlineCheckbox2" value="option2" />
-                <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">8+ Characters</label>
-              </div>
-              <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[-22px]">
-                <input
-                  class=" ml-[65px] relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent disabled:opacity-60 rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
-                  type="checkbox" id="inlineCheckbox2" value="option2" />
-                <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Uppercase</label>
-              </div>
-          </div>
+      </form>
+      <div>
+        <p class="w-[203px] h-[22px] font-bold text-[14px] leading-[22px] mt-[23px] mb-[23px] font-semibold">Your password must
+          contains:</p>
+        <div class="flex">
           <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">
             <input
               class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent disabled:opacity-60 rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
               type="checkbox" id="inlineCheckbox2" value="option2" />
-            <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1Numeric</label>
+            <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">8+ Characters</label>
           </div>
-          <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[96px]">
+          <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[-22px]">
             <input
-              class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent disabled:opacity-60 rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
+              class=" ml-[65px] relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent disabled:opacity-60 rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
               type="checkbox" id="inlineCheckbox2" value="option2" />
-            <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Special Character</label>
+            <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Uppercase</label>
           </div>
         </div>
-          <button type="submit"
-            class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px]"
-            style="background: rgba(242, 133, 0, 1); " [routerLink]="['/landingPage']"> Update password</button>
-            <button class="text-[#006CF0] text-[14px] font-medium mr-[334px] underline mt-[23px]">
-              <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to sign up
-          </button>
-            
+        <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">
+          <input
+            class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent disabled:opacity-60 rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
+            type="checkbox" id="inlineCheckbox2" value="option2" />
+          <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1Numeric</label>
         </div>
-        
-        
-        
-       </div>
-       
+        <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[96px]">
+          <input
+            class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent disabled:opacity-60 rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
+            type="checkbox" id="inlineCheckbox2" value="option2" />
+          <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Special
+            Character</label>
+        </div>
+      </div>
+      <button type="submit"
+        class="flex w-[80%] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px]"
+        style="background: rgba(242, 133, 0, 1); " [routerLink]="['/landingPage']"> Update password</button>
+      <button class="text-[#006CF0] text-[14px] font-medium mr-[334px] underline mt-[23px]">
+        <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
+        sign up
+      </button>
 
     </div>
-
-
-    <div class="col-span-6 sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-6 ">
-      <img src="assets/Subtract.png" alt="" class="w-[508px] h-[628px] mt-[-115px] ml-[868px] absolute z-0"
-        style="top: 22%;">
-      <p class="z-[1] relative h-[256px] w-[520px] mt-[-68px] ml-[892px] font-bold text-[38px] leading-[64px]">Explore
-        Local offerings in fitness, and wellness services.</p>
-      <img src="assets/Asset 3 1.png" alt=""
-        class=" max-w-none w-[486px] h-[404px] mt-[-94px] ml-[892px] relative z-[2]">
+  </div>
+   
+    
+  <div class="flex w-[50%] justify-center ">
+    <div class="w-[] justify-center items-center flex relative">
+         <img src="assets/subtract.png" alt="" class="  " style="height: calc(100vh - 50px);">
+        <img src="assets/logo.svg.svg" alt="" class=" absolute top-[42px] 2xl:right-[5%]  w-[30%] @screen xl:max-w-[1024px]">
+        <p class="flex font-bold text-[32px] leading-[60px] absolute left-[36px] top-[9%]">Explore Local <br>offerings in fitness,<br> and wellness <br>services.</p>
     </div>
+   </div>
+
+
+
+
+
+
+
+
+</div>

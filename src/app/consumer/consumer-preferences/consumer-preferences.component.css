@@ -1,0 +1,21 @@
+.jhonadamas{
+   
+    border-radius: 32px;
+    border: 1px;
+    gap: 10px;
+    padding: 10px, 16px, 10px, 16px;
+  
+    
+    
+   
+    
+}
+.shadowsfor{
+    box-shadow: inset 0 9px 51px 0 rgba(0, 0, 0, 0.05);  
+}
+.border2{
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #000000;
+}
+

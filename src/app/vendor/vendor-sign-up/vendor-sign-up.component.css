@@ -6,5 +6,8 @@ input {
     
   }
   input:focus {
-   outline: 1px dotted #00000042
+   outline: 1px  #00000042
+  }
+  .text-color{
+    color: rgba(0, 0, 0, 0.6)
   }

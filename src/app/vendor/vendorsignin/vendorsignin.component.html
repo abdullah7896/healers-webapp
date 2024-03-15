@@ -13,19 +13,19 @@
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm" *ngIf="!forgetPasswordUi">
         <form class="space-y-6" action="#" method="POST">
           <div>
-            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+            <label for="email" class="block text-sm font-medium leading-6   text-color">Email</label>
             <div class="mt-2">
-              <input placeholder="Email" type="text" class="w-[400px]" />
+              <input placeholder="Email" type="text" class="w-[370px] " />
             </div>
           </div>
 
           <div>
             <div class="flex items-center justify-between">
-              <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+              <label for="password" class="block text-sm font-medium leading-6  text-color">Password</label>
 
             </div>
             <div class="mt-2">
-              <input placeholder="Password" type="text" class="w-[400px]" />
+              <input placeholder="Password" type="text" class="w-[370px] " />
             </div>
           </div>
 
@@ -56,7 +56,7 @@
             (click)="navigatetosignup()">Sign up</button>
         </p>
       </div>
-      <section class="ml-[47px] mt-[50px]" *ngIf="forgetPasswordUi">
+      <section class="ml-[-36px] mt-[50px]" *ngIf="forgetPasswordUi">
         <div class="flex flex-col items-center justify-center " *ngIf="showForgetSectionvendor">
           <div class="w-full p-6  md:mt-0 sm:max-w-md sm:p-8 mr-[63px]">
             <h1 class="mb-1 text-xl font-bold leading-tight tracking-tight md:text-2xl ">
@@ -68,7 +68,7 @@
               <div>
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                 <input type="email" name="email" id="email"
-                  class="bg-gray-50 border sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class=" border sm:text-sm  focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="user@gmail.com" required="">
               </div>
 
@@ -89,7 +89,7 @@
         <div class="relative flex  flex-col justify-center overflow-hidden w-[400px] h-[205px] ml-[-21px]">
           <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl mb-[-58px]">
             <div class="mx-auto flex w-full max-w-md flex-col space-y-16">
-              <div class="flex flex-col space-y-2 mb-[-1]">
+              <div class="flex flex-col space-y-2 ">
                 <div class="font-bold text-[16px]">
                   <p>Forgot Password?</p>
                 </div>
@@ -105,26 +105,26 @@
         </div>
 
         <div>
-          <label for="email" class="block text-[12px] font-normal  leading-6 text-[#00000060%] gap-[5.5px] ">
+          <label for="email" class="block text-[12px] font-normal  leading-6 text-[#00000060%] gap-[5.5px] text-color ">
             Password</label>
 
           <div class="mt-2">
-            <input type="text" style="width: 380px;" />
+            <input type="text" style="width: 436px;" />
           </div>
         </div>
         <div>
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between text-color">
             <label for="password" class="block text-[12px]  leading-6  border-[
         #00000042]  gap-[5.5px] w-[380px]">Confirm
               password</label>
 
           </div>
           <div class="mt-2">
-            <input type="text" style="width: 380px;" class="w-400px" />
+            <input type="text" style="width: 436px;" class="w-400px" />
           </div>
         </div>
         <div>
-          <p class="w-[203px] h-[22px] font-bold text-[14px] leading-[22px] mt-[23px] mb-[23px]">Your password must
+          <p class="w-[203px] h-[22px] font-semibold text-[14px] leading-[22px] mt-[23px] mb-[23px]">Your password must
             contains:</p>
           <div class="flex">
             <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">

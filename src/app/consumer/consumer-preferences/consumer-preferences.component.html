@@ -1,29 +1,24 @@
 <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
 <nav
-    class="relative flex w-full flex-wrap items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4">
+    class=" relative flex w-full flex-wrap items-center justify-between  py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4    ">
     <div class="flex w-full flex-wrap items-center justify-between px-3">
-
         <div class="flex">
-
             <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0 h-[47px] w-[236px ml-[45px]">
                 <img class="me-2" src="assets/logo.svg.svg" alt="TE Logo" loading="lazy" />
             </a>
-
         </div>
-        <ul class="list-style-none ms-auto flex flex-row ps-0 md:ps-4" data-twe-navbar-nav-ref >
+        <ul class="jhonadamas list-style-none ms-auto flex flex-row ps-0 md:ps-4 mr-[70px] rounded-[32px]"
+            data-twe-navbar-nav-ref>
             <a class="hidden-arrow mr flex items-center text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80"
                 id="dropdownMenuButton1" role="button" data-twe-dropdown-toggle-ref aria-expanded="false">
-
                 <span class="[&>svg]:h-6 [&>svg]:w-6 ">
                     <img src="assets/bell.png.png" alt="">
                 </span>
-
-             
             </a>
             <li class="px-2" data-twe-nav-item-ref>
-                <a class="flex  transition duration-200 mt-[4px]"
-                    data-twe-nav-link-ref><img src="https://tecdn.b-cdn.net/img/new/avatars/1.jpg" class="rounded-full "
-                        style="height: 25px; width: 25px" alt="TE Avatar" loading="lazy" />
+                <a class="flex  transition duration-200 mt-[4px]" data-twe-nav-link-ref><img
+                        src="https://tecdn.b-cdn.net/img/new/avatars/1.jpg" class=" " style="height: 25px; width: 25px"
+                        alt="TE Avatar" loading="lazy" />
                     <strong class="ms-1 hidden sm:block">John Adams</strong>
                 </a>
             </li>
@@ -41,7 +36,7 @@
                     </span>
                 </a>
 
-                <ul class="absolute z-[1000] float-left hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-surface-dark data-[twe-dropdown-show]:block"
+                <ul class="absolute z-[1000] float-left hidden min-w-max list-none overflow-hidden border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-surface-dark data-[twe-dropdown-show]:block"
                     aria-labelledby="dropdownMenuButton1" data-twe-dropdown-menu-ref>
 
                 </ul>
@@ -50,3 +45,115 @@
 
     </div>
 </nav>
+<!-- hero sections   -->
+<section class=" body-font shadowsfor" *ngIf="!gendersection">
+    <div class=" mx-auto flex px-5 pt-[27px] items-center justify-center flex-col">
+        <img class="  w-5/6 mb-10 object-cover object-center rounded-[16px] w-[90%] h-[320px] " alt="hero"
+            src="assets/pref img.png">
+        <div class="text-center lg:w-2/3 w-full">
+            <h1 class="title-font sm:text-4xl text-[48px] mb-4 font-semibold text-[#18181B]">Let’s design your unique
+                Experience</h1>
+            <p class="mb-8 leading-[24px] text-[16px] ">The more we get to know you, the more we can serve up classes
+                you love. Help <br> us personalize your practice by answering three quick questions.</p>
+            <div class="flex justify-center">
+                <button
+                    class="inline-flex text-white bg-[#F28500] gap-[10px] border-0 py-2 px-6 focus:outline-none text-[18px] rounded-[44px] text-lg font-bold"
+                    (click)="togglegendersection() ">Sounds
+                    Good</button>
+            </div>
+            <div class="flex justify-center gap-[10px] font-medium mt-[10px] text-lg">
+                <button> No Thanks</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- new threee sections  -->
+<section class="text-gray-600 body-font" *ngIf="gendersection">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex items-center mx-auto  pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <button 
+                class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center  mb-[90px] justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                <img src="assets/gender white.png" alt="">
+            </button>
+            
+            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                <h2 class="text-gray-900 text-[32px]  title-font font-medium mb-2">What is your gender?</h2>
+                <p class="leading-relaxed text-base text-[16px] font-normal">To provide you the best experience we need
+                    to know your gender..</p>
+                <div
+                    class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                    <img src="assets/male.png" alt="" >
+                </div>
+                <div 
+                    class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                    <img src="assets/Gender (1).png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="text-gray-600 body-font" *ngIf="gendersection">
+    <div class="container px-5 py-24 mx-auto">
+
+        <div class="flex items-center  mx-auto  pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <button
+                class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
+                <img src="assets/birth.png" alt="">
+            </button>
+            <button
+                class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
+                <img src="assets/date of.png" alt="">
+            </button>
+            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0 ml-[26px]">
+                <h2 class="text-gray-900 text-[32px]  title-font font-medium mb-2 ml-[18px]">How old are you?</h2>
+                <p class="leading-relaxed text-base text-[16px] font-normal ml-[18px]">This will help us create your
+                    personalized
+                    experience.</p>
+                <form class="flex mt-[20px]">
+                    <form class="max-w-[8rem] ml-[23px] ">
+                        <label for="countries"
+                            class="block mb-2 text-sm font-medium ">Year</label>
+                        <select id="countries"
+                            class="border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>2000</option>
+                        </select>
+                    </form>
+                    <form class="max-w-[8rem] ml-[23px] ">
+                        <label for="countries"
+                            class="block mb-2 text-sm font-medium ">Month</label>
+                        <select id="countries"
+                            class=" border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>March</option>
+                        </select>
+                    </form>
+                    <form class="max-w-[8rem] ml-[23px] ">
+                        <label for="countries"
+                            class="block mb-2 text-sm font-medium ">Day</label>
+                        <select id="countries"
+                            class=" border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>31</option>
+                        </select>
+                    </form>
+                </form>
+
+            </div>
+
+
+        </div>
+        
+    </div>
+</section>
+<section class="text-gray-600 body-font" *ngIf="gendersection">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex items-center mx-auto sm:flex-row flex-col">
+            <button
+                class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
+                <img src="assets/profile.png" alt="">
+            </button>
+            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+
+            </div>
+        </div>
+    </div>
+</section>

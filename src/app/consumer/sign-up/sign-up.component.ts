@@ -19,4 +19,7 @@ export class SignUpComponent {
   navigatetosignin(){
     this.router.navigate(['/consumersignin']);
   }
+  navigatetohome(){
+    this.router.navigate(['']);
+  }
 }

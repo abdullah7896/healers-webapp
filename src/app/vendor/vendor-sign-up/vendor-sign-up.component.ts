@@ -17,6 +17,10 @@ export class VendorSignUpComponent {
   navigatetosignin(){
     this.router.navigate(['/vendorsignin']);
   }
+  navigatetohome(){
+    this.router.navigate(['']);
+  }
+
  
 
  

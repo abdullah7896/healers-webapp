@@ -27,6 +27,9 @@ navigatetosignup(){
 navigatetosignin(){
   this.router.navigate(['/vendorsignin']);
 }
+navigatetohome(){
+  this.router.navigate(['']);
+}
 
 
 

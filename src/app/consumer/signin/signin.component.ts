@@ -24,6 +24,12 @@ onSubmit() {
 naviagtetosignup(){
   this.router.navigate(['/consumersignup']);
 }
+navigatetohome(){
+  this.router.navigate(['']);
+}
+
+
+
 
  
  

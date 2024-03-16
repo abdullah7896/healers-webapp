@@ -58,18 +58,18 @@
 
                             </div>
                             <div class="mt-2">
-                                <input placeholder="Password" type="text" style="width: 400px;" class="w-400px" />
+                                <input placeholder="Password" type="password" style="width: 400px;" class="w-400px" />
                             </div>
                         </div>
 
-                        <div class="flex items-center">
+                        <!-- <div class="flex items-center">
                             <input checked id="checked-checkbox" type="checkbox" value=""
                                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             <label for="checked-checkbox"
                                 class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Keep me
                                 signed in</label>
 
-                        </div>
+                        </div> -->
                     </form>
                     <button type="submit"
                         class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
@@ -98,7 +98,7 @@
                       </div>
 
                     <p class="mt-10  text-sm text-gray-500">
-                        <button class=" font-semibold leading-6 mr-[268px] text-indigo-600 hover:text-indigo-500" (click)="navigatetosignin()"><span
+                        <button class=" font-medium leading-6 mr-[268px] text-indigo-600 hover:text-indigo-500" (click)="navigatetosignin()"><span
                                 class="text-[#161C2D]">Don’t have an account?</span> Sign In</button>
                     </p>
                 </div>
@@ -112,12 +112,12 @@
                         <p class="font-light">A 6 digit OTP has been sent to user@email.com Please verify to continue.</p>
                         <form class=" px-4 pt-[0.5rem] pb-[3.5rem]">
                             <div class="flex justify-center gap-4 mb-6">
-                                <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500" type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
+                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
                                 </div>
                                 
                            </form>
@@ -136,7 +136,7 @@
          <div class="flex w-[50%] justify-center ">
             <div class="w-[] justify-center items-center flex relative">
                  <img src="assets/Subtract.png" alt="" class="  " style="height: calc(100vh - 50px);">
-                <img src="assets/logo.svg.svg" alt="" class=" absolute top-[42px] right-[5%]  w-[30%] ">
+                <img src="assets/logo.svg.svg" alt="" class=" absolute top-[42px] right-[5%]  w-[30%] " (click)="navigatetohome()">
                 <p class="flex font-bold text-[32px] leading-[60px] absolute left-[36px] top-[9%]">Explore Local <br>offerings in fitness,<br> and wellness <br>services.</p>
             </div>
            </div>

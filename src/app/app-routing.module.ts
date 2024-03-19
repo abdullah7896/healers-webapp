@@ -10,6 +10,7 @@ import { ConsumerLandingPageComponent } from './consumer/consumer-landing-page/c
 import { SignUpComponent } from './consumer/sign-up/sign-up.component';
 import { VendorSignUpComponent } from './vendor/vendor-sign-up/vendor-sign-up.component';
 import { ConsumerPreferencesComponent } from './consumer/consumer-preferences/consumer-preferences.component';
+import { ProfileDetailingComponent } from './vendor/profile-detailing/profile-detailing.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'consumersignup', component:SignUpComponent},
   {path:'Vendorsignup', component:VendorSignUpComponent},
   {path:'Preferences',component:ConsumerPreferencesComponent},
+  {path:'ProfileDetailing', component:ProfileDetailingComponent},
   {path:'',component:HomeComponent}
   
  

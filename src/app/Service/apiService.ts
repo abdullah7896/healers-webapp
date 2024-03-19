@@ -5,24 +5,30 @@ import { Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root',
 })
-export class apiService extends BaseHttpService{
-    login(logina : any): Observable<any>{
-        return this.post(`${this.apiEndPoints.URL_Login}`,logina)
+export class apiService extends BaseHttpService {
+    login(logina: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_Login}`, logina)
     };
-    ForgotPassword(forgotPassword : any): Observable<any>{
-        return this.post(`${this.apiEndPoints.URL_ForgotPassword}?email=${forgotPassword}`,null)
+    ForgotPassword(forgotPassword: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_ForgotPassword}?email=${forgotPassword}`, null)
     };
-    ConfirmForgotPassword(confirmForgotPassword:any): Observable<any>{
-        return this.post(`${this.apiEndPoints.URL_ConfirmForgotPassword}`,confirmForgotPassword)
+    ConfirmForgotPassword(confirmForgotPassword: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_ConfirmForgotPassword}`, confirmForgotPassword)
     };
-    ConsumerSignUp(consumerSignUp: any):Observable<any>{
-        return this.post(`${this.apiEndPoints.URL_ConsumerSignUp}`,consumerSignUp)
+    SignUp(signUp: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_SignUp}`, signUp)
     };
-    GetAllCategory():Observable<any>{
+    GetAllCategory(): Observable<any> {
         return this.get(`${this.apiEndPoints.URL_GetAllCategory}`)
     };
-    PrectitionerSignUp(prectitionerSignUp: any):Observable<any>{
-        return this.post(`${this.apiEndPoints.URL_PrectitionerSignUp}`,prectitionerSignUp)
+    ResendForgotPasswordOTP(forgotPassword: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_ResendForgotPasswordOTP}?email=${forgotPassword}`, null)
     };
+    ConfirmSignUp(confirmSignUp: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_ConfirmSignUp}`, confirmSignUp)
+    };
+    ResendSignUpOTP(resendSignUpOTP: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_ResendSignUpOTP}?email=${resendSignUpOTP}`, null)
+    }
 
 }

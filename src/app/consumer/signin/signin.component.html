@@ -18,7 +18,8 @@
 
             </div>
             <div class="mt-2">
-              <input placeholder="Password" type="password" style="width: 400px;" class="w-400px"[(ngModel)]="loginData.password" name="password" />
+              <input placeholder="Password" type="password" style="width: 400px;" class="w-400px"
+                  [(ngModel)]="loginData.password" name="password" />
             </div>
           </div>
 
@@ -129,7 +130,11 @@
           </div>
         </div>
       </div>
-
+      <div class="text-right">
+        <span>Didn't get a code?&nbsp;&nbsp;</span>
+        <button class=" font-semibold leading-6 mr-[115px] text-indigo-600 hover:text-indigo-500"
+          (click)="ResendForgotPasswordOTP()">Resend</button>
+      </div>
       <div>
         <label for="password" class="block text-[12px] font-normal  leading-6 text-[#00000060%] gap-[5.5px] text-color">New
           Password</label>

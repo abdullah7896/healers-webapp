@@ -20,7 +20,8 @@
 
           </div>
           <div class="mt-2">
-            <input placeholder="Password" type="password" class="w-[370px] " [(ngModel)]="loginData.password" name="password" />
+            <input placeholder="Password" type="password" class="w-[370px] " [(ngModel)]="loginData.password"
+                name="password" />
           </div>
         </div>
 
@@ -32,7 +33,8 @@
         </div> -->
         <div>
           <button type="submit"
-            class="flex w-[378px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:   bg-[#006A6A] "(click)="onSubmit()">
+            class="flex w-[378px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:   bg-[#006A6A] "
+              (click)="onSubmit()">
             Sign in</button>
         </div>
         <div class="">
@@ -89,18 +91,48 @@
                 </p>
               </div>
             </div>
+              <div>
+                <form class=" px-4 pt-[0.5rem] pb-[3.5rem]">
+                  <div class="flex justify-center gap-2 mb-6">
+                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                      (change)="handleVerificationCodeChange(0,$event)" required>
+                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                      (change)="handleVerificationCodeChange(1,$event)" required>
+                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                      (change)="handleVerificationCodeChange(2,$event)" required>
+                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                      (change)="handleVerificationCodeChange(3,$event)" required>
+                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                      (change)="handleVerificationCodeChange(4,$event)" required>
+                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                      (change)="handleVerificationCodeChange(5,$event)" required>
+
+                  </div>
+
+                </form>
+              </div>
 
 
           </div>
         </div>
       </div>
-
+        <div class="text-right">
+          <span>Didn't get a code?&nbsp;&nbsp;</span>
+          <button class=" font-semibold leading-6 mr-[115px] text-indigo-600 hover:text-indigo-500"
+            (click)="ResendForgotPasswordOTP()">Resend</button>
+        </div>
       <div>
         <label for="email" class="block text-[12px] font-normal  leading-6 text-[#00000060%] gap-[5.5px] text-color ">
           Password</label>
 
         <div class="mt-2">
-          <input type="password" style="width: 436px;" [(ngModel)]="confirmForgotPassword.password" name="password"/>
+          <input type="password" style="width: 436px;" [(ngModel)]="confirmForgotPassword.password" name="password" />
         </div>
       </div>
       <div>
@@ -148,11 +180,13 @@
       <button type="submit"
         class="flex w-full justify-center rounded-md px-3 py-1.5 
           text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 
-          focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A] w-[388px]" (click)="ConfirmForgotPassword()">Update
+          focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A] w-[388px]"
+          (click)="ConfirmForgotPassword()">Update
         password</button>
       <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline ml-[-3px] mt-[23px]" (click)="navigatetosignup()">
         <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"
-          (click)="navigatetosignin()"> Back to
+         
+            (click)="navigatetosignin()"> Back to
         login
       </button>
 

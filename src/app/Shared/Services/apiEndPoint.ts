@@ -8,9 +8,11 @@ export class apiEndPoint {
     URL_Login:string='';
     URL_ForgotPassword:string='';
     URL_ConfirmForgotPassword:string='';
-    URL_ConsumerSignUp:string='';
+    URL_SignUp:string='';
     URL_GetAllCategory:string='';
-    URL_PrectitionerSignUp:string=''
+    URL_ResendForgotPasswordOTP:string='';
+    URL_ConfirmSignUp:string='';
+    URL_ResendSignUpOTP:string=''
     constructor() {
         this.initializeMembers()
     }
@@ -19,8 +21,10 @@ export class apiEndPoint {
         this.URL_Login=`${this.URL_APIBase}Auth/Login`;
         this.URL_ForgotPassword=`${this.URL_APIBase}Auth/ForgotPassword`;
         this.URL_ConfirmForgotPassword=`${this.URL_APIBase}Auth/ConfirmForgotPassword`;
-        this.URL_ConsumerSignUp=`${this.URL_APIBase}Auth/SignUp`;
+        this.URL_SignUp=`${this.URL_APIBase}Auth/SignUp`;
         this.URL_GetAllCategory=`${this.URL_APIBase}Category/GetAll`;
-        this.URL_PrectitionerSignUp=`${this.URL_APIBase}Auth/SignUp`;
+        this.URL_ResendForgotPasswordOTP=`${this.URL_APIBase}Auth/ForgotPassword`;
+        this.URL_ConfirmSignUp=`${this.URL_APIBase}Auth/ConfirmSignUp`;
+        this.URL_ResendSignUpOTP=`${this.URL_APIBase}Auth/ResendSignUpOTP`;
     }
 }

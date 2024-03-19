@@ -14,17 +14,14 @@ export class SigninComponent {
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
   forgetPasswordVisible = false;
   loginData = { email: '', password: '' };
-  //confirmForgotPassword ={email:'',verificationCode:['', '', '', '', '', ''],password:''};
   confirmForgotPassword = { email: '', verificationCode: '', password: '' };
   userEmail = '';
 
   handleVerificationCodeChange(index: number, event: Event) {
-    // Get the value of the changed input field
     const inputValue = (event.target as HTMLInputElement).value;
-
-    // Update the corresponding index of the verificationCode array
     this.confirmForgotPassword.verificationCode += inputValue;
   }
+
   toggleForgetPassword() {
     this.forgetPasswordVisible = !this.forgetPasswordVisible;
   }
@@ -38,36 +35,42 @@ export class SigninComponent {
         this.forgetPasswordVisible = false;
         this.showOtpSection = true;
       }
+      
       localStorage.setItem('userPasswordEmail', this.userEmail);
-      console.log('Login successful', response);
-      this.router.navigate(['/dashboard']); // Example redirect to dashboard
+      console.log('Email send  successfully', response);
+      //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     },
       error => {
-        console.error('Login failed', error);
+        console.error('Email send failed', error);
       });
   }
+
   ConfirmForgotPassword() {
     var storedemail = localStorage.getItem('userPasswordEmail')
     if (storedemail)
       this.confirmForgotPassword.email = storedemail;
-    // const { verificationCode, password } = this.confirmForgotPassword;
-    // const confirmForgotPassword = { email:storedemail, verificationCode,password };
     this.apiService.ConfirmForgotPassword(this.confirmForgotPassword).subscribe(response => {
-      console.log('Login successful', response);
+      console.log('Change Password successfully', response);
     }, error => {
       // Handle login error here
-      console.error('Login failed', error);
-      // Display error message or take appropriate action
+      console.error('Change Password failed', error);
     });
+  }
+  ResendForgotPasswordOTP(){
+    var resendForgotPasswordOtpemail = localStorage.getItem('userPasswordEmail')
+    this.apiService.ResendForgotPasswordOTP(resendForgotPasswordOtpemail).subscribe(response =>{
+      console.log('Resend OTP successful', response);
+      //this.router.navigate(['/dashboard']); // Example redirect to dashboard
+    },
+      error => {
+        console.error('Resend OTP failed', error);
+      });
   }
   Login() {
     const { email, password } = this.loginData;
     const loginData = { email, password };
-    // Call the login API from apiService here
     this.apiService.login(loginData).subscribe(response => {
-      // Handle successful login response here
       console.log('Login successful', response);
-      // Redirect or perform other actions after successful login
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     }, error => {
       // Handle login error here

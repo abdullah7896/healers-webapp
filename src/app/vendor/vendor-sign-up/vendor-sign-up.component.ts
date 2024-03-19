@@ -15,8 +15,9 @@ export class VendorSignUpComponent implements OnInit {
   fullName: string = '';
   placeholder:string ='Select upto 2 categories'
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
-  prectitionerSignUp = { firstName: '', lastName: '', email: '', phoneNumber: '', password: '', role: 1, selectedCategoryIds: this.selectedCategoryIds };
-  prectitionerEmail = '';
+  signUp = { firstName: '', lastName: '', email: '', phoneNumber: '', password: '', role: 1, selectedCategoryIds: this.selectedCategoryIds };
+  userEmail = '';
+  confirmSignUp = { email: '', verificationCode: '', password: '', };
   vendorsignup = false;
   dropdownSettings = {
     singleSelection: false, // Allow multiple selections
@@ -36,21 +37,27 @@ export class VendorSignUpComponent implements OnInit {
   ngOnInit(): void {
     this.GetAllCategory();
   }
+  handleVerificationCodeChange(index: number, event: Event) {
+    // Get the value of the changed input field
+    const inputValue = (event.target as HTMLInputElement).value;
 
-  PrectitionerSignUp() {
+    // Update the corresponding index of the verificationCode array
+    this.confirmSignUp.verificationCode += inputValue;
+  }
+  SignUp() {
     // Split full name into first name and last name
-
+    this.vendorsignup = !this.vendorsignup;
     const nameParts = this.fullName.indexOf(' ');
     console.log('Name Parts:', nameParts);
     if (nameParts >=0) {
-      this.prectitionerSignUp.firstName= this.fullName.slice(0, nameParts);
-      this.prectitionerSignUp.lastName= this.fullName.slice(nameParts + 1);
+      this.signUp.firstName= this.fullName.slice(0, nameParts);
+      this.signUp.lastName= this.fullName.slice(nameParts + 1);
     }
     else
-    this.prectitionerSignUp.firstName=this.fullName
-    this.prectitionerSignUp.selectedCategoryIds = this.selectedCategoryIds;
-    this.apiService.PrectitionerSignUp(this.prectitionerSignUp).subscribe(response => {
-      localStorage.setItem('practitionerPasswordEmail', this.prectitionerEmail);
+    this.signUp.firstName=this.fullName
+    this.signUp.selectedCategoryIds = this.selectedCategoryIds;
+    this.apiService.SignUp(this.signUp).subscribe(response => {
+      localStorage.setItem('practitionerPasswordEmail', this.userEmail);
       console.log('Login successful', response);
     }, error => {
       // Handle login error here
@@ -58,6 +65,26 @@ export class VendorSignUpComponent implements OnInit {
       // Display error message or take appropriate action
     });
   }
+
+  ConfirmSignUp(){
+    
+    this.confirmSignUp.password= this.signUp.password
+    this.confirmSignUp.email = this.signUp.email;
+  this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
+    console.log(' successful', response);
+  }, error => {
+    console.error(' failed', error);
+  });
+  }
+  ResendSignUpOTP(){
+    this.apiService.ResendSignUpOTP(this.signUp.email).subscribe(response =>{
+      console.log('Login successful', response);
+      //this.router.navigate(['/dashboard']); // Example redirect to dashboard
+    },
+      error => {
+        console.error('Login failed', error);
+      });
+    }
 
   onCategorySelect(event:any){
     this.selectedCategoryIds.push(event.id)

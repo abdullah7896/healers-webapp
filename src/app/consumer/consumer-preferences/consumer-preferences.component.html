@@ -69,91 +69,193 @@
 </section>
 
 <!-- new threee sections  -->
-<section class="text-gray-600 body-font" *ngIf="gendersection">
-    <div class="container px-5 py-24 mx-auto">
-        <div class="flex items-center mx-auto  pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-            <button 
-                class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center  mb-[90px] justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
-                <img src="assets/gender white.png" alt="">
-            </button>
-            
-            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-                <h2 class="text-gray-900 text-[32px]  title-font font-medium mb-2">What is your gender?</h2>
-                <p class="leading-relaxed text-base text-[16px] font-normal">To provide you the best experience we need
-                    to know your gender..</p>
-                <div
-                    class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
-                    <img src="assets/male.png" alt="" >
-                </div>
-                <div 
-                    class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
-                    <img src="assets/Gender (1).png" alt="">
+
+<section class="text-gray-600 body-font " *ngIf="gendersection">
+    <div class="flex items-center pt-10">
+        <div class="w-[25%] flex-row items-center">
+            <div class="pb-[23px] ">
+                <div class="flex items-center flex-col">
+                    <button *ngIf="!genderbutton"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center   justify-center  flex-shrink-0 rounded-[16px]">
+                        <img src="assets/gender white.png" alt="" (click)="toggleSection('gender')">
+                    </button>
+                    <button *ngIf="genderbutton"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center  justify-center  flex-shrink-0 rounded-[16px]">
+                        <img src="assets/gender 1.png" alt="" (click)="toggleSection('gender')">
+                    </button>
+
+
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="text-gray-600 body-font" *ngIf="gendersection">
-    <div class="container px-5 py-24 mx-auto">
+            <div class=" pb-[23px]">
 
-        <div class="flex items-center  mx-auto  pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-            <button
-                class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
-                <img src="assets/birth.png" alt="">
-            </button>
-            <button
-                class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
-                <img src="assets/date of.png" alt="">
-            </button>
-            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0 ml-[26px]">
-                <h2 class="text-gray-900 text-[32px]  title-font font-medium mb-2 ml-[18px]">How old are you?</h2>
-                <p class="leading-relaxed text-base text-[16px] font-normal ml-[18px]">This will help us create your
-                    personalized
-                    experience.</p>
-                <form class="flex mt-[20px]">
-                    <form class="max-w-[8rem] ml-[23px] ">
-                        <label for="countries"
-                            class="block mb-2 text-sm font-medium ">Year</label>
-                        <select id="countries"
-                            class="border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected>2000</option>
-                        </select>
-                    </form>
-                    <form class="max-w-[8rem] ml-[23px] ">
-                        <label for="countries"
-                            class="block mb-2 text-sm font-medium ">Month</label>
-                        <select id="countries"
-                            class=" border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected>March</option>
-                        </select>
-                    </form>
-                    <form class="max-w-[8rem] ml-[23px] ">
-                        <label for="countries"
-                            class="block mb-2 text-sm font-medium ">Day</label>
-                        <select id="countries"
-                            class=" border2  text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected>31</option>
-                        </select>
-                    </form>
-                </form>
+                <div class="flex items-center flex-col">
+                    <button *ngIf="!dateofbirth"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center   justify-center    flex-shrink-0 rounded-[16px]">
+                        <img src="assets/birth.png" alt="" (click)="toggleSection('dateofbirth')">
+                    </button>
+                    <button *ngIf="dateofbirth"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center  justify-center    flex-shrink-0 rounded-[16px]">
+                        <img src="assets/date of.png" alt="" (click)="toggleSection('dateofbirth')">
+                    </button>
+
+
+                </div>
+
 
             </div>
+            <div class=" pb-[23px]">
+                <div class="flex items-center flex-col">
+                    <button *ngIf="!physicalprofile"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0 rounded-[16px]">
+                        <img src="assets/profile.png" alt="" (click)="toggleSection('physicalprofile')">
+                    </button>
+                    <button *ngIf="physicalprofile"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center  flex-shrink-0 rounded-[16px]">
+                        <img src="assets/Preferences Tile.png" alt="" (click)="toggleSection('physicalprofile')">
+                    </button>
 
+                </div>
+            </div>
 
         </div>
+    
+         <div *ngIf="gendersection" class="flex flex-col items-center">
+            <!-- gender div -->
+            <div class="flex-grow" *ngIf="!dateofbirth">
+                <div *ngIf="!physicalprofile">
+                    <h2 class="text-gray-900 text-[32px]  title-font font-medium ">What is your gender?</h2>
+                    <p class="leading-relaxed text-base text-[16px] font-normal">To provide you the best experience we
+                        need
+                        to know your gender..</p>
+                    <div
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                        <img src="assets/male.png" alt="">
+                    </div>
+                    <div
+                        class="w-32 h-32 h-20 w-20 sm:mr-10 inline-flex mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                        <img src="assets/Gender (1).png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- birth div  -->
+            <div class="flex-grow " *ngIf="!genderbutton">
+                <div *ngIf="!physicalprofile">
+                    <div class="flex-col">
+                        <h2 class="text-gray-900 text-[32px]  title-font font-medium leading-[48px]">How old are you?
+                        </h2>
+                        <p class=" text-[#18181B] text-[16px] font-normal leading-[48px] font-normal">This will help us
+                            create your
+                            personalized
+                            experience.</p>
+                    </div>
+                    <form class="flex gap-[32px]">
+                        <form class="">
+                            <label for="countries" class="block mb-2 text-sm  ">Year</label>
+                            <select id="countries" class="border2    text-sm   block w-full p-2.5  ">
+                                <option selected>2000</option>
+                            </select>
+                        </form>
+                        <form class="">
+                            <label for="countries" class="block mb-2 text-sm  ">Month</label>
+                            <select id="countries" class=" border2   text-sm  block w-full p-2.5  ">
+                                <option selected>March</option>
+                            </select>
+                        </form>
+                        <form class="">
+                            <label for="countries" class="block mb-2 text-sm  ">Day</label>
+                            <select id="countries" class=" border2   text-sm   block w-full p-2.5  ">
+                                <option selected>31</option>
+                            </select>
+                        </form>
+                    </form>
+                </div>
+            </div>
+            <!-- physical div -->
+            <div class="flex-grow" *ngIf="!genderbutton">
+                <div *ngIf="!dateofbirth">
+                    <div>
+                        <h2 class="text-[#18181B] text-[32px]  title-font font-medium leading-[48px]">Let us know your
+                            weight and height</h2>
+                        <p class="leading-relaxed text-base text-[16px] font-normal leading-[24px]">This will help us
+                            create
+                            your personalized experience.</p>
+                    </div>
+                    <div class=" gap-[16px] mt-[23px]">
+
+                        <div class="inline-flex">
+                            <p class=" text-[16px] font-semibold leading-[24px] text-[#18181B] ">Weight</p>
+
+                            <label class="flex items-center relative w-max cursor-pointer select-none ">
+                                <input type="checkbox"
+                                    class="appearance-none transition-colors cursor-pointer w-[30rem] h-[0.5rem] rounded-full" />
+                                <span class="absolute font-medium text-xs uppercase right-1   text-[#71727A]"> Ib</span>
+                                <span class="absolute font-medium text-xs uppercase right-8 text-[#F28500]"> kg</span>
+                                <span
+                                    class="w-7 h-7 right-7 absolute rounded-[10px] transform transition-transform bg-gray-200"></span>
+                            </label>
+
+                        </div>
+                        <div class="flex items-center justify-between w-[11rem] mt-[23px]">
+                            <button (click)="decrement()"
+                                class="bg-gray-200  text-[#18181B]  font-bold py-2 px-4 :outline-none focus:shadow-outline border1">
+                                -
+                            </button>
+                            <span class=" py-2 px-4">
+                                {{ count }}
+                            </span>
+                            <button (click)="increment()"
+                                class="bg-[#F28500] hover:bg-[#F28500] text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline border23">
+                                +
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class=" gap-[16px] mt-[23px]">
+                        <div class="inline-flex">
+                            <p class=" text-[16px] font-semibold leading-[24px] text-[#18181B] ">Height</p>
+                            <label class="flex items-center relative w-max cursor-pointer select-none ">
+                                <input type="checkbox"
+                                    class="appearance-none transition-colors cursor-pointer w-[30rem] h-[0.5rem] rounded-full" />
+                                <span class="absolute font-medium text-xs uppercase right-1   text-[#71727A]">in</span>
+                                <span class="absolute font-medium text-xs uppercase right-8 text-[#F28500]">cm</span>
+                                <span
+                                    class="w-7 h-7 right-7 absolute rounded-[10px] transform transition-transform bg-gray-200"></span>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="flex flex-row gap-[32px] pt-[25px]">
+                        <form class="w-[234px]">
+                            <label for="countries" class="block mb-2 text-sm  ">Feet</label>
+                            <select id="countries" class="border2    text-sm   block w-full p-2.5  ">
+                                <option selected>6</option>
+                            </select>
+                        </form>
+                        <form class="w-[234px]">
+                            <label for="countries" class="block mb-2 text-sm  ">Inches</label>
+                            <select id="countries" class="border2    text-sm   block w-full p-2.5  ">
+                                <option selected>4</option>
+                            </select>
+                        </form>
+                    </div>
+                    <button
+                        class=" mt-[23px] inline-flex relative left-[350px] text-white bg-[#F28500] gap-[10px] border-0 py-2 px-6 focus:outline-none text-[18px] rounded-[44px] text-lg font-medium">Explore
+                        Services</button>
+
+
+                    <div>
+                    </div>
+                </div>
+            </div>
+
         
     </div>
-</section>
-<section class="text-gray-600 body-font" *ngIf="gendersection">
-    <div class="container px-5 py-24 mx-auto">
-        <div class="flex items-center mx-auto sm:flex-row flex-col">
-            <button
-                class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0 rounded-[16px]">
-                <img src="assets/profile.png" alt="">
-            </button>
-            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-
-            </div>
-        </div>
     </div>
+
 </section>
+
+
+
+<!-- new sections of gender and all -->

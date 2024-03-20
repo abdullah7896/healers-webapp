@@ -19,12 +19,13 @@
         </div>
     </div>
 </nav>
-<div class="w-full h-[100%]">
+<div class="w-full h-[100%] ">
     <p class="text-[40px] leading-[64px] font-semibold ml-[50px] pt-2">Tell us more about yourself.</p>
     <img src="assets/Col.png" alt="" class=" h-[73vh] relative left-[1057px]">
-    <div class="flex justify-center absolute inset-[170px]">
-        <div class="w-[798px] h-[500px] rounded-[16px] border2 flex justify-center drop-shadow-sm ">
-            <div class="w-[765px] h-[497px] ">
+    <div
+        class="flex justify-center absolute inset-[170px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]">
+        <div class="w-[798px] h-[500px] rounded-[16px] border2 flex justify-center bg-[#ffffff]" *ngIf="!firstsection">
+            <div class="w-[765px] h-[497px]">
                 <div class="w-[750px] h-[70px] justify-between">
                     <div class="w-[758px] h-[48px]">
                         <p class="text-[32px] font-semibold leading-[48px] text-[#000000]"> Add Tags</p>
@@ -128,7 +129,7 @@
                             </span>
 
                         </div>
-                        <!-- next -->
+
                         <div class="pt-[16px]">
                             <div class="w-[758px] h-[24px] pt-[5px]">
                                 <p class="text-[16px] leading-[24px] font-semibold text-[#000000]">Body:</p>
@@ -227,9 +228,9 @@
 
                                     </span>
                                     <div class="pt-10">
-                                        <button type="submit"
-                                            class="w-[758px] h-[40px] justify-center rounded-md  text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
-                                            Sign up</button>
+                                        <button type="submit" (click)="togglefirstsection()"
+                                            class="w-[758px] h-[40px] justify-center rounded-md hover:bg-[#F28500]  text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
+                                            Next</button>
                                     </div>
                                 </div>
 
@@ -241,6 +242,170 @@
 
             </div>
 
+        </div>
+        
+        <div class="w-[58%] h-[79vh] rounded-[16px] bg-[#ffffff] gap-[24px] p-[23px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]    flex-col" 
+        *ngIf="firstsection &&!secondsection">
+            <div class="w-[652px] h-[513px] gap-[23px] " >
+                <div class="w-[652px] h-[70px] justify-between">
+                    <div class="w-[539px] h-[70px] ">
+                        <div class="w-[539] h-[48px] ">
+                            <p class="text-[32px] leading-[48px] font-semibold text-[#000000]">Add Description</p>
+                        </div>
+                        <div class="w-[539px] h-[22px] ">
+                            <p class="text-[14px] leading-[22px] font-normal">Tell us more about yourself.</p>
+                        </div>
+                    </div>
+                    <div class="w-[652px] h-[64px] gap-[16px]">
+                        <p class="w-[105px] h-[24px] font-semibold text-[16px] leading-[24px] text-[#000000]">Session
+                            Type:</p>
+                        <p class="w-[314px] h-[24px] gap-[16px]  flex inline-flex">
+                            <span>
+                                <div class="flex items-center">
+                                    <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 ">
+                                    <label for="link-checkbox" class="ms-2 text-sm">Online</label>
+                                </div>
+                            </span>
+
+                        </p>
+                        <p class="w-[314px] h-[24px] gap-[16px]  flex inline-flex">
+                            <span>
+                                <div class="flex items-center">
+                                    <input id="link-checkbox" type="checkbox" disabled="" class="w-4 h-4">
+                                    <label for="link-checkbox" class="ms-2 text-sm">On-site</label>
+                                </div>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="w-[652px] h-[57px] gap-[5.5px] pt-[10px]">
+                        <div class="relative  w-[652px] h-[57px] gap-[6px] ">
+                            <input placeholder="Address"
+                                class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
+                            <label
+                                class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                Address
+                            </label>
+                        </div>
+                    </div>
+                    <div class="w-[652px] h-[57px] gap-[5.5px] pt-[30px]">
+                        <div class="relative  w-[652px] h-[57px] gap-[6px] ">
+                            <input placeholder="Time-Zone"
+                                class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
+                            <label
+                                class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                Time Zone
+                            </label>
+                        </div>
+                    </div>
+                    <div class="w-[652px] h-[105px] pt-[50px]">
+                        <div class="relative  w-[652px] h-[105px] gap-[6px] ">
+                            <input placeholder="Description"
+                                class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
+                            <label
+                                class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                Description
+                            </label>
+                        </div>
+                        <div class="w-[652px] h-[60px] pt-[24px]">
+                            <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px] text-[#ffffff]">
+                                <img src="assets/arrow back.png" alt="" class="pl-[5px]">
+                            </button>
+                            <button type="submit" (click)="togglesecondsection()"
+                                class="w-[92%] h-[8vh] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
+                                Next </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    
+
+        <!-- next sections -->
+        <div  class="w-[700px] h-[650px] rounded-[16px] bg-[#ffffff] gap-[24px] p-[23px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]    flex-col" *ngIf="secondsection">
+            <div class="w-[652px] h-[619px] ">
+                <div class="w-[652px] h-[70px]">
+                    <p class="w-[539px] h-[70px] text-[32px]  font-bold text-[#000000]">
+                        Your Identity
+                    </p>
+                    <p class="w-[539px] h-[22px] text-[14px]  font-normal text-[#000000]">
+                        Add your logo and images.
+                    </p>
+                    <div class="w-[652px] h-[140px] gap-[16px]">
+                        <p class="w-[652px] h-[24px] text-[16px] leading-[24px] font-medium">Logo</p>
+                        <div class="w-[652px] h-[110px] gap-[20px] flex ">
+                            <div class="w-[100px] h-[100px] "><img src="assets/Component Placeholder Image.png" alt="">
+                            </div>
+                            <div class="w-[341px] h-[94px] gap-[10px] ">
+                                <label for="formFile"
+                                    class=" inline-block text-[14px] text-[#000000] leading-[48px]">Please upload square
+                                    image, size less than 100KB</label>
+                                <label class="block">
+                                    <span class="sr-only">Choose profile photo</span>
+                                    <input type="file" class="block w-full text-sm text-[#000000]
+                                          file:me-4 file:py-2 file:px-4
+                                          file:rounded-[5px] file:border-0
+                                          file:text-sm file:font-semibold
+                                          file:bg-[#ffffff] file:text-[#10B981]
+                                          hover:file:bg-[#ffffff]
+                                          file:disabled:opacity-50 file:disabled:pointer-events-none
+                                          dark:file:bg-blue-500
+                                          dark:hover:file:bg-[#000000]
+                                          border-1
+                                          border-solid
+                                        ">
+                                </label>
+                            </div>
+                        </div>
+                       <div class="w-[652px] h-[24px]  font-semibold" >
+                         <p class="text-[16px] leading-[24px] text-[#000000]">Gallery Images</p>
+                       </div>
+                        <div class="w-[652px] h-[253px] gap-[16px]">
+                            <div class=" relative border-2 border-gray-300 border-dashed rounded-lg p-[2.5rem]" id="dropzone">
+                                <input type="file" class="absolute inset-0 w-full h-full opacity-0 z-50" (change)="onFileSelected($event)">
+                                <div class="text-center">
+                                    <img class="mx-auto" src="assets/Component Placeholder Image.png" alt="">
+                            
+                                    <h3 class="mt-2 text-sm font-normal text-gray-900">
+                                        <label for="file-upload" class="relative cursor-pointer">
+                                            <span>Drag and drop</span>
+                                            <span class="text-indigo-600"> or browse</span>
+                                           
+                                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                        </label>
+                                    </h3>
+                                    <p class="mt-1 text-xs text-gray-500">
+                                        PNG, JPG, GIF up to 10MB
+                                    </p>
+                                </div>
+                            
+                                <img src="" class="mt-4 mx-auto max-h-40 hidden" id="preview" [src]="previewImageUrl">
+                            </div>
+                            
+
+                        </div>
+                        
+                        <div class="w-[652px] h-[60px] pt-[24px]">
+                            <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px] text-[#ffffff]">
+                                <img src="assets/arrow back.png" alt="" class="pl-[5px]">
+                            </button>
+                            <button type="submit"
+                                class="w-[92%] h-[8vh] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
+                                Next</button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
 
         </div>
+
+
+
+
     </div>
+    <!-- Next section of  -->

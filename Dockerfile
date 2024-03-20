@@ -14,6 +14,9 @@ FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
 
+COPY nginx.conf /etc/nginx/nginx.conf
+
+
 # Copy built Angular app files to Nginx HTML directory
 COPY --from=build /app/dist/healers .
 

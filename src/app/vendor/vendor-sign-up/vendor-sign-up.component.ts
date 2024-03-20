@@ -20,6 +20,9 @@ export class VendorSignUpComponent {
   navigatetohome(){
     this.router.navigate(['']);
   }
+  navigatetoprofiledetailing(){
+    this.router.navigate(['/ProfileDetailing']);
+  }
 
  
 

@@ -12,6 +12,8 @@ RUN npm run build
 # Stage 2: Serve Angular application using Nginx
 FROM nginx:alpine
 
+COPY nginx.conf /etc/nginx/nginx.conf
+
 WORKDIR /usr/share/nginx/html
 
 # Copy built Angular app files to Nginx HTML directory

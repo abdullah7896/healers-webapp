@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-detailing',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile-detailing.component.css']
 })
 export class ProfileDetailingComponent {
+  constructor(private router: Router) { }
   firstsection= false;
 
   togglefirstsection() {
@@ -30,4 +32,8 @@ export class ProfileDetailingComponent {
       this.previewImageUrl = reader.result as string;
     };
   }
+  
+
+
+
 }

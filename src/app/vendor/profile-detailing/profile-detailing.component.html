@@ -1,263 +1,269 @@
 <nav class="flex justify-between px-10 py-5 items-center bg-white drop-shadow-lg">
     <img src="assets/logo.green.svg" alt="">
-    <div class="w-[339px] h-[61px] rounded-[32px] gap-[20px] border2">
-        <div class="relative  ">
+    <div class="w-full rounded-[32px] gap-[20px] border2">
+        <div class="absolute right-[95px] top-[30px]">
             <input
                 class="appearance-none border-1 pl-10  bg-[#F4F7FE]
-                 hover:border-gray-400 transition-colors rounded-[49px]  py-2 px-3  leading-[2.25rem] focus:outline-none focus:ring-purple-600 focus:border-purple-600 focus:shadow-outline"
+                 hover:border-gray-400 transition-colors rounded-[49px]  leading-[2.25rem] focus:outline-none focus:ring-purple-600 focus:border-purple-600 focus:shadow-outline"
                 id="username" type="text" placeholder="Search..." />
             <div class="absolute left-0 inset-y-0 flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-3 text-gray-400 hover:text-gray-500"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class=" w-6 ml-3 text-gray-400 hover:text-gray-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                <img src="assets/bell-v.png" alt="" class="relative left-[210px] relative ">
-                <img src="assets/Avatar Style 6.png" alt="" class="relative left-[220px] ">
+                <img src="assets/bell-v.png" alt="" class="absolute left-[230px] ">
+                <img src="assets/Avatar Style 6.png" alt="" class="absolute left-[268px] ">
             </div>
 
         </div>
     </div>
 </nav>
-<div class="w-full h-[100%] ">
-    <p class="text-[40px] leading-[64px] font-semibold ml-[50px] pt-2">Tell us more about yourself.</p>
-    <img src="assets/Col.png" alt="" class=" h-[73vh] relative left-[1057px]">
-    <div
-        class="flex justify-center absolute inset-[170px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]">
-        <div class="w-[798px] h-[500px] rounded-[16px] border2 flex justify-center bg-[#ffffff]" *ngIf="!firstsection">
-            <div class="w-[765px] h-[497px]">
-                <div class="w-[750px] h-[70px] justify-between">
-                    <div class="w-[758px] h-[48px]">
+
+<div class="text-[40px] leading-[64px] font-semibold  w-[50%] flex  pt-2 pl-10">
+    <p>Tell us more about yourself.</p>
+</div>
+<div>
+    <div class="flex justify-end  z-0">
+        <img src="assets/Col.png" alt="" class=" h-[72vh]">
+    </div>
+
+
+
+    <div class="flex justify-center items-center absolute inset-0 top-40  ">
+        <div class="  rounded-[16px]  border2 flex justify-center bg-[#ffffff] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px] z-10"
+            *ngIf="!firstsection">
+
+
+            <div class="h-[470px] w-[100%]">
+                <div class=" justify-between">
+                    <div >
                         <p class="text-[32px] font-semibold leading-[48px] text-[#000000]"> Add Tags</p>
                     </div>
-                    <div class="w-[758px] h-[22px]">
-                        <p class="text-[14px] leading-[22px] font-normal">Add related tags for respective categories,
+                    <div >
+                        <p class="text-[14px] leading-[22px] font-normal">Add related tags for respective
+                            categories,
                             this will help users find you easily.</p>
                     </div>
                 </div>
-                <div>
-                    <div class="w-[758px] h-[24px] pt-[5px]">
+                
+                <div class="w-full">
+                    <div class="pb-[23px]">
                         <p class="text-[16px] leading-[24px] font-semibold text-[#000000]">Mind:</p>
                     </div>
-                    <div class="w-[758px] h-[78px] pt-[23px]">
-                        <div class="relative">
-                            <input placeholder="Add Tags"
-                                class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
-                            <label
-                                class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                                Add Tags
-                            </label>
+                    <div class="relative ">
+                        <input placeholder="Add Tags"
+                            class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
+                        <label
+                            class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                            Add Tags
+                        </label>
 
+                    </div>
+                    <p class="text-[12px] font-normal text-color"> You can add 3 to 8 tags.</p>
+                    <div class="pt-4">
+                        <span id="badge-dismiss-default"
+                            class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                            Health
+                            <button type="button"
+                                class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Remove badge</span>
+                            </button>
+                        </span>
+                        <span id="badge-dismiss-default"
+                            class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                            Wellnes
+                            <button type="button"
+                                class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Remove badge</span>
+                            </button>
+                        </span>
+                        <span id="badge-dismiss-default"
+                            class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                            Nutrition
+                            <button type="button"
+                                class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Remove badge</span>
+                            </button>
+                        </span>
+                        <span id="badge-dismiss-default"
+                            class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                            Bootcamp
+                            <button type="button"
+                                class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Remove badge</span>
+                            </button>
+
+
+                        </span>
+                        <span id="badge-dismiss-default"
+                            class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                            Bootcamp
+                            <button type="button"
+                                class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                </svg>
+                                <span class="sr-only">Remove badge</span>
+                            </button>
+
+
+
+
+                        </span>
+
+                    </div>
+                     <div class="pt-[16px] ">
+                        <div class=" ">
+                            <p class="text-[16px] leading-[24px] font-semibold text-[#000000]">Body:</p>
                         </div>
-                        <p class="text-[12px] font-normal text-color"> You can add 3 to 8 tags.</p>
-                        <div class="pt-4">
-                            <span id="badge-dismiss-default"
-                                class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                Health
-                                <button type="button"
-                                    class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                    data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                    <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 14 14">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                    </svg>
-                                    <span class="sr-only">Remove badge</span>
-                                </button>
-                            </span>
-                            <span id="badge-dismiss-default"
-                                class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                Wellnes
-                                <button type="button"
-                                    class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                    data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                    <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 14 14">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                    </svg>
-                                    <span class="sr-only">Remove badge</span>
-                                </button>
-                            </span>
-                            <span id="badge-dismiss-default"
-                                class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                Nutrition
-                                <button type="button"
-                                    class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                    data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                    <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 14 14">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                    </svg>
-                                    <span class="sr-only">Remove badge</span>
-                                </button>
-                            </span>
-                            <span id="badge-dismiss-default"
-                                class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                Bootcamp
-                                <button type="button"
-                                    class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                    data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                    <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 14 14">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                    </svg>
-                                    <span class="sr-only">Remove badge</span>
-                                </button>
+                        <div class=" pt-[23px]">
+                            <div class="relative">
+                                <input placeholder="Add Tags"
+                                    class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
+                                <label
+                                    class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                    Add Tags
+                                </label>
 
-
-                            </span>
-                            <span id="badge-dismiss-default"
-                                class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                Bootcamp
-                                <button type="button"
-                                    class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                    data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                    <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 14 14">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                    </svg>
-                                    <span class="sr-only">Remove badge</span>
-                                </button>
-
-
-
-
-                            </span>
-
-                        </div>
-
-                        <div class="pt-[16px]">
-                            <div class="w-[758px] h-[24px] pt-[5px]">
-                                <p class="text-[16px] leading-[24px] font-semibold text-[#000000]">Body:</p>
                             </div>
-                            <div class="w-[758px] h-[78px] pt-[23px]">
-                                <div class="relative">
-                                    <input placeholder="Add Tags"
-                                        class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
-                                    <label
-                                        class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                                        Add Tags
-                                    </label>
-
-                                </div>
-                                <p class="text-[12px] font-normal text-color"> You can add 3 to 8 tags.</p>
-                                <div class="pt-4">
-                                    <span id="badge-dismiss-default"
-                                        class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                        Health
-                                        <button type="button"
-                                            class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                            data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                            <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                            </svg>
-                                            <span class="sr-only">Remove badge</span>
-                                        </button>
-                                    </span>
-                                    <span id="badge-dismiss-default"
-                                        class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                        Wellnes
-                                        <button type="button"
-                                            class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                            data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                            <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                            </svg>
-                                            <span class="sr-only">Remove badge</span>
-                                        </button>
-                                    </span>
-                                    <span id="badge-dismiss-default"
-                                        class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                        Nutrition
-                                        <button type="button"
-                                            class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                            data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                            <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                            </svg>
-                                            <span class="sr-only">Remove badge</span>
-                                        </button>
-                                    </span>
-                                    <span id="badge-dismiss-default"
-                                        class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                        Bootcamp
-                                        <button type="button"
-                                            class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                            data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                            <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                            </svg>
-                                            <span class="sr-only">Remove badge</span>
-                                        </button>
+                            <p class="text-[12px] font-normal text-color"> You can add 3 to 8 tags.</p>
+                            <div class="pt-4">
+                                <span id="badge-dismiss-default"
+                                    class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                                    Health
+                                    <button type="button"
+                                        class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                        data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                        <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Remove badge</span>
+                                    </button>
+                                </span>
+                                <span id="badge-dismiss-default"
+                                    class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                                    Wellnes
+                                    <button type="button"
+                                        class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                        data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                        <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Remove badge</span>
+                                    </button>
+                                </span>
+                                <span id="badge-dismiss-default"
+                                    class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                                    Nutrition
+                                    <button type="button"
+                                        class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                        data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                        <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Remove badge</span>
+                                    </button>
+                                </span>
+                                <span id="badge-dismiss-default"
+                                    class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                                    Bootcamp
+                                    <button type="button"
+                                        class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                        data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                        <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Remove badge</span>
+                                    </button>
 
 
-                                    </span>
-                                    <span id="badge-dismiss-default"
-                                        class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
-                                        Bootcamp
-                                        <button type="button"
-                                            class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
-                                            data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-                                            <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                            </svg>
-                                            <span class="sr-only">Remove badge</span>
-                                        </button>
+                                </span>
+                                <span id="badge-dismiss-default"
+                                    class="inline-flex items-center px-2 py-1 me-2 text-sm font-medium text-[#006FFD] bg-[#EAF2FF] rounded-full dark:bg-blue-900 dark:text-blue-300">
+                                    Bootcamp
+                                    <button type="button"
+                                        class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300"
+                                        data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+                                        <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Remove badge</span>
+                                    </button>
 
 
 
 
-                                    </span>
-                                    <div class="pt-10">
-                                        <button type="submit" (click)="togglefirstsection()"
-                                            class="w-[758px] h-[40px] justify-center rounded-md hover:bg-[#F28500]  text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
-                                            Next</button>
-                                    </div>
-                                </div>
+                                </span>
 
+                            </div>
+                            <div class="pt-12">
+                                <button type="submit" (click)="togglefirstsection()"
+                                    class="w-[100%] h-[40px] justify-center rounded-md hover:bg-[#F28500]  text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
+                                    Next</button>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+
 
             </div>
 
         </div>
-        
-        <div class="w-[58%] h-[79vh] rounded-[16px] bg-[#ffffff] gap-[24px] p-[23px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]    flex-col" 
-        *ngIf="firstsection &&!secondsection">
-            <div class="w-[652px] h-[513px] gap-[23px] " >
-                <div class="w-[652px] h-[70px] justify-between">
-                    <div class="w-[539px] h-[70px] ">
-                        <div class="w-[539] h-[48px] ">
+
+        <div class=" rounded-[16px] bg-[#ffffff] gap-[24px] p-[10px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]    flex-col"
+            *ngIf="firstsection &&!secondsection">
+            <div class="w-[100%] h-[470px] gap-[23px] ">
+                <div class="justify-between">
+                    <div class=" ">
+                        <div class=" ">
                             <p class="text-[32px] leading-[48px] font-semibold text-[#000000]">Add Description</p>
                         </div>
                         <div class="w-[539px] h-[22px] ">
                             <p class="text-[14px] leading-[22px] font-normal">Tell us more about yourself.</p>
                         </div>
                     </div>
-                    <div class="w-[652px] h-[64px] gap-[16px]">
-                        <p class="w-[105px] h-[24px] font-semibold text-[16px] leading-[24px] text-[#000000]">Session
+                    <div class=" gap-[16px]">
+                        <p class="w-[105px] h-[24px] font-semibold text-[16px] leading-[24px] text-[#000000]">
+                            Session
                             Type:</p>
                         <p class="w-[314px] h-[24px] gap-[16px]  flex inline-flex">
                             <span>
@@ -277,7 +283,7 @@
                             </span>
                         </p>
                     </div>
-                    <div class="w-[652px] h-[57px] gap-[5.5px] pt-[10px]">
+                    <div class=" gap-[5.5px] pt-[10px]">
                         <div class="relative  w-[652px] h-[57px] gap-[6px] ">
                             <input placeholder="Address"
                                 class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
@@ -306,12 +312,12 @@
                                 Description
                             </label>
                         </div>
-                        <div class="w-[652px] h-[60px] pt-[24px]">
-                            <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px] text-[#ffffff]">
+                        <div class="w-[652px] h-[60px] pt-[20px]">
+                            <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px]  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15) ">   
                                 <img src="assets/arrow back.png" alt="" class="pl-[5px]">
                             </button>
-                            <button type="submit" (click)="togglesecondsection()"
-                                class="w-[92%] h-[8vh] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
+                            <button type="submit" (click)="togglesecondsection()" 
+                                class="w-[92%] h-[40px] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
                                 Next </button>
                         </div>
                     </div>
@@ -321,11 +327,12 @@
 
             </div>
         </div>
-    
 
-        <!-- next sections -->
-        <div  class="w-[700px] h-[650px] rounded-[16px] bg-[#ffffff] gap-[24px] p-[23px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]    flex-col" *ngIf="secondsection">
-            <div class="w-[652px] h-[619px] ">
+
+
+        <div class="rounded-[16px] bg-[#ffffff] gap-[24px] p-[23px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]    flex-col"
+            *ngIf="secondsection">
+            <div class="w-[100%] h-[470px]">
                 <div class="w-[652px] h-[70px]">
                     <p class="w-[539px] h-[70px] text-[32px]  font-bold text-[#000000]">
                         Your Identity
@@ -340,11 +347,12 @@
                             </div>
                             <div class="w-[341px] h-[94px] gap-[10px] ">
                                 <label for="formFile"
-                                    class=" inline-block text-[14px] text-[#000000] leading-[48px]">Please upload square
+                                    class=" inline-block text-[14px] text-[#000000] leading-[48px]">Please upload
+                                    square
                                     image, size less than 100KB</label>
                                 <label class="block">
                                     <span class="sr-only">Choose profile photo</span>
-                                    <input type="file" class="block w-full text-sm text-[#000000]
+                                    <input type="file" class="block w-[67%] text-sm text-[#000000]
                                           file:me-4 file:py-2 file:px-4
                                           file:rounded-[5px] file:border-0
                                           file:text-sm file:font-semibold
@@ -353,26 +361,30 @@
                                           file:disabled:opacity-50 file:disabled:pointer-events-none
                                           dark:file:bg-blue-500
                                           dark:hover:file:bg-[#000000]
-                                          border-1
+                                          border-2
                                           border-solid
+                                          border-[#10B981]
+                                          rounded-[5px]
                                         ">
                                 </label>
                             </div>
                         </div>
-                       <div class="w-[652px] h-[24px]  font-semibold" >
-                         <p class="text-[16px] leading-[24px] text-[#000000]">Gallery Images</p>
-                       </div>
-                        <div class="w-[652px] h-[253px] gap-[16px]">
-                            <div class=" relative border-2 border-gray-300 border-dashed rounded-lg p-[2.5rem]" id="dropzone">
-                                <input type="file" class="absolute inset-0 w-full h-full opacity-0 z-50" (change)="onFileSelected($event)">
+                        <div class="w-[652px] h-[24px]  font-semibold">
+                            <p class="text-[16px] leading-[24px] text-[#000000]">Gallery Images</p>
+                        </div>
+                        <div class=" gap-[16px]">
+                            <div class=" relative border-2 border-gray-300 border-dashed rounded-lg p-[10px]"
+                                id="dropzone">
+                                <input type="file" class="absolute inset-0 w-full h-full opacity-0 z-50"
+                                    (change)="onFileSelected($event)">
                                 <div class="text-center">
-                                    <img class="mx-auto" src="assets/Component Placeholder Image.png" alt="">
-                            
+                                    <img class="mx-auto w-[10%]" src="assets/Component Placeholder Image.png" alt="">
+
                                     <h3 class="mt-2 text-sm font-normal text-gray-900">
                                         <label for="file-upload" class="relative cursor-pointer">
                                             <span>Drag and drop</span>
                                             <span class="text-indigo-600"> or browse</span>
-                                           
+
                                             <input id="file-upload" name="file-upload" type="file" class="sr-only">
                                         </label>
                                     </h3>
@@ -380,21 +392,21 @@
                                         PNG, JPG, GIF up to 10MB
                                     </p>
                                 </div>
-                            
+
                                 <img src="" class="mt-4 mx-auto max-h-40 hidden" id="preview" [src]="previewImageUrl">
                             </div>
-                            
 
-                        </div>
-                        
-                        <div class="w-[652px] h-[60px] pt-[24px]">
+                            <div class="w-[652px] h-[60px] pt-[24px]">
                             <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px] text-[#ffffff]">
                                 <img src="assets/arrow back.png" alt="" class="pl-[5px]">
                             </button>
                             <button type="submit"
-                                class="w-[92%] h-[8vh] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
+                                class="w-[92%] h-[40px] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
                                 Next</button>
+                            </div>
                         </div>
+
+                       
 
                     </div>
                 </div>
@@ -408,4 +420,3 @@
 
 
     </div>
-    <!-- Next section of  -->

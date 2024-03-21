@@ -11,3 +11,6 @@ border: solid;
     #000000
     60%;
 }
+.bordercolor{
+    border-color: rgb(0 0 0) solid;
+}

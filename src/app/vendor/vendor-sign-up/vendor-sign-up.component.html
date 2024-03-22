@@ -38,8 +38,8 @@
                     <label for="phoneNumber" class="block text-sm font-medium leading-6 text-color">Contact
                         No</label>
                     <div class="mt-2">
-                        <input placeholder="Contact Number" type="text" class="w-[400px]" 
-                        [(ngModel)]="signUp.phoneNumber" name="phoneNumber"/>
+                        <input placeholder="Contact Number" type="number" class="w-[400px]" 
+                        [(ngModel)]="phoneNumber" name="phoneNumber"/>
                     </div>
                 </div>
 
@@ -92,14 +92,14 @@
                             <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(4,$event)" required>
                             <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(5,$event)" required>
                             </div>
-                        <p class="text-[12px] font-normal ml-[224px] pb-[10px] ">Didn’t receive the code? <button class="underline text-[#006CF0]"> Resend</button></p>
+                        <p class="text-[12px] font-normal ml-[224px] pb-[10px] ">Didn’t receive the code? <button class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
                        
                     </form>
 
                     <button type="submit"
                         class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline 
                             focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-[#006A6A]"(click)="ConfirmSignUp() " (click)="navigatetoprofiledetailing()">Submit</button>
-                    <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]">
+                    <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="refreshPage()">
                         <img src="assets/Icon-Wrapper.jpg" alt="Icon"
                       style="display:inline-block;vertical-align:middle;" > Back to sign up
                     </button>

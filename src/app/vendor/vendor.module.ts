@@ -6,7 +6,8 @@ import { CommonComponentsModule } from '../common-components/common-components.m
 import { VendorLandingPageComponent } from './vendor-landing-page/vendor-landing-page.component';
 import { VendorSignUpComponent } from './vendor-sign-up/vendor-sign-up.component';
 import { ProfileDetailingComponent } from './profile-detailing/profile-detailing.component';
-
+import { FormsModule } from '@angular/forms';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 
@@ -23,7 +24,9 @@ import { ProfileDetailingComponent } from './profile-detailing/profile-detailing
   ],
   imports: [
     CommonModule,
-    CommonComponentsModule
+    CommonComponentsModule,
+    FormsModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   
 })

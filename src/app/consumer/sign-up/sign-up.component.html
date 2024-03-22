@@ -31,24 +31,27 @@
                 <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
                     <form class="space-y-6 mt-[-24px]" action="#" method="POST">
                         <div>
-                            <label for="email" class="block text-sm font-medium leading-6 text-[#00000042]">First
+                            <label for="firstName" class="block text-sm font-medium leading-6 text-[#00000042]">First
                                 Name</label>
                             <div class="mt-2">
-                                <input placeholder="" type="text" style="width: 400px;" />
+                                <input placeholder="" type="text" style="width: 400px;"
+                                    [(ngModel)]="signUp.firstName" name="firstName" />
                             </div>
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-medium leading-6 text-[#00000042]">Last
+                            <label for="lastName" class="block text-sm font-medium leading-6 text-[#00000042]">Last
                                 Name</label>
                             <div class="mt-2">
-                                <input placeholder="" type="text" style="width: 400px;" />
+                                <input placeholder="" type="text" style="width: 400px;"
+                                    [(ngModel)]="signUp.lastName" name="lastName" />
                             </div>
                         </div>
                         <div>
                             <label for="email"
                                 class="block text-sm font-medium leading-6 text-[#00000042]">Email</label>
                             <div class="mt-2">
-                                <input placeholder="Email" type="text" style="width: 400px;" />
+                                <input placeholder="Email" type="text" style="width: 400px;"
+                                    [(ngModel)]="signUp.email" name="email" />
                             </div>
                         </div>
                         <div>
@@ -58,7 +61,8 @@
 
                             </div>
                             <div class="mt-2">
-                                <input placeholder="Password" type="password" style="width: 400px;" class="w-400px" />
+                                <input placeholder="Password" type="password" style="width: 400px;" class="w-400px"
+                                    [(ngModel)]="signUp.password" name="password" />
                             </div>
                         </div>
 
@@ -73,7 +77,7 @@
                     </form>
                     <button type="submit"
                         class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
-                        style="background: rgba(242, 133, 0, 1); " (click)="toggleForgetPassword() ">Sign Up</button>
+                        style="background: rgba(242, 133, 0, 1); " (click)="SignUp() ">Sign Up</button>
 
                 </div>
                 <div class="mr-[-96px]">
@@ -98,38 +102,68 @@
                       </div>
 
                     <p class="mt-10  text-sm text-gray-500">
-                        <button class=" font-medium leading-6 mr-[268px] text-indigo-600 hover:text-indigo-500" (click)="navigatetosignin()"><span
-                                class="text-[#161C2D]">Don’t have an account?</span> Sign In</button>
+                        <button class=" font-medium leading-6 mr-[268px] text-indigo-600 hover:text-indigo-500"
+                            (click)="navigatetosignin()"><span class="text-[#161C2D]">Don’t have an account?</span> Sign
+                            In</button>
                     </p>
                 </div>
             </div>
-            <section class="ml-[47px] mt-[50px]"  *ngIf="signup" >
-                <div class="flex flex-col items-center justify-center "  >
+            <section class="ml-[47px] mt-[50px]" *ngIf="signup">
+                <div class="flex flex-col items-center justify-center ">
                     <div class="w-full p-6  md:mt-0 sm:max-w-md sm:p-8 mr-[63px]">
-                        <h1 class="mb-1 text-xl font-bold leading-tight tracking-tight md:text-2xl " >
-                            Verify Email 
+                        <h1 class="mb-1 text-xl font-bold leading-tight tracking-tight md:text-2xl ">
+                            Verify Email
                         </h1>
-                        <p class="font-light">A 6 digit OTP has been sent to user@email.com Please verify to continue.</p>
+                        <p class="font-light">A 6 digit OTP has been sent to user@email.com Please verify to continue.
+                        </p>
                         <form class=" px-4 pt-[0.5rem] pb-[3.5rem]">
                             <div class="flex justify-center gap-4 mb-6">
-                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" required>
-                                </div>
-                                
-                           </form>
-                           
-                        <button type="submit" 
-                        class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[-31px]"
-                        style="background: rgba(242, 133, 0, 1); " (click)="navigatetopreferences()"> Verify Email</button>
+                                <input
+                                    class="w-12 h-12 text-center border  shadow-sm "
+                                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                                    autocomplete="one-time-code" (change)="handleVerificationCodeChange(0,$event)"
+                                    required>
+                                <input
+                                    class="w-12 h-12 text-center border  shadow-sm "
+                                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                                    autocomplete="one-time-code" (change)="handleVerificationCodeChange(1,$event)"
+                                    required>
+                                <input
+                                    class="w-12 h-12 text-center border  shadow-sm "
+                                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                                    autocomplete="one-time-code" (change)="handleVerificationCodeChange(2,$event)"
+                                    required>
+                                <input
+                                    class="w-12 h-12 text-center border  shadow-sm "
+                                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                                    autocomplete="one-time-code" (change)="handleVerificationCodeChange(3,$event)"
+                                    required>
+                                <input
+                                    class="w-12 h-12 text-center border  shadow-sm "
+                                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                                    autocomplete="one-time-code" (change)="handleVerificationCodeChange(4,$event)"
+                                    required>
+                                <input
+                                    class="w-12 h-12 text-center border  shadow-sm "
+                                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric"
+                                    autocomplete="one-time-code" (change)="handleVerificationCodeChange(5,$event)"
+                                    required>
+                            </div>
+
+                        </form>
+                        
+                        <div>
+                        <button type="submit"
+                            class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[-31px]"
+                            style="background: rgba(242, 133, 0, 1); " (click)="ConfirmSignUp()"> Verify
+                            Email</button>
+                        </div>
                     </div>
-                   
+
                 </div>
                 <button class="text-[#006CF0] text-[14px] font-medium ml-[30px] underline ">
-                    <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;" (click)="navigatetosignin()"> Back to sign up
+                    <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"
+                        (click)="navigatetosignin()"> Back to sign up
                 </button>
                </section> 
          </div>

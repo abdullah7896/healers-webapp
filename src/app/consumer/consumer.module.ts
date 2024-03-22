@@ -5,6 +5,7 @@ import { CommonComponentsModule } from '../common-components/common-components.m
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SigninComponent } from './signin/signin.component';
 import { ConsumerPreferencesComponent } from './consumer-preferences/consumer-preferences.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +25,7 @@ import { ConsumerPreferencesComponent } from './consumer-preferences/consumer-pr
   imports: [
     CommonModule,
     CommonComponentsModule,
-    
+    FormsModule
   ]
 })
 export class ConsumerModule { }

@@ -25,14 +25,16 @@ export class VendorsigninComponent {
 
   toggleForgetPassword() {
     this.forgetPasswordUi = !this.forgetPasswordUi;
+    this.showForgetSectionvendor = !this.showForgetSectionvendor;
   }
   showOtpSectionvendor: boolean = false;
-showForgetSectionvendor: boolean = true;
+showForgetSectionvendor: boolean = false;
 
 ForgotPassword() {
   this.apiService.ForgotPassword(this.userEmail).subscribe(response => {
     if (response.status) {
-      this.forgetPasswordUi = false;
+       //this.forgetPasswordUi = false;
+      this.showForgetSectionvendor = false;
       this.showOtpSectionvendor = true;
     }
     localStorage.setItem('userPasswordEmail', this.userEmail);

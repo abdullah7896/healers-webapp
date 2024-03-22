@@ -25,16 +25,19 @@ export class SigninComponent {
 
   toggleForgetPassword() {
     this.forgetPasswordVisible = !this.forgetPasswordVisible;
+    this.showForgetSection = !this.showForgetSection;
   }
 
   showOtpSection: boolean = false;
-  showForgetSection: boolean = true;
+  showForgetSection: boolean = false;
 
   ForgotPassword() {
     this.apiService.ForgotPassword(this.userEmail).subscribe(response => {
       if (response.status) {
-        this.forgetPasswordVisible = false;
+        //this.forgetPasswordVisible = false;
+        this.showForgetSection = false;
         this.showOtpSection = true;
+
       }
       
       localStorage.setItem('userPasswordEmail', this.userEmail);

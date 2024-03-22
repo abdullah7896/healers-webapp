@@ -13,6 +13,7 @@ export class VendorSignUpComponent implements OnInit {
   public categories: any[] = [];
   public selectedCategoryIds: any[] = [];
   fullName: string = '';
+  phoneNumber='';
   placeholder:string ='Select upto 2 categories'
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
   signUp = { firstName: '', lastName: '', email: '', phoneNumber: '', password: '', role: 1, selectedCategoryIds: this.selectedCategoryIds };
@@ -53,6 +54,7 @@ export class VendorSignUpComponent implements OnInit {
     }
     else
     this.signUp.firstName=this.fullName
+    this.signUp.phoneNumber=this.phoneNumber.toString();
     this.signUp.selectedCategoryIds = this.selectedCategoryIds;
     this.apiService.SignUp(this.signUp).subscribe(response => {
       localStorage.setItem('practitionerPasswordEmail', this.userEmail);
@@ -122,6 +124,9 @@ export class VendorSignUpComponent implements OnInit {
     this.router.navigate(['/ProfileDetailing']);
   }
 
+  refreshPage() {
+    window.location.reload();
+  }
  
 
 

@@ -122,6 +122,10 @@ export class VendorSignUpComponent implements OnInit {
     this.router.navigate(['/ProfileDetailing']);
   }
 
+  // navigatetosignup(){
+  //   this.router.navigate(['/Vendorsignup']);
+  // }
+
  
 
 

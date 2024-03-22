@@ -17,10 +17,11 @@ export class SigninComponent {
   confirmForgotPassword = { email: '', verificationCode: '', password: '' };
   userEmail = '';
 
+  
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmForgotPassword.verificationCode += inputValue;
-  }
+    this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+}
 
   toggleForgetPassword() {
     this.forgetPasswordVisible = !this.forgetPasswordVisible;

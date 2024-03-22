@@ -15,13 +15,11 @@ export class SignUpComponent {
   signup= false;
   confirmSignUp = { email: '', verificationCode: '', password: '', };
   
+  
   handleVerificationCodeChange(index: number, event: Event) {
-    // Get the value of the changed input field
     const inputValue = (event.target as HTMLInputElement).value;
-
-    // Update the corresponding index of the verificationCode array
-    this.confirmSignUp.verificationCode += inputValue;
-  }
+    this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+}
 
   SignUp(){
     this.signup = !this.signup;

@@ -17,9 +17,11 @@ export class VendorsigninComponent {
 
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
+    this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+}
 
-    this.confirmForgotPassword.verificationCode += inputValue;
-  }
+
+  
 
   toggleForgetPassword() {
     this.forgetPasswordUi = !this.forgetPasswordUi;

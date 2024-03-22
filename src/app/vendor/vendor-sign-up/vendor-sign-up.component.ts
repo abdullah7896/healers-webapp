@@ -37,13 +37,11 @@ export class VendorSignUpComponent implements OnInit {
   ngOnInit(): void {
     this.GetAllCategory();
   }
+  
   handleVerificationCodeChange(index: number, event: Event) {
-    // Get the value of the changed input field
     const inputValue = (event.target as HTMLInputElement).value;
-
-    // Update the corresponding index of the verificationCode array
-    this.confirmSignUp.verificationCode += inputValue;
-  }
+    this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+}
   SignUp() {
     // Split full name into first name and last name
     this.vendorsignup = !this.vendorsignup;

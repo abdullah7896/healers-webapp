@@ -72,7 +72,7 @@ export class SigninComponent {
   }
   Login() {
     const { email, password } = this.loginData;
-    const loginData = { email, password };
+    const loginData = { email, password, role: 0 };
     this.apiService.login(loginData).subscribe(response => {
       console.log('Login successful', response);
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard

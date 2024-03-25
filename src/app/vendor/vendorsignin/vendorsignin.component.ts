@@ -70,7 +70,7 @@ ResendForgotPasswordOTP(){
 
 onSubmit() {
   const { email, password } = this.loginData;
-  const loginData = { email, password };
+  const loginData = { email, password, role: 1 };
    
   this.apiService.login(loginData).subscribe(response => {
     console.log('Login successful', response);

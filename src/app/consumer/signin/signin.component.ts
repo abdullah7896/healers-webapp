@@ -93,6 +93,39 @@ navigatetohome(){
   this.router.navigate(['']);
 }
 
+// 
+checkboxChecked = {
+  characters: false,
+  uppercase: false,
+  numeric: false,
+  special: false
+};
+checkPasswordStrength() {
+  const password = this.confirmForgotPassword.password;
+  // Reset all checkboxes
+  this.checkboxChecked = {
+    characters: false,
+    uppercase: false,
+    numeric: false,
+    special: false
+  };
+
+  // Check each password requirement
+  if (password.length >= 8) {
+    this.checkboxChecked.characters = true;
+  }
+  if (/[A-Z]/.test(password)) {
+    this.checkboxChecked.uppercase = true;
+  }
+  if (/\d/.test(password)) {
+    this.checkboxChecked.numeric = true;
+  }
+  if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
+    this.checkboxChecked.special = true;
+  }
+ 
+}
+
 
 
 

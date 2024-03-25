@@ -8,6 +8,7 @@ import { VendorSignUpComponent } from './vendor-sign-up/vendor-sign-up.component
 import { ProfileDetailingComponent } from './profile-detailing/profile-detailing.component';
 import { FormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { VendorLoginLandingPageComponent } from './vendor-login-landing-page/vendor-login-landing-page.component';
 
 
 
@@ -19,7 +20,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
   VendorLandingPageComponent,
  
   VendorSignUpComponent,
-    ProfileDetailingComponent
+    ProfileDetailingComponent,
+    VendorLoginLandingPageComponent
     
   ],
   imports: [

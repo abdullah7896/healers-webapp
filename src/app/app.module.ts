@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     ConsumerModule,
     HomeModule ,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+   
   ],
 
   providers: [],

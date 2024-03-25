@@ -3,13 +3,17 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { apiService } from 'src/app/Service/apiService';
 
+
+
+
 @Component({
   selector: 'app-vendorsignin',
   templateUrl: './vendorsignin.component.html',
-  styleUrls: ['./vendorsignin.component.css']
+  styleUrls: ['./vendorsignin.component.css'],
+  
 })
 export class VendorsigninComponent {
-  constructor(private router: Router,private httpClient: HttpClient,private apiService: apiService) { }
+  constructor(private router: Router,private httpClient: HttpClient,private apiService: apiService,) { }
   forgetPasswordUi = false;
   loginData = { email: '', password: '' };
   confirmForgotPassword = { email: '', verificationCode: '', password: '' };
@@ -19,11 +23,7 @@ export class VendorsigninComponent {
     const inputValue = (event.target as HTMLInputElement).value;
     this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
 }
-
-
-  
-
-  toggleForgetPassword() {
+toggleForgetPassword() {
     this.forgetPasswordUi = !this.forgetPasswordUi;
     this.showForgetSectionvendor = !this.showForgetSectionvendor;
   }
@@ -70,7 +70,7 @@ ResendForgotPasswordOTP(){
 
 onSubmit() {
   const { email, password } = this.loginData;
-  const loginData = { email, password, role: 1 };
+  const loginData = { email, password };
    
   this.apiService.login(loginData).subscribe(response => {
     console.log('Login successful', response);
@@ -93,6 +93,39 @@ navigatetosignin(){
 navigatetohome(){
   this.router.navigate(['']);
 }
+
+checkboxChecked = {
+  characters: false,
+  uppercase: false,
+  numeric: false,
+  special: false
+};
+checkPasswordStrength() {
+  const password = this.confirmForgotPassword.password;
+  // Reset all checkboxes
+  this.checkboxChecked = {
+    characters: false,
+    uppercase: false,
+    numeric: false,
+    special: false
+  };
+
+  // Check each password requirement
+  if (password.length >= 8) {
+    this.checkboxChecked.characters = true;
+  }
+  if (/[A-Z]/.test(password)) {
+    this.checkboxChecked.uppercase = true;
+  }
+  if (/\d/.test(password)) {
+    this.checkboxChecked.numeric = true;
+  }
+  if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
+    this.checkboxChecked.special = true;
+  }
+ 
+}
+
 
 
 

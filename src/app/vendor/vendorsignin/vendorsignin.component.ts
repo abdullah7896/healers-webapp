@@ -16,8 +16,9 @@ export class VendorsigninComponent {
   constructor(private router: Router,private httpClient: HttpClient,private apiService: apiService,) { }
   forgetPasswordUi = false;
   loginData = { email: '', password: '' };
-  confirmForgotPassword = { email: '', verificationCode: '', password: '' };
+  confirmForgotPassword = { email: '', verificationCode: '', password: '', userType: 1 };
   userEmail = '';
+  userType = 1;
 
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
@@ -31,7 +32,7 @@ toggleForgetPassword() {
 showForgetSectionvendor: boolean = false;
 
 ForgotPassword() {
-  this.apiService.ForgotPassword(this.userEmail).subscribe(response => {
+  this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
     if (response.status) {
        //this.forgetPasswordUi = false;
       this.showForgetSectionvendor = false;
@@ -70,7 +71,7 @@ ResendForgotPasswordOTP(){
 
 onSubmit() {
   const { email, password } = this.loginData;
-  const loginData = { email, password };
+  const loginData = { email, password, userType: 1 };
    
   this.apiService.login(loginData).subscribe(response => {
     console.log('Login successful', response);

@@ -13,7 +13,7 @@ export class SignUpComponent {
   signUp={firstName:'',lastName:'',email:'',password:'',role:0};
   userEmail = '';
   signup= false;
-  confirmSignUp = { email: '', verificationCode: '', password: '', };
+  confirmSignUp = { email: '', verificationCode: '', password: '', userType: 0};
   
   
   handleVerificationCodeChange(index: number, event: Event) {

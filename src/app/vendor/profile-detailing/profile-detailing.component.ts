@@ -32,7 +32,9 @@ export class ProfileDetailingComponent {
       this.previewImageUrl = reader.result as string;
     };
   }
-  
+  navigatetohome(){
+    this.router.navigate(['']); 
+  }
 
 
 

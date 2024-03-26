@@ -18,7 +18,7 @@ export class VendorSignUpComponent implements OnInit {
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
   signUp = { firstName: '', lastName: '', email: '', phoneNumber: '', password: '', role: 1, selectedCategoryIds: this.selectedCategoryIds };
   userEmail = '';
-  confirmSignUp = { email: '', verificationCode: '', password: '', };
+  confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1};
   vendorsignup = false;
   dropdownSettings = {
     singleSelection: false, // Allow multiple selections

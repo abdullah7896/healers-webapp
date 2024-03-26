@@ -14,9 +14,9 @@ export class SigninComponent {
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
   forgetPasswordVisible = false;
   loginData = { email: '', password: '' };
-  confirmForgotPassword = { email: '', verificationCode: '', password: '' };
+  confirmForgotPassword = { email: '', verificationCode: '', password: '', userType: 0 };
   userEmail = '';
-
+  userType = 0;
   
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
@@ -32,7 +32,7 @@ export class SigninComponent {
   showForgetSection: boolean = false;
 
   ForgotPassword() {
-    this.apiService.ForgotPassword(this.userEmail).subscribe(response => {
+    this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
       if (response.status) {
         //this.forgetPasswordVisible = false;
         this.showForgetSection = false;
@@ -72,7 +72,7 @@ export class SigninComponent {
   }
   Login() {
     const { email, password } = this.loginData;
-    const loginData = { email, password, role: 0 };
+    const loginData = { email, password, userType: 0 };
     this.apiService.login(loginData).subscribe(response => {
       console.log('Login successful', response);
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard

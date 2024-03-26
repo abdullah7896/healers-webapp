@@ -9,8 +9,8 @@ export class apiService extends BaseHttpService {
     login(logina: any): Observable<any> {
         return this.post(`${this.apiEndPoints.URL_Login}`, logina)
     };
-    ForgotPassword(forgotPassword: any): Observable<any> {
-        return this.post(`${this.apiEndPoints.URL_ForgotPassword}?email=${forgotPassword}`, null)
+    ForgotPassword(forgotPassword: any, userType: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_ForgotPassword}?email=${forgotPassword}&userType=${userType}`, null)
     };
     ConfirmForgotPassword(confirmForgotPassword: any): Observable<any> {
         return this.post(`${this.apiEndPoints.URL_ConfirmForgotPassword}`, confirmForgotPassword)

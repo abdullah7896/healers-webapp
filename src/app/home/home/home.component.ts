@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,11 +8,18 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   constructor(private router: Router) { }
   navigatetootherpage(){
-    this.router.navigate(['/vendors']);
+    window.scrollTo(0, 0);
+    this.router.navigate(['/vendors']); 
+    
+    
+    
   }
   navigatetoconsumerlandingpage(){
+    window.scrollTo(0, 0);
     this.router.navigate(['/consumer']);
   }
+
+
 
   //   navigatetootherpage() {
 //     const navigationExtras: NavigationExtras = {

@@ -13,4 +13,7 @@ export class ConsumerLandingPageComponent {
   navigatetosignup(){
     this.router.navigate(['/consumersignup']); 
   }
+  navigateTohomepage(){
+    this.router.navigate(['']); 
+  }
 }

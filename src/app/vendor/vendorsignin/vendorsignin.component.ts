@@ -74,7 +74,7 @@ onSubmit() {
    
   this.apiService.login(loginData).subscribe(response => {
     console.log('Login successful', response);
-    //this.router.navigate(['/dashboard']); // Example redirect to dashboard
+    this.router.navigate(['/VendorLoginLandingPage']);
   }, error => {
     console.error('Login failed', error);
   });

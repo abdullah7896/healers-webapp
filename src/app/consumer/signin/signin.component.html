@@ -2,6 +2,7 @@
   <div class="flex w-[50%] justify-center items-center">
     <div *ngIf="!forgetPasswordVisible">
       <div class="">
+        <p class="font-bold text-[23px] leading-[48px] ">Continue your healing journey</p>
         <p class="text-[#262626] font-normal">Enter your credentials to access your account</p>
       </div>
       <div class=" mt-[23px] ">
@@ -64,7 +65,10 @@
             (click)="naviagtetosignup()"><span class="text-[#161C2D]">Don’t have an account?</span> Sign Up</button>
         </p>
       </div>
- 
+      <button (click)="navigatetohome()" type="button" class="w-full mt-[10px] font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
+        <img src="assets/back button.png" alt="">
+        <span>Back to home</span>
+    </button>
 
 
     </div>
@@ -98,6 +102,7 @@
         </div>
 
       </div>
+      
     </section>
     <!-- this one is otp sections -->
     <div class="" *ngIf="showOtpSection">

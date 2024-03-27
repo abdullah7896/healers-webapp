@@ -11,6 +11,11 @@
             <div class="mt-2">
               <input placeholder="Email" type="text" style="width: 400px;" [(ngModel)]="loginData.email" name="email"/>
             </div>
+            <div *ngIf="formSubmitted">
+              <p class="text-red-500 text-xs mt-2" *ngIf="!loginData.email">
+                Email is required
+              </p>            
+            </div>
           </div>
           <div>
             <div class="flex items-center justify-between">
@@ -20,6 +25,14 @@
             <div class="mt-2">
               <input placeholder="Password" type="password" style="width: 400px;" class="w-400px"
                   [(ngModel)]="loginData.password" name="password" />
+            </div>
+            <div *ngIf="formSubmitted">
+              <p class="text-red-500 text-xs mt-2" *ngIf="!loginData.password">
+                Password is required
+              </p>
+              <p class="text-red-500 text-xs mt-2" *ngIf="!response.status">
+                {{response.message}}
+              </p>
             </div>
           </div>
 

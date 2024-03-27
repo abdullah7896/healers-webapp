@@ -17,6 +17,8 @@ export class SigninComponent {
   confirmForgotPassword = { email: '', verificationCode: '', password: '', userType: 0 };
   userEmail = '';
   userType = 0;
+  formSubmitted = false
+  response = {status:true, message: ''}
   
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
@@ -73,7 +75,19 @@ export class SigninComponent {
   Login() {
     const { email, password } = this.loginData;
     const loginData = { email, password, userType: 0 };
+    // Validate Fields
+    this.formSubmitted = true
+    if (!this.loginData.email || !this.loginData.password) {
+      console.error('Email and password are required.');
+      return;
+    }
     this.apiService.login(loginData).subscribe(response => {
+      // Validate API Status
+      const {status, message} = response;
+      if (!status){
+        this.response = {status, message};
+        return;
+      }
       console.log('Login successful', response);
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     }, error => {

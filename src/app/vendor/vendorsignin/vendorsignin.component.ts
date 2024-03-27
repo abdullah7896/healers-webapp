@@ -74,6 +74,7 @@ ResendForgotPasswordOTP(){
 onSubmit() {
   const { email, password } = this.loginData;
   const loginData = { email, password, userType: 1 };
+  // Validate Fields
   this.formSubmitted = true
   if (!this.loginData.email || !this.loginData.password) {
     console.error('Email and password are required.');
@@ -81,6 +82,7 @@ onSubmit() {
   }
    
   this.apiService.login(loginData).subscribe(response => {
+    // Validate API Status
     const {status, message} = response;
     if (!status){
       this.response = {status, message};

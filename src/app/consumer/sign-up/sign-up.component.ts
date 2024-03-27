@@ -63,4 +63,8 @@ export class SignUpComponent {
   navigatetohome(){
     this.router.navigate(['']);
   }
+
+  refreshPage() {
+    window.location.reload();
+  }
 }

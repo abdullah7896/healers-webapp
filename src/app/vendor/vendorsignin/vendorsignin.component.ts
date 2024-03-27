@@ -19,6 +19,8 @@ export class VendorsigninComponent {
   confirmForgotPassword = { email: '', verificationCode: '', password: '', userType: 1 };
   userEmail = '';
   userType = 1;
+  formSubmitted = false
+  response = {status:true, message: ''}
 
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
@@ -72,8 +74,18 @@ ResendForgotPasswordOTP(){
 onSubmit() {
   const { email, password } = this.loginData;
   const loginData = { email, password, userType: 1 };
+  this.formSubmitted = true
+  if (!this.loginData.email || !this.loginData.password) {
+    console.error('Email and password are required.');
+    return;
+  }
    
   this.apiService.login(loginData).subscribe(response => {
+    const {status, message} = response;
+    if (!status){
+      this.response = {status, message};
+      return;
+    }
     console.log('Login successful', response);
     this.router.navigate(['/VendorLoginLandingPage']);
   }, error => {

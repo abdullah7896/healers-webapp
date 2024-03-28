@@ -47,6 +47,28 @@ export class VendorSignUpComponent implements OnInit {
     const inputValue = (event.target as HTMLInputElement).value;
     this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
   }
+
+  isValidated(response: any): boolean{
+    if (response.status) return true;
+
+    if (this.signUp.email == '') {
+      this.showEmptyEmail = !this.showEmptyEmail;
+      if (this.showEmailAlreadyExists == true) this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
+    }
+    else if (response.errorCode == 'Status406NotAcceptable'){
+      this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
+      if (this.showEmptyEmail == true) this.showEmptyEmail = !this.showEmptyEmail;
+    }
+    
+    if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
+
+    else{
+      alert(response.message)
+    }
+
+    return false;
+  }
+
   SignUp() {
     // Split full name into first name and last name
     const nameParts = this.fullName.indexOf(' ');
@@ -61,19 +83,9 @@ export class VendorSignUpComponent implements OnInit {
     this.signUp.selectedCategoryIds = this.selectedCategoryIds;
 
     this.apiService.SignUp(this.signUp).subscribe(response => {
-      if (!response.status) {
-        if (this.signUp.email == '') this.showEmptyEmail = !this.showEmptyEmail;
-        
-        if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
-
-        if (response.errorCode == 'Status406NotAcceptable'){
-          this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
-        }
-        else{
-          alert(response.message)
-        }
-        return;
-      }
+      const isValidatedResponse = this.isValidated(response)
+      console.log('isValidatedResponse', isValidatedResponse)
+      if (!isValidatedResponse) return;
 
       this.vendorsignup = !this.vendorsignup;
       localStorage.setItem('practitionerPasswordEmail', this.userEmail);

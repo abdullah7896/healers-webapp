@@ -23,12 +23,13 @@ export class VendorsigninComponent {
   response = { status: true, message: '' }
   vendorsigninotp = false
   confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1 };
+  showEmptyEmail = false
 
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
     this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
   }
-  
+
   handlevendorSigninOtpChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
     this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
@@ -41,18 +42,31 @@ export class VendorsigninComponent {
   showOtpSectionvendor: boolean = false;
   showForgetSectionvendor: boolean = false;
 
+  isValidated(response: any) {
+    console.log('response.status', response.status);
+    if (response.status) return true;
+
+    alert(response.message);
+    return false;
+  }
+
   ForgotPassword() {
     this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
-      if (response.status) {
-        //this.forgetPasswordUi = false;
-        this.showForgetSectionvendor = false;
-        this.showOtpSectionvendor = true;
-      }
+      console.log('isValidatedResponse');
+      const isValidatedResponse = this.isValidated(response);
+      console.log('isValidatedResponse', isValidatedResponse);
+      if (!isValidatedResponse) return;
+
+      this.showForgetSectionvendor = false;
+      this.showOtpSectionvendor = true;
       localStorage.setItem('userPasswordEmail', this.userEmail);
       console.log('Email Send successful', response);
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     },
       error => {
+        if (error.status == 400) {
+          this.showEmptyEmail = !this.showEmptyEmail
+        }
         console.error('Email Send failed', error);
       });
   }

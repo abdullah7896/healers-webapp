@@ -61,40 +61,43 @@
           Don't have an account?
           <button class="font-semibold leading-6 text-[#006CF0] underline" (click)="navigatetosignup()">Sign up</button>
         </p>
-      </form>
-    </div>
 
-    <section class="" *ngIf="showForgetSectionvendor">
-      <div class="flex  items-center justify-center " *ngIf="showForgetSectionvendor">
-        <div class=" ">
-          <h1 class=" text-xl font-bold leading-tight tracking-tight py-2">
-            Forgot password?
-          </h1>
-          <p class="font-light">Don’ Worry ! It happens. Please enter your registered email <br> below to reset your
-            password.</p>
-          <form class=" space-y-4 space-y-5" action="#">
-            <div>
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-              <input type="email" name="email" id="email"
-                class=" border w-[450px] text-sm  focus:ring-primary-600 focus:border-primary-600 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="user@gmail.com" required="" [(ngModel)]="userEmail" name="email">
-            </div>
-
-          </form>
-          <button type="submit"
-            class="flex w-[450px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
-            (click)="ForgotPassword()">Submit</button>
-          <button class="text-[#006CF0] text-[14px] font-medium py-4 underline " (click)="navigatetosignup()">
-            <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
-            login
-          </button>
-        </div>
-
+        <button (click)="navigatetohome()" type="button" class="w-full font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
+          <img src="assets/back button.png" alt="">
+          <span>Back to home</span>
+      </button>
+       </form>
       </div>
-
-    </section>
-
-    <div class="" *ngIf="showOtpSectionvendor">
+       <section class="" *ngIf="showForgetSectionvendor">
+        <div class="flex  items-center justify-center " *ngIf="showForgetSectionvendor">
+          <div class=" ">
+            <h1 class=" text-xl font-bold leading-tight tracking-tight py-2">
+              Forgot password?
+            </h1>
+            <p class="font-light">Don’ Worry ! It happens. Please enter your registered email <br> below to reset your
+              password.</p>
+            <form class=" space-y-4 space-y-5" action="#">
+              <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                <input type="email" name="email" id="email"
+                  class=" border w-[450px] text-sm  focus:ring-primary-600 focus:border-primary-600 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="user@gmail.com" required="" [(ngModel)]="userEmail" name="email">
+              </div>
+  
+            </form>
+            <button type="submit"
+              class="flex w-[450px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
+              (click)="ForgotPassword()">Submit</button>
+              <button class="text-[#006CF0] text-[14px] font-medium py-4 underline " (click)="navigatetosignup()">
+                <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
+                login
+               </button>
+           </div>
+          
+        </div>
+       
+      </section>
+       <div class="" *ngIf="showOtpSectionvendor">
       <div class="relative flex  flex-col justify-center overflow-hidden w-[400px] h-[205px] ml-[-21px]">
         <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl mb-[-58px]">
           <div class="mx-auto flex w-full max-w-md flex-col space-y-16">

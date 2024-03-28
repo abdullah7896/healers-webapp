@@ -84,6 +84,13 @@ export class VendorSignUpComponent implements OnInit {
       // Display error message or take appropriate action
     });
   }
+  onBlur() {
+  
+  }
+  handleUserNotConfirmedError() {
+    // Make your API call or perform other actions here
+    console.log('User is not confirmed. Handling the error...');
+  }
 
   ConfirmSignUp() {
 

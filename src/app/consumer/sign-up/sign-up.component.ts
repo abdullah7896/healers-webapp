@@ -22,10 +22,16 @@ export class SignUpComponent {
 }
 
   SignUp(){
-    this.signup = !this.signup;
+   
     this.apiService.SignUp(this.signUp).subscribe(response => {
       localStorage.setItem('userPasswordEmail', this.userEmail);
       console.log('SignUp successful', response);
+      if(response.status){
+        this.signup = !this.signup;
+      }
+      else{
+        alert(response.message)
+      }
     }, error => {
       // Handle login error here
       console.error('SignUp failed', error);

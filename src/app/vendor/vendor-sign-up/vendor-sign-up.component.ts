@@ -14,14 +14,16 @@ export class VendorSignUpComponent implements OnInit {
   public selectedCategoryIds: any[] = [];
   fullName: string = '';
   phoneNumber = '';
-  response = { status: true, message: '' }
   placeholder: string = 'Select upto 2 categories'
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
   signUp = { firstName: '', lastName: '', email: '', phoneNumber: '', password: '', role: 1, selectedCategoryIds: this.selectedCategoryIds };
   userEmail = '';
-
   confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1 };
   vendorsignup = false;
+  showEmailAlreadyExists = false
+  showEmptyEmail = false
+  showEmptyPassword = false
+
   dropdownSettings = {
     singleSelection: false, // Allow multiple selections
     idField: 'id', // Property name for the ID
@@ -57,16 +59,25 @@ export class VendorSignUpComponent implements OnInit {
       this.signUp.firstName = this.fullName
     this.signUp.phoneNumber = this.phoneNumber.toString();
     this.signUp.selectedCategoryIds = this.selectedCategoryIds;
-    this.apiService.SignUp(this.signUp).subscribe(response => {
 
+    this.apiService.SignUp(this.signUp).subscribe(response => {
+      if (!response.status) {
+        if (this.signUp.email == '') this.showEmptyEmail = !this.showEmptyEmail;
+        
+        if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
+
+        if (response.errorCode == 'Status406NotAcceptable'){
+          this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
+        }
+        else{
+          alert(response.message)
+        }
+        return;
+      }
+
+      this.vendorsignup = !this.vendorsignup;
       localStorage.setItem('practitionerPasswordEmail', this.userEmail);
-      console.log('Login successful', response);
-      if (response.status) {
-        this.vendorsignup = !this.vendorsignup;
-      }
-      else {
-        alert(response.message)
-      }
+      console.log('Signup successful', response);
     }, error => {
       // Handle login error here
       console.log('Login failed', error);

@@ -9,37 +9,43 @@
                 <div>
                     <label for="fullName" class="block text-sm font-medium leading-6 text-color">Full name</label>
                     <div class="mt-2">
-                        <input placeholder="Full Name" type="text" class="w-[400px]"  [(ngModel)]="fullName"
-                        name="fullName"/>
+                        <input placeholder="Full Name" type="text" class="w-[400px]" [(ngModel)]="fullName"
+                            name="fullName" />
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-color">Email</label>
                     <div class="mt-2">
-                        <input placeholder="Email" type="text" class="w-[400px]" (blur)="onBlur()"
-                        [(ngModel)]="signUp.email" name="email"/>
+                        <input placeholder="Email" type="text" class="w-[400px]" [(ngModel)]="signUp.email"
+                            name="email" />
+                    </div>
+                    <div *ngIf="showEmailAlreadyExists">
+                        <p class="text-red-500 text-xs mt-2">
+                            Email already exists. Please Login In.
+                        </p>
+                    </div>
+                    <div *ngIf="showEmptyEmail">
+                        <p class="text-red-500 text-xs mt-2">
+                            Email is required
+                        </p>
                     </div>
                 </div>
                 <div>
                     <label for="Category" class="block text-sm font-medium leading-6 text-color">Choose
                         Category</label>
                     <div class="mt-2">
-                        <ng-multiselect-dropdown 
-                            [data]="categories" 
-                            [(ngModel)]="selectedCategoryIds"
-                            [settings]="dropdownSettings" 
-                            [placeholder]="placeholder"
+                        <ng-multiselect-dropdown [data]="categories" [(ngModel)]="selectedCategoryIds"
+                            [settings]="dropdownSettings" [placeholder]="placeholder"
                             (onSelect)="onCategorySelect($event)"
-                            (onDeSelect)="onCategoryUnselect($event)"
-                            ></ng-multiselect-dropdown>
-                        </div>
+                            (onDeSelect)="onCategoryUnselect($event)"></ng-multiselect-dropdown>
                     </div>
+                </div>
                 <div>
                     <label for="phoneNumber" class="block text-sm font-medium leading-6 text-color">Contact
                         No</label>
                     <div class="mt-2">
-                        <input placeholder="Contact Number" type="number" class="w-[400px]" 
-                        [(ngModel)]="phoneNumber" name="phoneNumber"/>
+                        <input placeholder="Contact Number" type="number" class="w-[400px]" [(ngModel)]="phoneNumber"
+                            name="phoneNumber" />
                     </div>
                 </div>
 
@@ -49,8 +55,13 @@
 
                     </div>
                     <div class="mt-2">
-                        <input placeholder="Password" type="password" class="w-[400px]"
-                                [(ngModel)]="signUp.password" name="password" />
+                        <input placeholder="Password" type="password" class="w-[400px]" [(ngModel)]="signUp.password"
+                            name="password" />
+                    </div>
+                    <div *ngIf="showEmptyPassword">
+                        <p class="text-red-500 text-xs mt-2">
+                            Password is required
+                        </p>
                     </div>
                 </div>
 
@@ -84,28 +95,43 @@
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-2xl ">
                         Verify Email
                     </h1>
-                    <p class="font-light">A 6 digit OTP has been sent to <span class="font-bold">{{ signUp.email }}</span><br>
+                    <p class="font-light">A 6 digit OTP has been sent to <span class="font-bold">{{ signUp.email
+                            }}</span><br>
                         Please verify to continue.
                     </p>
                     <form class="mt-4 space-y-4 mt-5 space-y-5">
                         <div class="flex justify-center gap-4 mb-6">
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(0,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(1,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"(change)="handleVerificationCodeChange(2,$event)"  required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(3,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(4,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(5,$event)" required>
-                            </div>
-                        <p class="text-[12px] font-normal ml-[224px] pb-[10px] ">Didn’t receive the code? <button class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
-                       
+                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
+                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                                (change)="handleVerificationCodeChange(0,$event)" required>
+                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
+                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                                (change)="handleVerificationCodeChange(1,$event)" required>
+                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
+                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                                (change)="handleVerificationCodeChange(2,$event)" required>
+                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
+                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                                (change)="handleVerificationCodeChange(3,$event)" required>
+                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
+                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                                (change)="handleVerificationCodeChange(4,$event)" required>
+                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
+                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                                (change)="handleVerificationCodeChange(5,$event)" required>
+                        </div>
+                        <p class="text-[12px] font-normal ml-[224px] pb-[10px] ">Didn’t receive the code? <button
+                                class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
+
                     </form>
 
                     <button type="submit"
                         class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline 
-                            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-[#006A6A]"(click)="ConfirmSignUp() " (click)="navigatetoprofiledetailing()">Submit</button>
+                            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-[#006A6A]"
+                        (click)="ConfirmSignUp() " (click)="navigatetoprofiledetailing()">Submit</button>
                     <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="refreshPage()">
                         <img src="assets/Icon-Wrapper.jpg" alt="Icon"
-                      style="display:inline-block;vertical-align:middle;" > Back to sign up
+                            style="display:inline-block;vertical-align:middle;"> Back to sign up
                     </button>
                 </div>
 

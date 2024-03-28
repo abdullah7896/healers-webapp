@@ -53,6 +53,16 @@
                                 <input placeholder="Email" type="text" style="width: 400px;"
                                     [(ngModel)]="signUp.email" name="email" />
                             </div>
+                            <div *ngIf="showEmailAlreadyExists">
+                                <p class="text-red-500 text-xs mt-2">
+                                    Email already exists. Please Login In.
+                                </p>
+                            </div>
+                            <div *ngIf="showEmptyEmail">
+                                <p class="text-red-500 text-xs mt-2">
+                                    Email is required
+                                </p>
+                            </div>
                         </div>
                         <div>
                             <div class="flex items-center justify-between">
@@ -63,6 +73,11 @@
                             <div class="mt-2">
                                 <input placeholder="Password" type="password" style="width: 400px;" class="w-400px"
                                     [(ngModel)]="signUp.password" name="password" />
+                            </div>
+                            <div *ngIf="showEmptyPassword">
+                                <p class="text-red-500 text-xs mt-2">
+                                    Password is required
+                                </p>
                             </div>
                         </div>
 

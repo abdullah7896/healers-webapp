@@ -14,16 +14,43 @@ export class SignUpComponent {
   userEmail = '';
   signup= false;
   confirmSignUp = { email: '', verificationCode: '', password: '', userType: 0};
-  
+  showEmailAlreadyExists = false
+  showEmptyEmail = false
+  showEmptyPassword = false
   
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
     this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
 }
 
+  isValidated(response: any): boolean{
+    if (response.status) return true;
+
+    if (this.signUp.email == '') {
+      this.showEmptyEmail = !this.showEmptyEmail;
+      if (this.showEmailAlreadyExists == true) this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
+    }
+    else if (response.errorCode == 'Status406NotAcceptable'){
+      this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
+      if (this.showEmptyEmail == true) this.showEmptyEmail = !this.showEmptyEmail;
+    }
+    
+    if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
+
+    else{
+      alert(response.message)
+    }
+
+    return false;
+  }
+
   SignUp(){
-    this.signup = !this.signup;
     this.apiService.SignUp(this.signUp).subscribe(response => {
+      const isValidatedResponse = this.isValidated(response)
+      console.log('isValidatedResponse', isValidatedResponse)
+      if (!isValidatedResponse) return;
+
+      this.signup = !this.signup;
       localStorage.setItem('userPasswordEmail', this.userEmail);
       console.log('SignUp successful', response);
     }, error => {

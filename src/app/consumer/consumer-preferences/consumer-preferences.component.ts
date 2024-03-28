@@ -6,14 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./consumer-preferences.component.css']
 })
 export class ConsumerPreferencesComponent {
-  gendersection= false;
+  gendersection = false;
   togglegendersection() {
     this.gendersection = !this.gendersection;
-    
+
   }
- genderbutton = true;
+  genderbutton = true;
   dateofbirth = false;
   physicalprofile = false;
+  wellnessGoals = false;
 
   toggleSection(section: string) {
     switch (section) {
@@ -21,28 +22,43 @@ export class ConsumerPreferencesComponent {
         this.genderbutton = true;
         this.dateofbirth = false;
         this.physicalprofile = false;
+        this.wellnessGoals = false;
+
         break;
       case 'dateofbirth':
         this.dateofbirth = true;
         this.genderbutton = false;
         this.physicalprofile = false;
+        this.wellnessGoals = false;
+
         break;
       case 'physicalprofile':
         this.physicalprofile = true;
         this.genderbutton = false;
         this.dateofbirth = false;
+        this.wellnessGoals = false;
+       break;
+      case 'wellnessGoals':
+        this.wellnessGoals = true;
+        this.genderbutton = false;
+        this.dateofbirth = false;
+        this.physicalprofile = false;
+
+
+
         break;
+
       default:
         break;
     }
-   
+
   }
 
 
 
 
   count: number = 0;
- increment() {
+  increment() {
     this.count++;
   }
 
@@ -54,7 +70,7 @@ export class ConsumerPreferencesComponent {
 
 
 
-  
+
 
 
 

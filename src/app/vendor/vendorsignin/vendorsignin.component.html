@@ -1,10 +1,11 @@
 <div class="flex  w-full  items-center ">
-  <img class="relative bottom-[311px] left-[238px]" src="assets/logo.green.svg" alt="Your Company" (click)="navigatetohome()">
-  
-  <div class="w-[50%] flex items-center" >
-      <div class="" *ngIf="!forgetPasswordUi">
-       <form class="space-y-6 " action="#" method="POST">
-        <div >
+  <img class="relative bottom-[311px] left-[238px]" src="assets/logo.green.svg" alt="Your Company"
+    (click)="navigatetohome()">
+
+  <div class="w-[50%] flex items-center">
+    <div class="" *ngIf="!forgetPasswordUi">
+      <form class="space-y-6 " action="#" method="POST">
+        <div>
           <p class="">Enter your credentials to access your account</p>
         </div>
         <div>
@@ -15,7 +16,7 @@
           <div *ngIf="formSubmitted">
             <p class="text-red-500 text-xs mt-2" *ngIf="!loginData.email">
               Email is required
-            </p>            
+            </p>
           </div>
         </div>
 
@@ -26,7 +27,7 @@
           </div>
           <div class="mt-2">
             <input placeholder="Password" type="password" class="w-[370px] " [(ngModel)]="loginData.password"
-                name="password" />
+              name="password" />
           </div>
           <div *ngIf="formSubmitted">
             <p class="text-red-500 text-xs mt-2" *ngIf="!loginData.password">
@@ -47,7 +48,7 @@
         <div>
           <button type="submit"
             class="flex w-[378px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:   bg-[#006A6A] "
-              (click)="onSubmit()">
+            (click)="onSubmit()">
             Sign in</button>
         </div>
         <div class="">
@@ -60,38 +61,40 @@
           Don't have an account?
           <button class="font-semibold leading-6 text-[#006CF0] underline" (click)="navigatetosignup()">Sign up</button>
         </p>
-       </form>
-      </div>
-       <section class="" *ngIf="showForgetSectionvendor">
-        <div class="flex  items-center justify-center " *ngIf="showForgetSectionvendor">
-          <div class=" ">
-            <h1 class=" text-xl font-bold leading-tight tracking-tight py-2">
-              Forgot password?
-            </h1>
-            <p class="font-light">Don’ Worry ! It happens. Please enter your registered email <br> below to reset your
-              password.</p>
-            <form class=" space-y-4 space-y-5" action="#">
-              <div>
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                <input type="email" name="email" id="email"
-                  class=" border w-[450px] text-sm  focus:ring-primary-600 focus:border-primary-600 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="user@gmail.com" required="" [(ngModel)]="userEmail" name="email">
-              </div>
-  
-            </form>
-            <button type="submit"
-              class="flex w-[450px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
-              (click)="ForgotPassword()">Submit</button>
-              <button class="text-[#006CF0] text-[14px] font-medium py-4 underline " (click)="navigatetosignup()">
-                <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
-                login
-               </button>
-           </div>
-          
+      </form>
+    </div>
+
+    <section class="" *ngIf="showForgetSectionvendor">
+      <div class="flex  items-center justify-center " *ngIf="showForgetSectionvendor">
+        <div class=" ">
+          <h1 class=" text-xl font-bold leading-tight tracking-tight py-2">
+            Forgot password?
+          </h1>
+          <p class="font-light">Don’ Worry ! It happens. Please enter your registered email <br> below to reset your
+            password.</p>
+          <form class=" space-y-4 space-y-5" action="#">
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+              <input type="email" name="email" id="email"
+                class=" border w-[450px] text-sm  focus:ring-primary-600 focus:border-primary-600 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="user@gmail.com" required="" [(ngModel)]="userEmail" name="email">
+            </div>
+
+          </form>
+          <button type="submit"
+            class="flex w-[450px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
+            (click)="ForgotPassword()">Submit</button>
+          <button class="text-[#006CF0] text-[14px] font-medium py-4 underline " (click)="navigatetosignup()">
+            <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
+            login
+          </button>
         </div>
-       
-      </section>
-       <div class="" *ngIf="showOtpSectionvendor">
+
+      </div>
+
+    </section>
+
+    <div class="" *ngIf="showOtpSectionvendor">
       <div class="relative flex  flex-col justify-center overflow-hidden w-[400px] h-[205px] ml-[-21px]">
         <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl mb-[-58px]">
           <div class="mx-auto flex w-full max-w-md flex-col space-y-16">
@@ -104,48 +107,49 @@
                 </p>
               </div>
             </div>
-              <div>
-                <form class=" px-4 pt-[0.5rem] pb-[3.5rem]">
-                  <div class="flex justify-center gap-2 mb-6">
-                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
-                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                      (change)="handleVerificationCodeChange(0,$event)" required>
-                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
-                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                      (change)="handleVerificationCodeChange(1,$event)" required>
-                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
-                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                      (change)="handleVerificationCodeChange(2,$event)" required>
-                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
-                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                      (change)="handleVerificationCodeChange(3,$event)" required>
-                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
-                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                      (change)="handleVerificationCodeChange(4,$event)" required>
-                    <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
-                      type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                      (change)="handleVerificationCodeChange(5,$event)" required>
+            <div>
+              <form class=" px-4 pt-[0.5rem] pb-[3.5rem]">
+                <div class="flex justify-center gap-2 mb-6">
+                  <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                    (change)="handleVerificationCodeChange(0,$event)" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                    (change)="handleVerificationCodeChange(1,$event)" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                    (change)="handleVerificationCodeChange(2,$event)" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                    (change)="handleVerificationCodeChange(3,$event)" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                    (change)="handleVerificationCodeChange(4,$event)" required>
+                  <input class="w-12 h-12 text-center border  shadow-sm focus:border-teal-500 focus:ring-teal-500"
+                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
+                    (change)="handleVerificationCodeChange(5,$event)" required>
 
-                  </div>
+                </div>
 
-                </form>
-              </div>
+              </form>
+            </div>
 
 
           </div>
         </div>
       </div>
-        <div class="text-right">
-          <span>Didn't get a code?&nbsp;&nbsp;</span>
-          <button class=" font-semibold leading-6 mr-[115px] text-indigo-600 hover:text-indigo-500"
-            (click)="ResendForgotPasswordOTP()">Resend</button>
-        </div>
+      <div class="text-right">
+        <span>Didn't get a code?&nbsp;&nbsp;</span>
+        <button class=" font-semibold leading-6 mr-[115px] text-indigo-600 hover:text-indigo-500"
+          (click)="ResendForgotPasswordOTP()">Resend</button>
+      </div>
       <div>
         <label for="email" class="block text-[12px] font-normal  leading-6 text-[#00000060%] gap-[5.5px] text-color ">
           Password</label>
 
         <div class="mt-2">
-          <input type="password" style="width: 436px;" [(ngModel)]="confirmForgotPassword.password" name="password" (input)="checkPasswordStrength()" />
+          <input type="password" style="width: 436px;" [(ngModel)]="confirmForgotPassword.password" name="password"
+            (input)="checkPasswordStrength()" />
         </div>
       </div>
       <div>
@@ -166,58 +170,94 @@
           <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">
             <input
               class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] "
-              type="checkbox"  id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.characters" [disabled]="checkboxChecked.characters"/>
+              type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.characters"
+              [disabled]="checkboxChecked.characters" />
             <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">8+ Characters</label>
           </div>
           <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[-22px]">
             <input
               class=" ml-[65px] relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] "
-              type="checkbox"  id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.uppercase" [disabled]="checkboxChecked.uppercase"/>
+              type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.uppercase"
+              [disabled]="checkboxChecked.uppercase" />
             <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Uppercase</label>
           </div>
         </div>
         <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">
           <input
             class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem]"
-            type="checkbox"  id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.numeric" [disabled]="checkboxChecked.numeric"/>
+            type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.numeric"
+            [disabled]="checkboxChecked.numeric" />
           <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1Numeric</label>
         </div>
         <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[96px]">
           <input
             class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] "
-            type="checkbox"  id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.special"  [disabled]="checkboxChecked.special"/>
+            type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.special"
+            [disabled]="checkboxChecked.special" />
           <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Special
             Character</label>
         </div>
       </div>
-      <button type="submit"
-        class="flex w-full justify-center rounded-md px-3 py-1.5 
+      <button type="submit" class="flex w-full justify-center rounded-md px-3 py-1.5 
           text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 
           focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A] w-[388px]"
-          (click)="ConfirmForgotPassword()">Update
+        (click)="ConfirmForgotPassword()">Update
         password</button>
-      <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline ml-[-3px] mt-[23px]" (click)="navigatetosignup()">
+      <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline ml-[-3px] mt-[23px]"
+        (click)="navigatetosignup()">
         <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"
-         
-            (click)="navigatetosignin()"> Back to
+          (click)="navigatetosignin()"> Back to
         login
       </button>
 
     </div>
-    
-     
-    </div>
-     
-  
-    <!-- otp section -->
 
-   
+    <section class="" *ngIf="vendorsigninotp">
+      <div class="flex flex-col items-center justify-center ">
+          <div class="">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-2xl ">
+                  Verify Email
+              </h1>
+              <p class="font-light">A 6 digit OTP has been sent to <span class="font-bold">{{ loginData.email }}</span><br>
+                  Please verify to continue.
+              </p>
+              <form class="mt-4 space-y-4 mt-5 space-y-5">
+                  <div class="flex justify-center gap-4 mb-6">
+                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(0,$event)" required>
+                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(1,$event)" required>
+                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"(change)="handlevendorSigninOtpChange(2,$event)"  required>
+                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(3,$event)" required>
+                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(4,$event)" required>
+                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(5,$event)" required>
+                      </div>
+                  <p class="text-[12px] font-normal ml-[224px] pb-[10px] ">Didn’t receive the code? <button class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
+                 
+              </form>
+
+              <button type="submit"
+                  class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline 
+                      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-[#006A6A]"(click)="ConfirmSignUp() " (click)="navigatetoprofiledetailing()">Submit</button>
+              <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="refreshPage()">
+                  <img src="assets/Icon-Wrapper.jpg" alt="Icon"
+                style="display:inline-block;vertical-align:middle;" > Back to sign up
+              </button>
+          </div>
+
+      </div>
+  </section>
+
+  </div>
 
 
-  
+  <!-- otp section -->
 
-    <div class="flex w-[50%]  justify-center py-6">
-      <img class=" h-[640px]   rounded-[24px]" src="assets/image2.png" alt="image description">
-     </div>
-   
+
+
+
+
+
+  <div class="flex w-[50%]  justify-center py-6">
+    <img class=" h-[640px]   rounded-[24px]" src="assets/image2.png" alt="image description">
+  </div>
+
 </div>

@@ -73,7 +73,7 @@
 <section class="text-gray-600 body-font " *ngIf="gendersection">
     <div class="flex items-center pt-10">
         <div class="w-[25%] flex-row items-center">
-            <div class="pb-[23px] ">
+            <div class="pb-[10px] ">
                 <div class="flex items-center flex-col">
                     <button *ngIf="!genderbutton"
                         class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center   justify-center  flex-shrink-0 rounded-[16px]">
@@ -87,7 +87,7 @@
 
                 </div>
             </div>
-            <div class=" pb-[23px]">
+            <div class=" pb-[10px]">
 
                 <div class="flex items-center flex-col">
                     <button *ngIf="!dateofbirth"
@@ -104,7 +104,7 @@
 
 
             </div>
-            <div class=" pb-[23px]">
+            <div class=" pb-[10px]">
                 <div class="flex items-center flex-col">
                     <button *ngIf="!physicalprofile"
                         class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0 rounded-[16px]">
@@ -117,13 +117,25 @@
 
                 </div>
             </div>
+            <div class=" pb-[23px]">
+                <div class="flex items-center flex-col">
+                    <button *ngIf="!wellnessGoals"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0 rounded-[16px]">
+                        <img src="assets/Wellness White.png" alt="" (click)="toggleSection('wellnessGoals')">
+                    </button>
+                    <button *ngIf="wellnessGoals"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center  flex-shrink-0 rounded-[16px]">
+                        <img src="assets/Wellness Blue.png" alt="" (click)="toggleSection('wellnessGoals')">
+                    </button>
+                </div>
+            </div>
 
         </div>
-    
-         <div *ngIf="gendersection" class="flex flex-col items-center">
+
+        <div *ngIf="gendersection" class="flex flex-col items-center">
             <!-- gender div -->
             <div class="flex-grow" *ngIf="!dateofbirth">
-                <div *ngIf="!physicalprofile">
+                <div *ngIf="!physicalprofile && !wellnessGoals">
                     <h2 class="text-gray-900 text-[32px]  title-font font-medium ">What is your gender?</h2>
                     <p class="leading-relaxed text-base text-[16px] font-normal">To provide you the best experience we
                         need
@@ -140,7 +152,7 @@
             </div>
             <!-- birth div  -->
             <div class="flex-grow " *ngIf="!genderbutton">
-                <div *ngIf="!physicalprofile">
+                <div *ngIf="!physicalprofile && !wellnessGoals">
                     <div class="flex-col">
                         <h2 class="text-gray-900 text-[32px]  title-font font-medium leading-[48px]">How old are you?
                         </h2>
@@ -173,7 +185,7 @@
             </div>
             <!-- physical div -->
             <div class="flex-grow" *ngIf="!genderbutton">
-                <div *ngIf="!dateofbirth">
+                <div *ngIf="!dateofbirth && !wellnessGoals">
                     <div>
                         <h2 class="text-[#18181B] text-[32px]  title-font font-medium leading-[48px]">Let us know your
                             weight and height</h2>
@@ -197,17 +209,22 @@
 
                         </div>
                         <div class="flex items-center justify-between w-[11rem] mt-[23px]">
-                            <button (click)="decrement()"
-                                class="bg-gray-200  text-[#18181B]  font-bold py-2 px-4 :outline-none focus:shadow-outline border1">
-                                -
-                            </button>
-                            <span class=" py-2 px-4">
-                                {{ count }}
-                            </span>
-                            <button (click)="increment()"
-                                class="bg-[#F28500] hover:bg-[#F28500] text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline border23">
-                                +
-                            </button>
+                            <!-- <button (click)="decrement()" -->
+                            <!-- class="bg-gray-200  text-[#18181B]  font-bold py-2 px-4 :outline-none focus:shadow-outline border1"> -->
+                            <!-- - -->
+                            <!-- </button> -->
+                            <!-- <span class=" py-2 px-4"> -->
+                            <!-- {{ count }} -->
+                            <!-- </span> -->
+                            <!-- <button (click)="increment()" -->
+                            <!-- class="bg-[#F28500] hover:bg-[#F28500] text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline border23"> -->
+                            <!-- + -->
+                            <!-- </button> -->
+                            <form class="">
+                                <input type="number" id="number-input" aria-describedby="helper-text-explanation"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-[299%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="3" required />
+                            </form>
                         </div>
 
                     </div>
@@ -227,22 +244,21 @@
 
                     </div>
                     <div class="flex flex-row gap-[32px] pt-[25px]">
-                        <form class="w-[234px]">
-                            <label for="countries" class="block mb-2 text-sm  ">Feet</label>
-                            <select id="countries" class="border2    text-sm   block w-full p-2.5  ">
-                                <option selected>6</option>
-                            </select>
+                        <form class="">
+                            <input type="number" id="number-input" aria-describedby="helper-text-explanation"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-[295%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="3" required />
                         </form>
-                        <form class="w-[234px]">
-                            <label for="countries" class="block mb-2 text-sm  ">Inches</label>
-                            <select id="countries" class="border2    text-sm   block w-full p-2.5  ">
-                                <option selected>4</option>
-                            </select>
-                        </form>
+                        <!-- <form class="w-[234px]"> -->
+                        <!-- <label for="countries" class="block mb-2 text-sm  ">Inches</label> -->
+                        <!-- <select id="countries" class="border2    text-sm   block w-full p-2.5  "> -->
+                        <!-- <option selected>4</option> -->
+                        <!-- </select> -->
+                        <!-- </form> -->
                     </div>
-                    <button
-                        class=" mt-[23px] inline-flex relative left-[350px] text-white bg-[#F28500] gap-[10px] border-0 py-2 px-6 focus:outline-none text-[18px] rounded-[44px] text-lg font-medium">Explore
-                        Services</button>
+                    <!-- <button -->
+                    <!-- class=" mt-[23px] inline-flex relative left-[350px] text-white bg-[#F28500] gap-[10px] border-0 py-2 px-6 focus:outline-none text-[18px] rounded-[44px] text-lg font-medium">Explore -->
+                    <!-- Services</button> -->
 
 
                     <div>
@@ -250,8 +266,35 @@
                 </div>
             </div>
 
-        
-    </div>
+            <div class="flex-grow" *ngIf="!genderbutton && !dateofbirth && !physicalprofile">
+                <div>
+                    <div>
+                        <h2 class="text-[#18181B] text-[32px]  title-font font-medium leading-[48px]">What would you
+                            like to focus on ?</h2>
+                        <p class="leading-relaxed text-base text-[16px] font-normal leading-[24px]">This will help us
+                            create your personalized experience.</p>
+                    </div>
+                    <div
+                        class=" mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                        <img src="assets/Focus Selector.png" alt="">
+                    </div>
+                    <div
+                        class=" inline-flex mt-[20px] ml-[10px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                        <img src="assets/Focus Selector (1).png" alt="">
+                    </div>
+                    <div class=" mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                        <img src="assets/Focus Selector (2).png" alt="">
+                
+                    </div>
+                    <div
+                        class=" mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                        <img src="assets/Focus Selector (3).png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
 </section>

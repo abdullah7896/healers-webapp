@@ -169,14 +169,14 @@
                                     autocomplete="one-time-code" (change)="handleVerificationCodeChange(5,$event)"
                                     required>
                             </div>
-                            <p class="text-[12px] font-normal ml-[181px]">Didn’t receive the code? <button class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
+                            <p class="text-[12px] font-normal float-right">Didn’t receive the code? <button class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
                         </form>
                         
                         <div>
                         <button type="submit"
                             class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[-31px]"
-                            style="background: rgba(242, 133, 0, 1); " (click)="ConfirmSignUp()" (click)="navigatetopreferences()"> Verify
-                            Email</button>
+                            style="background: rgba(242, 133, 0, 1); " (click)="ConfirmSignUp()"> Verify
+                            </button>
                         </div>
                     </div>
 

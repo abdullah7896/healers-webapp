@@ -70,6 +70,12 @@ export class SignUpComponent {
     this.confirmSignUp.email = this.signUp.email;
   this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
     console.log('Email send successful', response);
+    if(response.status){
+      this.router.navigate(['/Preferences']); 
+    }
+    else{
+      alert(response.message)
+    }
   }, error => {
     console.error('Email send failed', error);
   });
@@ -87,9 +93,9 @@ export class SignUpComponent {
   toggleForgetPassword() {
     this.signup = !this.signup;
   }
-  navigatetopreferences(){
-    this.router.navigate(['/Preferences']);
-  }
+  // navigatetopreferences(){
+    // this.router.navigate(['/Preferences']);
+  // }
   navigatetosignin(){
     this.router.navigate(['/consumersignin']);
   }

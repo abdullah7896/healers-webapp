@@ -25,6 +25,11 @@
                             Email already exists. Please Login In.
                         </p>
                     </div>
+                    <div *ngIf="showEmptyEmail">
+                        <p class="text-red-500 text-xs mt-2">
+                            Email is required
+                        </p>
+                    </div>
                 </div>
                 <div>
                     <label for="Category" class="block text-sm font-medium leading-6 text-color">Choose
@@ -53,6 +58,11 @@
                     <div class="mt-2">
                         <input placeholder="Password" type="password" class="w-[400px]" [(ngModel)]="signUp.password"
                             name="password" />
+                    </div>
+                    <div *ngIf="showEmptyPassword">
+                        <p class="text-red-500 text-xs mt-2">
+                            Password is required
+                        </p>
                     </div>
                 </div>
 

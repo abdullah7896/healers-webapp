@@ -21,6 +21,8 @@ export class VendorSignUpComponent implements OnInit {
   confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1 };
   vendorsignup = false;
   showEmailAlreadyExists = false
+  showEmptyEmail = false
+  showEmptyPassword = false
 
   dropdownSettings = {
     singleSelection: false, // Allow multiple selections
@@ -46,24 +48,35 @@ export class VendorSignUpComponent implements OnInit {
     this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
   }
   SignUp() {
+    // Split full name into first name and last name
+    const nameParts = this.fullName.indexOf(' ');
+    console.log('Name Parts:', nameParts);
+    if (nameParts >= 0) {
+      this.signUp.firstName = this.fullName.slice(0, nameParts);
+      this.signUp.lastName = this.fullName.slice(nameParts + 1);
+    }
+    else
+      this.signUp.firstName = this.fullName
+    this.signUp.phoneNumber = this.phoneNumber.toString();
+    this.signUp.selectedCategoryIds = this.selectedCategoryIds;
+
     this.apiService.SignUp(this.signUp).subscribe(response => {
-      localStorage.setItem('practitionerPasswordEmail', this.userEmail);
       if (!response.status) {
-        this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
+        if (this.signUp.email == '') this.showEmptyEmail = !this.showEmptyEmail;
+        
+        if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
+
+        if (response.errorCode == 'Status406NotAcceptable'){
+          this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
+        }
+        else{
+          alert(response.message)
+        }
         return;
       }
-      // Split full name into first name and last name
+
       this.vendorsignup = !this.vendorsignup;
-      const nameParts = this.fullName.indexOf(' ');
-      console.log('Name Parts:', nameParts);
-      if (nameParts >= 0) {
-        this.signUp.firstName = this.fullName.slice(0, nameParts);
-        this.signUp.lastName = this.fullName.slice(nameParts + 1);
-      }
-      else
-        this.signUp.firstName = this.fullName
-      this.signUp.phoneNumber = this.phoneNumber.toString();
-      this.signUp.selectedCategoryIds = this.selectedCategoryIds;
+      localStorage.setItem('practitionerPasswordEmail', this.userEmail);
       console.log('Signup successful', response);
     }, error => {
       // Handle login error here

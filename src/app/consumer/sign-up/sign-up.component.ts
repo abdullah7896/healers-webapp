@@ -53,6 +53,12 @@ export class SignUpComponent {
       this.signup = !this.signup;
       localStorage.setItem('userPasswordEmail', this.userEmail);
       console.log('SignUp successful', response);
+      if(response.status){
+        this.signup = !this.signup;
+      }
+      else{
+        alert(response.message)
+      }
     }, error => {
       // Handle login error here
       console.error('SignUp failed', error);

@@ -1,7 +1,6 @@
 <div class="flex w-full items-center">
-    <img class="relative bottom-[288px] left-[238px]" src="assets/logo.green.svg" alt="Your Company"
-        (click)="navigatetohome()">
-    <div class="w-[50%] flex items-center pt-[50px]">
+    <img class="relative bottom-[288px] left-[238px]" src="assets/logo.green.svg" alt="Your Company"  (click)="navigatetohome()">
+    <div class="w-[50%] flex items-center pt-[28px]">
         <div class="" *ngIf="!vendorsignup">
             <form class="space-y-6 ">
                 <div class="" *ngIf="!vendorsignup">
@@ -80,11 +79,15 @@
                         Sign up</button>
                 </div>
             </form>
-            <p class="mt-[1.5rem] text-sm text-gray-500">
+            <p class="mt-[10px] text-sm text-gray-500">
                 Already have an account?
                 <button class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
                     (click)="navigatetosignin()">Sign In</button>
             </p>
+            <button  (click)="navigatetohome()" type="button" class="w-full mt-[10px] font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
+                <img src="assets/back button.png" alt="">
+                <span>Back to home</span>
+            </button>
         </div>
         <section class="" *ngIf="vendorsignup">
             <div class="flex flex-col items-center justify-center ">
@@ -140,8 +143,9 @@
 
     </div>
 
-
+    <img src="assets/Ellipse 2.png" alt="" class="w-[16%] h-[187px] relative  left-[137px]  top-[167px] flex">
     <div class="flex w-[50%]  justify-center py-6">
+        <img src="" alt="">
         <img class=" h-[640px]   rounded-[24px]" src="assets/image2.png" alt="image description">
     </div>
 </div>

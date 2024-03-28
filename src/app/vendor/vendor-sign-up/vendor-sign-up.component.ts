@@ -13,13 +13,15 @@ export class VendorSignUpComponent implements OnInit {
   public categories: any[] = [];
   public selectedCategoryIds: any[] = [];
   fullName: string = '';
-  phoneNumber='';
-  placeholder:string ='Select upto 2 categories'
+  phoneNumber = '';
+  placeholder: string = 'Select upto 2 categories'
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
   signUp = { firstName: '', lastName: '', email: '', phoneNumber: '', password: '', role: 1, selectedCategoryIds: this.selectedCategoryIds };
   userEmail = '';
-  confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1};
+  confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1 };
   vendorsignup = false;
+  showEmailAlreadyExists = false
+
   dropdownSettings = {
     singleSelection: false, // Allow multiple selections
     idField: 'id', // Property name for the ID
@@ -28,37 +30,41 @@ export class VendorSignUpComponent implements OnInit {
     //unSelectAllText: 'Unselect All', // Text for the "Unselect All" option
     itemsShowLimit: 2, // Show a maximum of 3 selected items
     allowSearchFilter: true, // Enable search filter
-    enableCheckAll:false,
-    limitSelection:2,
-    clearSearchFilter:true,
-    placeholder:'Select upto 2 categories',
-    maxHeight:300
+    enableCheckAll: false,
+    limitSelection: 2,
+    clearSearchFilter: true,
+    placeholder: 'Select upto 2 categories',
+    maxHeight: 300
   };
-  
+
   ngOnInit(): void {
     this.GetAllCategory();
   }
-  
+
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
     this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
-}
+  }
   SignUp() {
-    // Split full name into first name and last name
-    this.vendorsignup = !this.vendorsignup;
-    const nameParts = this.fullName.indexOf(' ');
-    console.log('Name Parts:', nameParts);
-    if (nameParts >=0) {
-      this.signUp.firstName= this.fullName.slice(0, nameParts);
-      this.signUp.lastName= this.fullName.slice(nameParts + 1);
-    }
-    else
-    this.signUp.firstName=this.fullName
-    this.signUp.phoneNumber=this.phoneNumber.toString();
-    this.signUp.selectedCategoryIds = this.selectedCategoryIds;
     this.apiService.SignUp(this.signUp).subscribe(response => {
       localStorage.setItem('practitionerPasswordEmail', this.userEmail);
-      console.log('Login successful', response);
+      if (!response.status) {
+        this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
+        return;
+      }
+      // Split full name into first name and last name
+      this.vendorsignup = !this.vendorsignup;
+      const nameParts = this.fullName.indexOf(' ');
+      console.log('Name Parts:', nameParts);
+      if (nameParts >= 0) {
+        this.signUp.firstName = this.fullName.slice(0, nameParts);
+        this.signUp.lastName = this.fullName.slice(nameParts + 1);
+      }
+      else
+        this.signUp.firstName = this.fullName
+      this.signUp.phoneNumber = this.phoneNumber.toString();
+      this.signUp.selectedCategoryIds = this.selectedCategoryIds;
+      console.log('Signup successful', response);
     }, error => {
       // Handle login error here
       console.log('Login failed', error);
@@ -66,32 +72,32 @@ export class VendorSignUpComponent implements OnInit {
     });
   }
 
-  ConfirmSignUp(){
-    
-    this.confirmSignUp.password= this.signUp.password
+  ConfirmSignUp() {
+
+    this.confirmSignUp.password = this.signUp.password
     this.confirmSignUp.email = this.signUp.email;
-  this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
-    console.log(' successful', response);
-  }, error => {
-    console.error(' failed', error);
-  });
+    this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
+      console.log(' successful', response);
+    }, error => {
+      console.error(' failed', error);
+    });
   }
-  ResendSignUpOTP(){
-    this.apiService.ResendSignUpOTP(this.signUp.email).subscribe(response =>{
+  ResendSignUpOTP() {
+    this.apiService.ResendSignUpOTP(this.signUp.email).subscribe(response => {
       console.log('Login successful', response);
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     },
       error => {
         console.error('Login failed', error);
       });
-    }
+  }
 
-  onCategorySelect(event:any){
+  onCategorySelect(event: any) {
     this.selectedCategoryIds.push(event.id)
   }
-  
-  onCategoryUnselect(event:any){
-    this.selectedCategoryIds=this.selectedCategoryIds.filter((id)=> id!=event.id)
+
+  onCategoryUnselect(event: any) {
+    this.selectedCategoryIds = this.selectedCategoryIds.filter((id) => id != event.id)
   }
   GetAllCategory() {
     this.apiService.GetAllCategory().subscribe(response => {
@@ -117,17 +123,17 @@ export class VendorSignUpComponent implements OnInit {
   navigatetosignin() {
     this.router.navigate(['/vendorsignin']);
   }
-  navigatetohome(){
+  navigatetohome() {
     this.router.navigate(['']);
   }
-  navigatetoprofiledetailing(){
+  navigatetoprofiledetailing() {
     this.router.navigate(['/ProfileDetailing']);
   }
 
   refreshPage() {
     window.location.reload();
   }
- 
+
 
 
 }

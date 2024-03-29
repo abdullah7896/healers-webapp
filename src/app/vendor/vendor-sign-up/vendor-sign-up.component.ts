@@ -110,6 +110,12 @@ export class VendorSignUpComponent implements OnInit {
     this.confirmSignUp.email = this.signUp.email;
     this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
       console.log(' successful', response);
+      if(response.status){
+        this.router.navigate(['/ProfileDetailing']);
+      }
+      else{
+        alert(response.message)
+      }
     }, error => {
       console.error(' failed', error);
     });
@@ -158,9 +164,9 @@ export class VendorSignUpComponent implements OnInit {
   navigatetohome() {
     this.router.navigate(['']);
   }
-  navigatetoprofiledetailing() {
-    this.router.navigate(['/ProfileDetailing']);
-  }
+  // navigatetoprofiledetailing() {
+    // this.router.navigate(['/ProfileDetailing']);
+  // }
 
   refreshPage() {
     window.location.reload();

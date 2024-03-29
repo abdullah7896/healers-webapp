@@ -62,42 +62,47 @@
           <button class="font-semibold leading-6 text-[#006CF0] underline" (click)="navigatetosignup()">Sign up</button>
         </p>
 
-        <button (click)="navigatetohome()" type="button" class="w-full font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
+        <button (click)="navigatetohome()" type="button"
+          class="w-full font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
           <img src="assets/back button.png" alt="">
           <span>Back to home</span>
-      </button>
-       </form>
-      </div>
-       <section class="" *ngIf="showForgetSectionvendor">
-        <div class="flex  items-center justify-center " *ngIf="showForgetSectionvendor">
-          <div class=" ">
-            <h1 class=" text-xl font-bold leading-tight tracking-tight py-2">
-              Forgot password?
-            </h1>
-            <p class="font-light">Don’ Worry ! It happens. Please enter your registered email <br> below to reset your
-              password.</p>
-            <form class=" space-y-4 space-y-5" action="#">
-              <div>
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                <input type="email" name="email" id="email"
-                  class=" border w-[450px] text-sm  focus:ring-primary-600 focus:border-primary-600 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="user@gmail.com" required="" [(ngModel)]="userEmail" name="email">
-              </div>
-  
-            </form>
-            <button type="submit"
-              class="flex w-[450px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
-              (click)="ForgotPassword()">Submit</button>
-              <button class="text-[#006CF0] text-[14px] font-medium py-4 underline " (click)="navigatetosignup()">
-                <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
-                login
-               </button>
-           </div>
-          
+        </button>
+      </form>
+    </div>
+    <section class="" *ngIf="showForgetSectionvendor">
+      <div class="flex  items-center justify-center " *ngIf="showForgetSectionvendor">
+        <div class=" ">
+          <h1 class=" text-xl font-bold leading-tight tracking-tight py-2">
+            Forgot password?
+          </h1>
+          <p class="font-light">Don’ Worry ! It happens. Please enter your registered email <br> below to reset your
+            password.</p>
+          <form class=" space-y-4 space-y-5" action="#">
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+              <input type="email" name="email" id="email"
+                class=" border w-[450px] text-sm  focus:ring-primary-600 focus:border-primary-600 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="user@gmail.com" required="" [(ngModel)]="userEmail" name="email">
+            </div>
+            <div *ngIf="showEmptyEmail">
+              <p class="text-red-500 text-xs mt-2">
+                Email is required
+              </p>
+            </div>
+          </form>
+          <button type="submit"
+            class="flex w-[450px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
+            (click)="ForgotPassword()">Submit</button>
+          <button class="text-[#006CF0] text-[14px] font-medium py-4 underline " (click)="navigatetosignin()">
+            <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
+            login
+          </button>
         </div>
-       
-      </section>
-       <div class="" *ngIf="showOtpSectionvendor">
+
+      </div>
+
+    </section>
+    <div class="" *ngIf="showOtpSectionvendor">
       <div class="relative flex  flex-col justify-center overflow-hidden w-[400px] h-[205px] ml-[-21px]">
         <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl mb-[-58px]">
           <div class="mx-auto flex w-full max-w-md flex-col space-y-16">
@@ -217,37 +222,51 @@
 
     <section class="" *ngIf="vendorsigninotp">
       <div class="flex flex-col items-center justify-center ">
-          <div class="">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-2xl ">
-                  Verify Email
-              </h1>
-              <p class="font-light">A 6 digit OTP has been sent to <span class="font-bold">{{ loginData.email }}</span><br>
-                  Please verify to continue.
-              </p>
-              <form class="mt-4 space-y-4 mt-5 space-y-5">
-                  <div class="flex justify-center gap-4 mb-6">
-                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(0,$event)" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(1,$event)" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"(change)="handlevendorSigninOtpChange(2,$event)"  required>
-                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(3,$event)" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(4,$event)" required>
-                      <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(5,$event)" required>
-                      </div>
-                  <p class="text-[12px] font-normal ml-[224px] pb-[10px] ">Didn’t receive the code? <button class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
-                 
-              </form>
+        <div class="">
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-2xl ">
+            Verify Email
+          </h1>
+          <p class="font-light">A 6 digit OTP has been sent to <span class="font-bold">{{ loginData.email }}</span><br>
+            Please verify to continue.
+          </p>
+          <form class="mt-4 space-y-4 mt-5 space-y-5">
+            <div class="flex justify-center gap-4 mb-6">
+              <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
+                inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(0,$event)"
+                required>
+              <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
+                inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(1,$event)"
+                required>
+              <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
+                inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(2,$event)"
+                required>
+              <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
+                inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(3,$event)"
+                required>
+              <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
+                inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(4,$event)"
+                required>
+              <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
+                inputmode="numeric" autocomplete="one-time-code" (change)="handlevendorSigninOtpChange(5,$event)"
+                required>
+            </div>
+            <p class="text-[12px] font-normal ml-[224px] pb-[10px] ">Didn’t receive the code? <button
+                class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
 
-              <button type="submit"
-                  class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline 
-                      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-[#006A6A]"(click)="ConfirmSignUp() " (click)="navigatetoprofiledetailing()">Submit</button>
-              <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="refreshPage()">
-                  <img src="assets/Icon-Wrapper.jpg" alt="Icon"
-                style="display:inline-block;vertical-align:middle;" > Back to sign up
-              </button>
-          </div>
+          </form>
+
+          <button type="submit"
+            class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline 
+                      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-[#006A6A]"
+            (click)="ConfirmSignUp() " (click)="navigatetoprofiledetailing()">Submit</button>
+          <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="refreshPage()">
+            <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
+            sign up
+          </button>
+        </div>
 
       </div>
-  </section>
+    </section>
 
   </div>
 

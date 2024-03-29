@@ -124,13 +124,13 @@
     <div class="" *ngIf="showOtpSection">
       <div class="relative flex  flex-col justify-center overflow-hidden w-[400px] h-[205px] ml-[-21px]">
         <div class="relative  pt-10 pb-9 shadow-xl mb-[-58px]">
-          <div class="mx-auto flex  max-w-md flex-col space-y-16">
-            <div class="flex flex-col space-y-2 ml-[19px]">
+          <div class="mx-auto flex  max-w-md flex-col ">
+            <div class="flex flex-col ml-[19px]">
               <div class="font-bold text-[16px]">
                 <p>Forgot Password?</p>
               </div>
               <div class="flex flex-row text-sm  ">
-                <p>Enter 6 digit OTP sent to <span class="font-bold">user@email.com</span> and update <br> your
+                <p>Enter 6 digit OTP sent to <span class="font-bold">{{userEmail}}</span> and update your
                   password.
                 </p>
               </div>

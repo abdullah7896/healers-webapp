@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consumer-preferences',
@@ -6,11 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./consumer-preferences.component.css']
 })
 export class ConsumerPreferencesComponent {
+constructor(private router:Router){}
   gendersection = false;
+  
   togglegendersection() {
     this.gendersection = !this.gendersection;
 
   }
+  navigatetohome() {
+    this.router.navigate(['']);
+  }
+  
+  
   genderbutton = true;
   dateofbirth = false;
   physicalprofile = false;
@@ -67,8 +75,21 @@ export class ConsumerPreferencesComponent {
       this.count--;
     }
   }
+ 
+  maleBorderStyle: string | undefined;
+  femaleBorderStyle: string | undefined;
 
-
+  toggleBorder(gender: string) {
+    if (gender === 'male') {
+      this.maleBorderStyle = this.maleBorderStyle ? '' : '1px solid #096DD9';
+      this.femaleBorderStyle = '';
+    } else {
+      this.femaleBorderStyle = this.femaleBorderStyle ? '' : '1px solid #096DD9';
+      this.maleBorderStyle = '';
+    }
+  }
+  
+  
 
 
 

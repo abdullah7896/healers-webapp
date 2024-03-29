@@ -3,9 +3,9 @@
     class=" relative flex w-full flex-wrap items-center justify-between  py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4    ">
     <div class="flex w-full flex-wrap items-center justify-between px-3">
         <div class="flex">
-            <a class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0 h-[47px] w-[236px ml-[45px]">
+            <button class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0 h-[47px] w-[236px ml-[45px]" (click)="navigatetohome()">
                 <img class="me-2" src="assets/logo.svg.svg" alt="TE Logo" loading="lazy" />
-            </a>
+            </button>
         </div>
         <ul class="jhonadamas list-style-none ms-auto flex flex-row ps-0 md:ps-4 mr-[70px] rounded-[32px] bp"
             data-twe-navbar-nav-ref>
@@ -140,12 +140,12 @@
                     <p class="leading-relaxed text-base text-[16px] font-normal">To provide you the best experience we
                         need
                         to know your gender..</p>
-                    <div
-                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                    <div (click)="toggleBorder('male')" [style.border]="maleBorderStyle" 
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 ">
                         <img src="assets/male.png" alt="">
                     </div>
-                    <div
-                        class="w-32 h-32 h-20 w-20 sm:mr-10 inline-flex mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                    <div (click)="toggleBorder('female')" [style.border]="femaleBorderStyle"
+                        class="w-32 h-32 h-20 w-20 sm:mr-10 inline-flex mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 ">
                         <img src="assets/Gender (1).png" alt="">
                     </div>
                 </div>
@@ -274,23 +274,31 @@
                         <p class="leading-relaxed text-base text-[16px] font-normal leading-[24px]">This will help us
                             create your personalized experience.</p>
                     </div>
+                    <div class="inline-flex pt-[10px]">
                     <div
-                        class=" mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                        class="items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
                         <img src="assets/Focus Selector.png" alt="">
                     </div>
                     <div
-                        class=" inline-flex mt-[20px] ml-[10px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                        class=" ml-[10px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
                         <img src="assets/Focus Selector (1).png" alt="">
                     </div>
-                    <div class=" mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                </div>
+                <div class="flex flex-row">
+                    <div class="   items-center  justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
                         <img src="assets/Focus Selector (2).png" alt="">
-                
                     </div>
-                    <div
-                        class=" mt-[20px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                    <div class="pl-[5px]">
                         <img src="assets/Focus Selector (3).png" alt="">
                     </div>
                 </div>
+                  
+                  
+                  
+                </div>
+                <button
+                class=" mt-[23px] inline-flex relative left-[350px] text-white bg-[#F28500] gap-[10px] border-0 py-2 px-6 focus:outline-none text-[18px] rounded-[44px] text-lg font-medium">Explore
+                Services</button>
             </div>
 
 

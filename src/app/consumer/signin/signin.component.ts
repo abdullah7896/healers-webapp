@@ -18,12 +18,13 @@ export class SigninComponent {
   userEmail = '';
   userType = 0;
   formSubmitted = false
-  response = {status:true, message: ''}
-  
+  response = { status: true, message: '' }
+  showEmptyEmail = false
+
   handleVerificationCodeChange(index: number, event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
     this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
-}
+  }
 
   toggleForgetPassword() {
     this.forgetPasswordVisible = !this.forgetPasswordVisible;
@@ -33,20 +34,30 @@ export class SigninComponent {
   showOtpSection: boolean = false;
   showForgetSection: boolean = false;
 
+  isValidated(response: any) {
+    console.log('response.status', response.status);
+    if (response.status) return true;
+    alert(response.message);
+
+    return false;
+  }
+
   ForgotPassword() {
     this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
-      if (response.status) {
-        //this.forgetPasswordVisible = false;
-        this.showForgetSection = false;
-        this.showOtpSection = true;
+      const isValidatedResponse = this.isValidated(response);
+      console.log('isValidatedResponse', isValidatedResponse);
+      if (!isValidatedResponse) return;
 
-      }
-      
+      this.showForgetSection = false;
+      this.showOtpSection = true;
       localStorage.setItem('userPasswordEmail', this.userEmail);
       console.log('Email send  successfully', response);
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     },
       error => {
+        if (error.status == 400) {
+          this.showEmptyEmail = !this.showEmptyEmail
+        }
         console.error('Email send failed', error);
       });
   }
@@ -62,9 +73,9 @@ export class SigninComponent {
       console.error('Change Password failed', error);
     });
   }
-  ResendForgotPasswordOTP(){
+  ResendForgotPasswordOTP() {
     var resendForgotPasswordOtpemail = localStorage.getItem('userPasswordEmail')
-    this.apiService.ResendForgotPasswordOTP(resendForgotPasswordOtpemail).subscribe(response =>{
+    this.apiService.ResendForgotPasswordOTP(resendForgotPasswordOtpemail).subscribe(response => {
       console.log('Resend OTP successful', response);
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     },
@@ -83,9 +94,9 @@ export class SigninComponent {
     }
     this.apiService.login(loginData).subscribe(response => {
       // Validate API Status
-      const {status, message} = response;
-      if (!status){
-        this.response = {status, message};
+      const { status, message } = response;
+      if (!status) {
+        this.response = { status, message };
         return;
       }
       console.log('Login successful', response);
@@ -103,42 +114,42 @@ export class SigninComponent {
   naviagtetosignup() {
     this.router.navigate(['/consumersignup']);
   }
-navigatetohome(){
-  this.router.navigate(['']);
-}
+  navigatetohome() {
+    this.router.navigate(['']);
+  }
 
-// 
-checkboxChecked = {
-  characters: false,
-  uppercase: false,
-  numeric: false,
-  special: false
-};
-checkPasswordStrength() {
-  const password = this.confirmForgotPassword.password;
-  // Reset all checkboxes
-  this.checkboxChecked = {
+  // 
+  checkboxChecked = {
     characters: false,
     uppercase: false,
     numeric: false,
     special: false
   };
+  checkPasswordStrength() {
+    const password = this.confirmForgotPassword.password;
+    // Reset all checkboxes
+    this.checkboxChecked = {
+      characters: false,
+      uppercase: false,
+      numeric: false,
+      special: false
+    };
 
-  // Check each password requirement
-  if (password.length >= 8) {
-    this.checkboxChecked.characters = true;
+    // Check each password requirement
+    if (password.length >= 8) {
+      this.checkboxChecked.characters = true;
+    }
+    if (/[A-Z]/.test(password)) {
+      this.checkboxChecked.uppercase = true;
+    }
+    if (/\d/.test(password)) {
+      this.checkboxChecked.numeric = true;
+    }
+    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
+      this.checkboxChecked.special = true;
+    }
+
   }
-  if (/[A-Z]/.test(password)) {
-    this.checkboxChecked.uppercase = true;
-  }
-  if (/\d/.test(password)) {
-    this.checkboxChecked.numeric = true;
-  }
-  if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
-    this.checkboxChecked.special = true;
-  }
- 
-}
 
 
 

@@ -52,7 +52,6 @@ export class VendorsigninComponent {
 
   ForgotPassword() {
     this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
-      console.log('isValidatedResponse');
       const isValidatedResponse = this.isValidated(response);
       console.log('isValidatedResponse', isValidatedResponse);
       if (!isValidatedResponse) return;

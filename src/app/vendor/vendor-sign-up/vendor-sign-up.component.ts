@@ -48,21 +48,21 @@ export class VendorSignUpComponent implements OnInit {
     this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
   }
 
-  isValidated(response: any): boolean{
+  isValidated(response: any): boolean {
     if (response.status) return true;
 
     if (this.signUp.email == '') {
       this.showEmptyEmail = !this.showEmptyEmail;
       if (this.showEmailAlreadyExists == true) this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
     }
-    else if (response.errorCode == 'Status406NotAcceptable'){
+    else if (response.errorCode == 'Status406NotAcceptable') {
       this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
       if (this.showEmptyEmail == true) this.showEmptyEmail = !this.showEmptyEmail;
     }
-    
+
     if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
 
-    else{
+    else {
       alert(response.message)
     }
 
@@ -92,13 +92,14 @@ export class VendorSignUpComponent implements OnInit {
       console.log('Signup successful', response);
     }, error => {
       // Handle login error here
+      if (error.status == 400) {
+        this.showEmptyEmail = !this.showEmptyEmail
+      }
       console.log('Login failed', error);
       // Display error message or take appropriate action
     });
   }
-  onBlur() {
-  
-  }
+
   handleUserNotConfirmedError() {
     // Make your API call or perform other actions here
     console.log('User is not confirmed. Handling the error...');
@@ -110,10 +111,10 @@ export class VendorSignUpComponent implements OnInit {
     this.confirmSignUp.email = this.signUp.email;
     this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
       console.log(' successful', response);
-      if(response.status){
+      if (response.status) {
         this.router.navigate(['/ProfileDetailing']);
       }
-      else{
+      else {
         alert(response.message)
       }
     }, error => {
@@ -165,7 +166,7 @@ export class VendorSignUpComponent implements OnInit {
     this.router.navigate(['']);
   }
   // navigatetoprofiledetailing() {
-    // this.router.navigate(['/ProfileDetailing']);
+  // this.router.navigate(['/ProfileDetailing']);
   // }
 
   refreshPage() {

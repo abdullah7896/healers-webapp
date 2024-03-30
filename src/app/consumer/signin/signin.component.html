@@ -2,8 +2,8 @@
   <div class="flex w-[50%] justify-center items-center">
     <div *ngIf="!forgetPasswordVisible">
       <div class="">
-        <p class="font-bold text-[23px] leading-[48px] ">Continue your healing journey</p>
-        <p class="text-[#262626] font-normal">Enter your credentials to access your account</p>
+        <p class="font-bold text-[28px] leading-[48px] ">Continue your healing journey</p>
+        <!-- <p class="text-[#262626] font-normal">Enter your credentials to access your account</p> -->
       </div>
       <div class=" mt-[23px] ">
         <form class="space-y-6" action="" method="POST">
@@ -40,8 +40,10 @@
 
         </form>
         <button type="submit"
+        
           class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
-          style="background: rgba(242, 133, 0, 1); " (click)="Login()">Sign In</button>
+          style="background: rgba(242, 133, 0, 1); " (click)="Login()" (click)="toggleloading()">
+          Sign In <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]"  src="assets/loading.gif"  alt=""></button>
         <div class="text-sm">
           <button class="font-semibold text-indigo-600 hover:text-indigo-500 ml-[149px] mt-[33px]"
             (click)="toggleForgetPassword()">Forgot password?</button>
@@ -58,16 +60,16 @@
           <div class="grow border-b "></div>
         </div>
         <!-- [routerLink]="['/landingPage']" -->
-        <div style="width: 476px; height: 32px; gap: 5px; display: flex; justify-content: center;">
+        <div style="width: 476px; height: 32px; gap: 5px;  justify-content: center;">
           <button type="button"
-            class="text-gray-900 bg-white  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium  text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 rounded-[50px]"
-            style=" width: 308px; height: 35px;   gap: 10px; ">
+            class="text-gray-900 bg-white  border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 rounded-[50px]"
+            style=" width: 192px; height: 35px;   gap: 10px; ">
             <img src="assets/icons8-google 1.svg" alt="">
             Sign in with Google
           </button>
           <button type="button"
-            class="text-gray-900 bg-whiteborder border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium  text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 rounded-[50px]"
-            style=" width: 308px; height: 34px;   gap: 10px;">
+            class="text-gray-900 bg-whiteborder border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2 rounded-[50px]"
+            style=" width: 200px; height: 34px;   gap: 10px;">
             <img src="assets/Facebook.png" alt="">
             Sign in with Facebook
           </button>
@@ -137,8 +139,8 @@
             </div>
 
             <div>
-              <form class=" px-4 pt-[0.5rem] pb-[3.5rem]">
-                <div class="flex justify-center gap-4 mb-6">
+              <form class=" px-4 pt-[0.5rem]">
+                <div class="flex justify-center gap-4 ">
                   <input class="w-11 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
                     inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(0,$event)"
                     required>
@@ -165,8 +167,8 @@
         </div>
       </div>
       <div class="text-right">
-        <span>Didn't get a code?&nbsp;&nbsp;</span>
-        <button class=" font-semibold leading-6 mr-[115px] text-indigo-600 hover:text-indigo-500"
+        <span class="text-[12px]">Didn't get a code?&nbsp;&nbsp;</span>
+        <button class=" font-semibold leading-6 mr-[89px] text-indigo-600 text-[12px] hover:text-indigo-500"
           (click)="ResendForgotPasswordOTP()">Resend</button>
       </div>
       <div>
@@ -175,7 +177,7 @@
           Password</label>
 
         <div class="mt-2">
-          <input type="password" style="width: 345px;" [(ngModel)]="confirmForgotPassword.password" name="password"
+          <input type="password" style="width: 355px;" [(ngModel)]="confirmForgotPassword.password" name="password"
             (input)="checkPasswordStrength()" />
         </div>
       </div>
@@ -188,7 +190,7 @@
 
           </div>
           <div class="mt-2">
-            <input type="password" style="width: 345px;" class="w-400px" />
+            <input type="password" style="width: 355px;" class="w-400px" />
           </div>
         </div>
       </form>

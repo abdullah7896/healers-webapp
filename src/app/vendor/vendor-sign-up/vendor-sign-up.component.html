@@ -1,9 +1,10 @@
 <div class="flex w-full items-center">
-    <img class="relative bottom-[288px] left-[238px]" src="assets/logo.green.svg" alt="Your Company"  (click)="navigatetohome()">
+    <img class="relative bottom-[288px] left-[252px]" src="assets/logo.green.svg" alt="Your Company"
+        (click)="navigatetohome()">
     <div class="w-[50%] flex items-center pt-[28px]">
         <div class="" *ngIf="!vendorsignup">
             <form class="space-y-6 ">
-                <div class="" *ngIf="!vendorsignup">
+                <div class="pt-[20px]" *ngIf="!vendorsignup">
                     <p class="mt-[46px]">Enter your credentials to access your account</p>
                 </div>
                 <div>
@@ -84,7 +85,8 @@
                 <button class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
                     (click)="navigatetosignin()">Sign In</button>
             </p>
-            <button  (click)="navigatetohome()" type="button" class="w-full mt-[10px] font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
+            <button (click)="navigatetohome()" type="button"
+                class="w-full mt-[10px] font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
                 <img src="assets/back button.png" alt="">
                 <span>Back to home</span>
             </button>
@@ -143,9 +145,10 @@
 
     </div>
 
-   
+
     <div class="flex w-[50%]  justify-center py-6">
         <img src="" alt="">
-        <img class="rounded-[24px]" style="height: calc(100vh - 50px);" src="assets/Both Img.png" alt="image description">
+        <img class="rounded-[24px]" style="height: calc(100vh - 50px);" src="assets/Both Img.png"
+            alt="image description">
     </div>
 </div>

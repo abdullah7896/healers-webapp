@@ -91,7 +91,9 @@
                 </form>
                 <button type="submit"
                     class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
-                    style="background: rgba(242, 133, 0, 1); " (click)="SignUp() ">Sign Up</button>
+                    style="background: rgba(242, 133, 0, 1); " (click)="SignUp() " (click)="toggleloading()">
+                    
+                    Sign Up <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif"  alt="">   </button>
 
             </div>
             <div class="mr-[-96px]">
@@ -129,11 +131,11 @@
         </div>
         <section class="ml-[47px] mt-[50px]" *ngIf="signup">
             <div class="flex flex-col items-center justify-center ">
-                <div class="w-full p-6  md:mt-0 sm:max-w-md sm:p-8 mr-[63px]">
+                <div class="">
                     <h1 class="mb-1 text-xl font-bold leading-tight tracking-tight md:text-2xl ">
                         Verify Email
                     </h1>
-                    <p class="font-light">A 6 digit OTP has been sent to <span class="font-bold">{{ signUp.email
+                    <p class="font-light text-[15px]">A 6 digit OTP has been sent to <span class="font-bold">{{ signUp.email
                             }}</span><br>
                         Please verify to continue.
                     </p>
@@ -171,7 +173,7 @@
                 </div>
 
             </div>
-            <button class="text-[#006CF0] text-[14px] font-medium ml-[30px] underline " (click)="refreshPage()">
+            <button class="text-[#006CF0] text-[14px] font-medium mt-[10px] underline " (click)="refreshPage()">
                 <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"
                     (click)="navigatetosignin()"> Back to sign up
             </button>

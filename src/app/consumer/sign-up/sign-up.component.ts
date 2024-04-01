@@ -48,7 +48,9 @@ export class SignUpComponent {
     this.apiService.SignUp(this.signUp).subscribe(response => {
       const isValidatedResponse = this.isValidated(response)
       console.log('isValidatedResponse', isValidatedResponse)
-      if (!isValidatedResponse) return;
+      if (!isValidatedResponse){
+        this.isloading = false; 
+        return};
 
       if (response.status) {
         this.signup = !this.signup;
@@ -58,12 +60,14 @@ export class SignUpComponent {
       else {
         alert(response.message)
       }
+      this.isloading = false;
     }, error => {
       // Handle login error here
       if (error.status == 400) {
         this.showEmptyEmail = !this.showEmptyEmail
       }
       console.error('SignUp failed', error);
+      this.isloading = false;
       // Display error message or take appropriate action
     });
   }
@@ -108,4 +112,10 @@ export class SignUpComponent {
   refreshPage() {
     window.location.reload();
   }
+
+isloading=false;
+toggleloading(){
+  this.isloading=true;
+}
+
 }

@@ -92,6 +92,7 @@ export class SigninComponent {
       console.error('Email and password are required.');
       return;
     }
+   
     this.apiService.login(loginData).subscribe(response => {
       // Validate API Status
       const { status, message } = response;
@@ -99,11 +100,14 @@ export class SigninComponent {
         this.response = { status, message };
         return;
       }
-      console.log('Login successful', response);
-      //this.router.navigate(['/dashboard']); // Example redirect to dashboard
+      
+    console.log('Login successful', response);
+    //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     }, error => {
       // Handle login error here
+    
       console.error('Login failed', error);
+      
       // Display error message or take appropriate action
     });
   }
@@ -151,7 +155,10 @@ export class SigninComponent {
 
   }
 
-
+isloading=false;
+toggleloading(){
+  this.isloading=true;
+}
 
 
 

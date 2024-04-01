@@ -74,6 +74,7 @@ export class SignUpComponent {
   ConfirmSignUp() {
     this.confirmSignUp.password = this.signUp.password
     this.confirmSignUp.email = this.signUp.email;
+    this.isloading = true;
     this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
       console.log('Email send successful', response);
       if (response.status) {
@@ -84,6 +85,9 @@ export class SignUpComponent {
       }
     }, error => {
       console.error('Email send failed', error);
+    }).add(() => {
+      // Reset loading to false after the API call is completed
+      this.isloading = false;
     });
   }
   ResendSignUpOTP() {
@@ -117,5 +121,8 @@ isloading=false;
 toggleloading(){
   this.isloading=true;
 }
+
+
+
 
 }

@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { apiService } from 'src/app/Service/apiService';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-signin',
@@ -43,6 +44,7 @@ export class SigninComponent {
   }
 
   ForgotPassword() {
+    this.isloading = true;
     this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
       const isValidatedResponse = this.isValidated(response);
       console.log('isValidatedResponse', isValidatedResponse);
@@ -59,10 +61,14 @@ export class SigninComponent {
           this.showEmptyEmail = !this.showEmptyEmail
         }
         console.error('Email send failed', error);
+      }).add(() => {
+       
+        this.isloading = false;
       });
   }
 
   ConfirmForgotPassword() {
+    this.isloading = true;
     var storedemail = localStorage.getItem('userPasswordEmail')
     if (storedemail)
       this.confirmForgotPassword.email = storedemail;
@@ -71,6 +77,9 @@ export class SigninComponent {
     }, error => {
       // Handle login error here
       console.error('Change Password failed', error);
+    }).add(() => {
+      
+      this.isloading = false;
     });
   }
   ResendForgotPasswordOTP() {
@@ -84,17 +93,23 @@ export class SigninComponent {
       });
   }
   Login() {
-    const { email, password } = this.loginData;
-    const loginData = { email, password, userType: 0 };
+    this.isloading = true;
+    setTimeout(() => {
+      const { email, password } = this.loginData;
+      const loginData = { email, password, userType: 1 };
+    // const { email, password } = this.loginData;
+    // const loginData = { email, password, userType: 0 };
     // Validate Fields
     this.formSubmitted = true
     if (!this.loginData.email || !this.loginData.password) {
       console.error('Email and password are required.');
+      this.isloading = false;
       return;
     }
    
     this.apiService.login(loginData).subscribe(response => {
       // Validate API Status
+      this.isloading = false;
       const { status, message } = response;
       if (!status) {
         this.response = { status, message };
@@ -105,11 +120,12 @@ export class SigninComponent {
     //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     }, error => {
       // Handle login error here
-    
+      this.isloading = false;
       console.error('Login failed', error);
       
       // Display error message or take appropriate action
     });
+    },2000);
   }
   onSubmit() {
     this.showOtpSection = true;
@@ -159,6 +175,39 @@ isloading=false;
 toggleloading(){
   this.isloading=true;
 }
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

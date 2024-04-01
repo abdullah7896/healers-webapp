@@ -48,8 +48,8 @@
         <div>
           <button type="submit"
             class="flex w-[378px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:   bg-[#006A6A] "
-            (click)="onSubmit()">
-            Sign in</button>
+            (click)="onSubmit()" (click)="toggleloading()">
+            Sign in <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
         </div>
         <div class="">
           <div class="text-sm text-center">
@@ -92,7 +92,7 @@
           </form>
           <button type="submit"
             class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
-            (click)="ForgotPassword()">Submit</button>
+            (click)="ForgotPassword()" (click)="toggleloading()">Submit <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
           <button class="text-[#006CF0] text-[14px] font-medium py-4 underline" (click)="navigatetosignup()">
             <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
             login
@@ -214,8 +214,8 @@
       <button type="submit" class="flex  justify-center rounded-md px-3 py-1.5 
           text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 
           focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A] w-[373px]"
-        (click)="ConfirmForgotPassword()">Update
-        password</button>
+        (click)="ConfirmForgotPassword()" (click)="toggleloading()">Update
+        password <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
       <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline ml-[-3px] mt-[23px]"
         (click)="navigatetosignup()">
         <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"

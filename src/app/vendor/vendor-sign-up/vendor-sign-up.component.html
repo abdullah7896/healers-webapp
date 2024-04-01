@@ -46,7 +46,7 @@
                         No</label>
                     <div class="mt-2">
                         <input placeholder="Contact Number" type="number" class="w-[400px]" [(ngModel)]="phoneNumber"
-                            name="phoneNumber"/>
+                            name="phoneNumber" />
                     </div>
                 </div>
 
@@ -76,8 +76,9 @@
                 <div>
                     <button type="submit"
                         class="flex w-[105%] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] "
-                        (click)="SignUp() ">
-                        Sign up</button>
+                        (click)="SignUp()" (click)="toggleloading()">
+                        Sign up <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif"
+                            alt=""></button>
                 </div>
             </form>
             <p class="mt-[10px] text-sm text-gray-500">
@@ -130,7 +131,8 @@
                     <button type="submit"
                         class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline 
                             focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-[#006A6A]"
-                        (click)="ConfirmSignUp() ">Verify</button>
+                        (click)="ConfirmSignUp() " (click)="toggleloading()">Verify <img *ngIf="isloading"
+                            class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
                     <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="refreshPage()">
                         <img src="assets/Icon-Wrapper.jpg" alt="Icon"
                             style="display:inline-block;vertical-align:middle;"> Back to sign up

@@ -78,11 +78,14 @@ constructor(private router:Router){}
  
   maleBorderStyle: string | undefined;
   femaleBorderStyle: string | undefined;
-
+ 
+ 
   toggleBorder(gender: string) {
     if (gender === 'male') {
-      this.maleBorderStyle = this.maleBorderStyle ? '' : '1px solid #096DD9';
+      this.maleBorderStyle = this.maleBorderStyle ? '' : '1px solid  #096DD9';
       this.femaleBorderStyle = '';
+    
+    
     } else {
       this.femaleBorderStyle = this.femaleBorderStyle ? '' : '1px solid #096DD9';
       this.maleBorderStyle = '';

@@ -112,7 +112,7 @@
           </form>
           <button type="submit"
             class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px]"
-            style="background: rgba(242, 133, 0, 1); " (click)="ForgotPassword()">Submit</button>
+            style="background: rgba(242, 133, 0, 1); " (click)="ForgotPassword()" (click)="toggleloading()">Submit <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
           <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="naviagtetosignup()">
             <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle; "> Back to
             log In
@@ -148,16 +148,16 @@
                     inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(1,$event)"
                     required>
                   <input class="w-11 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
-                    inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(2,$event)"
+                    inputmode="numeric" autocomplete="one-time-code"   (change)="handleVerificationCodeChange(2,$event)"
                     required>
                   <input class="w-11 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
-                    inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(3,$event)"
+                    inputmode="numeric" autocomplete="one-time-code"  (change)="handleVerificationCodeChange(3,$event)"
                     required>
                   <input class="w-11 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
                     inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(4,$event)"
                     required>
                   <input class="w-11 h-12 text-center border  shadow-sm " type="text" maxlength="1" pattern="[0-9]"
-                    inputmode="numeric" autocomplete="one-time-code" (change)="handleVerificationCodeChange(5,$event)"
+                    inputmode="numeric" autocomplete="one-time-code"  (change)="handleVerificationCodeChange(5,$event)"
                     required>
                 </div>
 
@@ -201,16 +201,16 @@
         <div class="flex">
           <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">
             <input
-              class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] rounded-[0.25rem] border-[0.125rem]"
+              class="checkbox relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] rounded-[0.25rem] border-[0.5rem]"
               type="checkbox" id="default-checkbox" value="option2" [checked]="checkboxChecked.characters"
-              [disabled]="checkboxChecked.characters" />
+               />
             <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="default-checkbox">8+ Characters</label>
           </div>
           <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[-22px]">
             <input
               class=" ml-[65px] relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] "
               type="checkbox" id="uppercaseCheckbox" value="option2" [checked]="checkboxChecked.uppercase"
-              [disabled]="checkboxChecked.uppercase" />
+               />
             <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Uppercase</label>
           </div>
         </div>
@@ -218,21 +218,21 @@
           <input
             class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] "
             type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.numeric"
-            [disabled]="checkboxChecked.numeric" />
+             />
           <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1Numeric</label>
         </div>
         <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[96px]">
           <input
             class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem]"
             type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.special"
-            [disabled]="checkboxChecked.special" />
+             />
           <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Special
             Character</label>
         </div>
       </div>
       <button type="submit"
         class="flex w-[85%] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px]"
-        style="background: rgba(242, 133, 0, 1); " (click)="ConfirmForgotPassword()"> Update password</button>
+        style="background: rgba(242, 133, 0, 1); " (click)="ConfirmForgotPassword()" (click)="toggleloading()"> Update password <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""> </button>
       <button class="text-[#006CF0] text-[14px] font-medium mr-[334px] underline mt-[23px]"
         (click)="naviagtetosignup()">
         <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to

@@ -18,7 +18,6 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
-    "@preline/tooltip": "^2.0.2",
     "install": "^0.13.0",
     "ng-multiselect-dropdown": "^1.0.0",
     "ng-otp-input": "^1.9.3",

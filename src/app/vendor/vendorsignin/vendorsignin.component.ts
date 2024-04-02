@@ -25,9 +25,15 @@ export class VendorsigninComponent {
   confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1 };
   showEmptyEmail = false
 
-  handleVerificationCodeChange(index: number, event: Event) {
+  // handleVerificationCodeChange(index: number, event: Event) {
+    // const inputValue = (event.target as HTMLInputElement).value;
+    // this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+  // }
+  handleVerificationCodeChange(event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+    this.confirmForgotPassword.verificationCode += inputValue;
+    // Convert the OTP code to a string
+    this.confirmForgotPassword.verificationCode = String(this.confirmForgotPassword.verificationCode);
   }
 
   handlevendorSigninOtpChange(index: number, event: Event) {
@@ -51,6 +57,7 @@ export class VendorsigninComponent {
   }
 
   ForgotPassword() {
+    this.isloading = true;
     this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
       const isValidatedResponse = this.isValidated(response);
       console.log('isValidatedResponse', isValidatedResponse);
@@ -67,10 +74,14 @@ export class VendorsigninComponent {
           this.showEmptyEmail = !this.showEmptyEmail
         }
         console.error('Email Send failed', error);
+      }).add(() => {
+
+        this.isloading = false;
       });
   }
 
   ConfirmForgotPassword() {
+    this.isloading = true;
     var storedemail = localStorage.getItem('userPasswordEmail')
     if (storedemail)
       this.confirmForgotPassword.email = storedemail;
@@ -79,6 +90,9 @@ export class VendorsigninComponent {
     }, error => {
       console.error('Change Password failed', error);
       // Display error message or take appropriate action
+    }).add(() => {
+
+      this.isloading = false;
     });
   }
   ResendForgotPasswordOTP() {
@@ -93,17 +107,23 @@ export class VendorsigninComponent {
   }
 
   onSubmit() {
-    const { email, password } = this.loginData;
-    const loginData = { email, password, userType: 1 };
+    this.isloading = true;
+    setTimeout(() => {
+      const { email, password } = this.loginData;
+      const loginData = { email, password, userType: 1 };
+    // const { email, password } = this.loginData;
+    // const loginData = { email, password, userType: 1 };
     // Validate Fields
     this.formSubmitted = true
     if (!this.loginData.email || !this.loginData.password) {
       console.error('Email and password are required.');
+      this.isloading = false;
       return;
     }
 
     this.apiService.login(loginData).subscribe(response => {
       // Validate API Status
+      this.isloading = false;
       const { status, message, errorCode } = response;
       if (!status) {
         console.log('errorCode', errorCode)
@@ -119,8 +139,10 @@ export class VendorsigninComponent {
       console.log('Login successful', response);
       this.router.navigate(['/VendorLoginLandingPage']);
     }, error => {
+      this.isloading = false;
       console.error('Login failed', error);
     });
+  },2000);
   }
   // onSubmit() {
   //    this.showOtpSectionvendor = true;
@@ -197,5 +219,9 @@ export class VendorsigninComponent {
 
   refreshPage() {
     window.location.reload();
+  }
+  isloading = false;
+  toggleloading() {
+    this.isloading = true;
   }
 }

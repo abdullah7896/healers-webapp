@@ -1,13 +1,15 @@
 <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
 <nav
-    class=" relative flex w-full flex-wrap items-center justify-between  py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4    ">
+    class=" relative flex w-full h-full flex-wrap items-center justify-between  py-2 shadow-dark-mild dark:bg-neutral-700 py-4    ">
     <div class="flex w-full flex-wrap items-center justify-between px-3">
         <div class="flex">
-            <button class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0 h-[47px] w-[236px ml-[45px]" (click)="navigatetohome()">
+            <button class="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0 h-[47px] w-[236px ml-[45px]"
+                (click)="navigatetohome()">
                 <img class="me-2" src="assets/logo.svg.svg" alt="TE Logo" loading="lazy" />
             </button>
         </div>
-        <ul class="jhonadamas list-style-none ms-auto flex flex-row ps-0 md:ps-4 mr-[70px] rounded-[32px] bp"
+        
+        <ul class="jhonadamas list-style-none ms-auto flex flex-row  mr-[70px]"
             data-twe-navbar-nav-ref>
             <a class="hidden-arrow mr flex items-center text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80"
                 id="dropdownMenuButton1" role="button" data-twe-dropdown-toggle-ref aria-expanded="false">
@@ -17,7 +19,7 @@
             </a>
             <li class="px-2" data-twe-nav-item-ref>
                 <a class="flex  transition duration-200 mt-[4px]" data-twe-nav-link-ref><img
-                        src="https://tecdn.b-cdn.net/img/new/avatars/1.jpg" class=" " style="height: 25px; width: 25px"
+                        src="https://tecdn.b-cdn.net/img/new/avatars/1.jpg" class=" rounded-full" style="height: 25px; width: 25px"
                         alt="TE Avatar" loading="lazy" />
                     <strong class="ms-1 hidden sm:block">John Adams</strong>
                 </a>
@@ -47,10 +49,10 @@
 </nav>
 <!-- hero sections   -->
 <section class=" body-font shadowsfor" *ngIf="!gendersection">
-    <div class=" mx-auto flex px-5 pt-[27px] items-center justify-center flex-col">
-        <img class="  w-5/6 mb-10 object-cover object-center rounded-[16px] w-[90%] h-[320px] " alt="hero"
+    <div class=" mx-auto flex  pt-[27px] items-center justify-center flex-col">
+        <img class="object-cover object-center rounded-[16px] w-[90%] h-[320px] " alt="hero"
             src="assets/pref img.png">
-        <div class="text-center lg:w-2/3 w-full">
+        <div class="text-center pt-5">
             <h1 class="title-font sm:text-4xl text-[48px] mb-4 font-semibold text-[#18181B]">Let’s design your unique
                 Experience</h1>
             <p class="mb-8 leading-[24px] text-[16px] ">The more we get to know you, the more we can serve up classes
@@ -70,9 +72,9 @@
 
 <!-- new threee sections  -->
 
-<section class="text-gray-600 body-font " *ngIf="gendersection">
-    <div class="flex items-center pt-10">
-        <div class="w-[25%] flex-row items-center">
+<section class="text-gray-600 body-font" *ngIf="gendersection">
+    <div class="flex pt-10">
+        <div class="w-[25%]  flex-row items-center">
             <div class="pb-[10px] ">
                 <div class="flex items-center flex-col">
                     <button *ngIf="!genderbutton"
@@ -134,14 +136,14 @@
 
         <div *ngIf="gendersection" class="flex flex-col items-center">
             <!-- gender div -->
-            <div class="flex-grow" *ngIf="!dateofbirth">
+            <div class="" *ngIf="!dateofbirth">
                 <div *ngIf="!physicalprofile && !wellnessGoals">
                     <h2 class="text-gray-900 text-[32px]  title-font font-medium ">What is your gender?</h2>
                     <p class="leading-relaxed text-base text-[16px] font-normal">To provide you the best experience we
                         need
-                        to know your gender..</p>
-                    <div (click)="toggleBorder('male')" [style.border]="maleBorderStyle" 
-                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  mt-[20px] inline-flex items-center justify-center   text-indigo-500 flex-shrink-0 ">
+                        to know your gender.</p>
+                    <div (click)="toggleBorder('male')" [style.border]="maleBorderStyle"
+                        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10  mt-[20px] inline-flex items-center justify-center  text-indigo-500 flex-shrink-0 ">
                         <img src="assets/male.png" alt="">
                     </div>
                     <div (click)="toggleBorder('female')" [style.border]="femaleBorderStyle"
@@ -151,7 +153,7 @@
                 </div>
             </div>
             <!-- birth div  -->
-            <div class="flex-grow " *ngIf="!genderbutton">
+            <div class=" " *ngIf="!genderbutton">
                 <div *ngIf="!physicalprofile && !wellnessGoals">
                     <div class="flex-col">
                         <h2 class="text-gray-900 text-[32px]  title-font font-medium leading-[48px]">How old are you?
@@ -184,7 +186,7 @@
                 </div>
             </div>
             <!-- physical div -->
-            <div class="flex-grow" *ngIf="!genderbutton">
+            <div class="" *ngIf="!genderbutton">
                 <div *ngIf="!dateofbirth && !wellnessGoals">
                     <div>
                         <h2 class="text-[#18181B] text-[32px]  title-font font-medium leading-[48px]">Let us know your
@@ -201,8 +203,9 @@
                             <label class="flex items-center relative w-max cursor-pointer select-none ">
                                 <input type="checkbox"
                                     class="appearance-none transition-colors cursor-pointer w-[30rem] h-[0.5rem] rounded-full" />
-                                <span class="absolute font-medium text-xs uppercase right-1   text-[#71727A]"> Ib</span>
-                                <span class="absolute font-medium text-xs uppercase right-8 text-[#F28500]"> kg</span>
+                                <span class="absolute font-medium text-xs  right-1   text-[#71727A]"> ib</span>
+                                <span class="absolute font-medium text-xs  right-8 text-[#F28500]">kg</span>
+
                                 <span
                                     class="w-7 h-7 right-7 absolute rounded-[10px] transform transition-transform bg-gray-200"></span>
                             </label>
@@ -235,8 +238,8 @@
                             <label class="flex items-center relative w-max cursor-pointer select-none ">
                                 <input type="checkbox"
                                     class="appearance-none transition-colors cursor-pointer w-[30rem] h-[0.5rem] rounded-full" />
-                                <span class="absolute font-medium text-xs uppercase right-1   text-[#71727A]">in</span>
-                                <span class="absolute font-medium text-xs uppercase right-8 text-[#F28500]">cm</span>
+                                <span class="absolute font-medium text-xs  right-1   text-[#71727A]">in</span>
+                                <span class="absolute font-medium text-xs  right-8 text-[#F28500]">cm</span>
                                 <span
                                     class="w-7 h-7 right-7 absolute rounded-[10px] transform transition-transform bg-gray-200"></span>
                             </label>
@@ -266,7 +269,7 @@
                 </div>
             </div>
 
-            <div class="flex-grow" *ngIf="!genderbutton && !dateofbirth && !physicalprofile">
+            <div class="" *ngIf="!genderbutton && !dateofbirth && !physicalprofile">
                 <div>
                     <div>
                         <h2 class="text-[#18181B] text-[32px]  title-font font-medium leading-[48px]">What would you
@@ -275,30 +278,29 @@
                             create your personalized experience.</p>
                     </div>
                     <div class="inline-flex pt-[10px]">
-                    <div
-                        class="items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
-                        <img src="assets/Focus Selector.png" alt="">
+                        <div class="items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                            <img src="assets/Focus Selector.png" alt="">
+                        </div>
+                        <div
+                            class=" ml-[10px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                            <img src="assets/Focus Selector (1).png" alt="">
+                        </div>
                     </div>
-                    <div
-                        class=" ml-[10px] items-center justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
-                        <img src="assets/Focus Selector (1).png" alt="">
+                    <div class="flex flex-row">
+                        <div class="   items-center  justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
+                            <img src="assets/Focus Selector (2).png" alt="">
+                        </div>
+                        <div class="pl-[5px]">
+                            <img src="assets/Focus Selector (3).png" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="flex flex-row">
-                    <div class="   items-center  justify-center   text-indigo-500 flex-shrink-0 rounded-[16px]">
-                        <img src="assets/Focus Selector (2).png" alt="">
-                    </div>
-                    <div class="pl-[5px]">
-                        <img src="assets/Focus Selector (3).png" alt="">
-                    </div>
-                </div>
-                  
-                  
-                  
+
+
+
                 </div>
                 <button
-                class=" mt-[23px] inline-flex relative left-[350px] text-white bg-[#F28500] gap-[10px] border-0 py-2 px-6 focus:outline-none text-[18px] rounded-[44px] text-lg font-medium">Explore
-                Services</button>
+                    class=" mt-[23px] inline-flex relative left-[350px] text-white bg-[#F28500] gap-[10px] border-0 py-2 px-6 focus:outline-none text-[18px] rounded-[44px] text-lg font-medium">Explore
+                    Services</button>
             </div>
 
 

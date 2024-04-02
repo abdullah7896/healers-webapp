@@ -11,5 +11,10 @@ input {
   .text-color{
     color: rgba(0, 0, 0, 0.6)
   }
+  .checkbox{
+  background-color: yellow !important;
+  }
+  
+  
   
   

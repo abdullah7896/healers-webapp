@@ -9,6 +9,7 @@ import { ProfileDetailingComponent } from './profile-detailing/profile-detailing
 import { FormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { VendorLoginLandingPageComponent } from './vendor-login-landing-page/vendor-login-landing-page.component';
+import { NgOtpInputModule } from 'ng-otp-input';
 
 
 
@@ -28,7 +29,8 @@ import { VendorLoginLandingPageComponent } from './vendor-login-landing-page/ven
     CommonModule,
     CommonComponentsModule,
     FormsModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    NgOtpInputModule
   ],
   
 })

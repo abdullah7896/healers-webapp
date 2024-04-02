@@ -48,8 +48,8 @@
         <div>
           <button type="submit"
             class="flex w-[378px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:   bg-[#006A6A] "
-            (click)="onSubmit()">
-            Sign in</button>
+            (click)="onSubmit()" (click)="toggleloading()" [disabled]="isloading">
+            Sign in <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
         </div>
         <div class="">
           <div class="text-sm text-center">
@@ -92,7 +92,7 @@
           </form>
           <button type="submit"
             class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
-            (click)="ForgotPassword()">Submit</button>
+            (click)="ForgotPassword()" (click)="toggleloading()">Submit <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
           <button class="text-[#006CF0] text-[14px] font-medium py-4 underline" (click)="navigatetosignup()">
             <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
             login
@@ -121,28 +121,29 @@
               </div>
             </div>
             <div>
-              <form class=" pl-[1rem]">
-                <div class="flex justify-center gap-[1rem]">
-                  <input class="w-12 h-12 text-center border  shadow-sm "
-                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                    (change)="handleVerificationCodeChange(0,$event)" required>
-                  <input class="w-12 h-12 text-center border  shadow-sm "
-                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                    (change)="handleVerificationCodeChange(1,$event)" required>
-                  <input class="w-12 h-12 text-center border  shadow-sm "
-                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                    (change)="handleVerificationCodeChange(2,$event)" required>
-                  <input class="w-12 h-12 text-center border  shadow-sm "
-                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                    (change)="handleVerificationCodeChange(3,$event)" required>
-                  <input class="w-12 h-12 text-center border  shadow-sm "
-                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                    (change)="handleVerificationCodeChange(4,$event)" required>
-                  <input class="w-12 h-12 text-center border  shadow-sm "
-                    type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                    (change)="handleVerificationCodeChange(5,$event)" required>
+              <form class="">
+                <!-- <div class="flex justify-center gap-[1rem]"> -->
+                  <!-- <input class="w-12 h-12 text-center border  shadow-sm " -->
+                    <!-- type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                    <!-- (change)="handleVerificationCodeChange(0,$event)" required> -->
+                  <!-- <input class="w-12 h-12 text-center border  shadow-sm " -->
+                    <!-- type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                    <!-- (change)="handleVerificationCodeChange(1,$event)" required> -->
+                  <!-- <input class="w-12 h-12 text-center border  shadow-sm " -->
+                    <!-- type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                    <!-- (change)="handleVerificationCodeChange(2,$event)" required> -->
+                  <!-- <input class="w-12 h-12 text-center border  shadow-sm " -->
+                    <!-- type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                    <!-- (change)="handleVerificationCodeChange(3,$event)" required> -->
+                  <!-- <input class="w-12 h-12 text-center border  shadow-sm " -->
+                    <!-- type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                    <!-- (change)="handleVerificationCodeChange(4,$event)" required> -->
+                  <!-- <input class="w-12 h-12 text-center border  shadow-sm " -->
+                    <!-- type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                    <!-- (change)="handleVerificationCodeChange(5,$event)" required> -->
 
-                </div>
+                <!-- </div> -->
+                <ng-otp-input  [config]="{length:6}" (change)="handleVerificationCodeChange($event)"></ng-otp-input>
 
               </form>
             </div>
@@ -153,7 +154,7 @@
       </div>
       <div class="text-right">
         <span class="text-[12px]">Didn't get a code?&nbsp;&nbsp;</span>
-        <button class=" font-semibold leading-6 text-indigo-600 hover:text-indigo-500 text-[12px] mr-[74px]"
+        <button class=" font-semibold leading-6 text-indigo-600 hover:text-indigo-500 underline text-[12px] mr-[74px]"
           (click)="ResendForgotPasswordOTP()">Resend</button>
       </div>
       <div>
@@ -214,8 +215,8 @@
       <button type="submit" class="flex  justify-center rounded-md px-3 py-1.5 
           text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 
           focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A] w-[373px]"
-        (click)="ConfirmForgotPassword()">Update
-        password</button>
+        (click)="ConfirmForgotPassword()" (click)="toggleloading()" [disabled]="isloading">Update
+        password <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
       <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline ml-[-3px] mt-[23px]"
         (click)="navigatetosignup()">
         <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"

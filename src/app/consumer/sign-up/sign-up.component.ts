@@ -18,9 +18,15 @@ export class SignUpComponent {
   showEmptyEmail = false
   showEmptyPassword = false
 
-  handleVerificationCodeChange(index: number, event: Event) {
+  // handleVerificationCodeChange(index: number, event: Event) {
+    // const inputValue = (event.target as HTMLInputElement).value;
+    // this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+  // }
+  handleVerificationCodeChange(event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+    this.confirmSignUp.verificationCode += inputValue;
+    // Convert the OTP code to a string
+    this.confirmSignUp.verificationCode = String(this.confirmSignUp.verificationCode);
   }
 
   isValidated(response: any): boolean {
@@ -74,6 +80,7 @@ export class SignUpComponent {
   ConfirmSignUp() {
     this.confirmSignUp.password = this.signUp.password
     this.confirmSignUp.email = this.signUp.email;
+    this.isloading = true;
     this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
       console.log('Email send successful', response);
       if (response.status) {
@@ -84,6 +91,9 @@ export class SignUpComponent {
       }
     }, error => {
       console.error('Email send failed', error);
+    }).add(() => {
+      // Reset loading to false after the API call is completed
+      this.isloading = false;
     });
   }
   ResendSignUpOTP() {
@@ -117,5 +127,8 @@ isloading=false;
 toggleloading(){
   this.isloading=true;
 }
+
+
+
 
 }

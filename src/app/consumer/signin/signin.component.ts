@@ -5,12 +5,14 @@ import { apiService } from 'src/app/Service/apiService';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
+
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
   forgetPasswordVisible = false;
   loginData = { email: '', password: '' };
@@ -21,12 +23,17 @@ export class SigninComponent {
   response = { status: true, message: '' }
   showEmptyEmail = false
 
-  handleVerificationCodeChange(index: number, event: Event) {
+  // handleVerificationCodeChange(index: number, event: Event) {
+  // const inputValue = (event.target as HTMLInputElement).value;
+  // // this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+  // }
+  handleVerificationCodeChange(event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+    this.confirmForgotPassword.verificationCode += inputValue;
+    // Convert the OTP code to a string
+    this.confirmForgotPassword.verificationCode = String(this.confirmForgotPassword.verificationCode);
   }
-
-  toggleForgetPassword() {
+ toggleForgetPassword() {
     this.forgetPasswordVisible = !this.forgetPasswordVisible;
     this.showForgetSection = !this.showForgetSection;
   }
@@ -43,6 +50,7 @@ export class SigninComponent {
   }
 
   ForgotPassword() {
+    this.isloading = true;
     this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
       const isValidatedResponse = this.isValidated(response);
       console.log('isValidatedResponse', isValidatedResponse);
@@ -59,10 +67,14 @@ export class SigninComponent {
           this.showEmptyEmail = !this.showEmptyEmail
         }
         console.error('Email send failed', error);
+      }).add(() => {
+
+        this.isloading = false;
       });
   }
 
   ConfirmForgotPassword() {
+    this.isloading = true;
     var storedemail = localStorage.getItem('userPasswordEmail')
     if (storedemail)
       this.confirmForgotPassword.email = storedemail;
@@ -71,6 +83,9 @@ export class SigninComponent {
     }, error => {
       // Handle login error here
       console.error('Change Password failed', error);
+    }).add(() => {
+
+      this.isloading = false;
     });
   }
   ResendForgotPasswordOTP() {
@@ -84,32 +99,39 @@ export class SigninComponent {
       });
   }
   Login() {
-    const { email, password } = this.loginData;
-    const loginData = { email, password, userType: 0 };
-    // Validate Fields
-    this.formSubmitted = true
-    if (!this.loginData.email || !this.loginData.password) {
-      console.error('Email and password are required.');
-      return;
-    }
-   
-    this.apiService.login(loginData).subscribe(response => {
-      // Validate API Status
-      const { status, message } = response;
-      if (!status) {
-        this.response = { status, message };
+    this.isloading = true;
+    setTimeout(() => {
+      const { email, password } = this.loginData;
+      const loginData = { email, password, userType: 1 };
+      // const { email, password } = this.loginData;
+      // const loginData = { email, password, userType: 0 };
+      // Validate Fields
+      this.formSubmitted = true
+      if (!this.loginData.email || !this.loginData.password) {
+        console.error('Email and password are required.');
+        this.isloading = false;
         return;
       }
-      
-    console.log('Login successful', response);
-    //this.router.navigate(['/dashboard']); // Example redirect to dashboard
-    }, error => {
-      // Handle login error here
-    
-      console.error('Login failed', error);
-      
-      // Display error message or take appropriate action
-    });
+
+      this.apiService.login(loginData).subscribe(response => {
+        // Validate API Status
+        this.isloading = false;
+        const { status, message } = response;
+        if (!status) {
+          this.response = { status, message };
+          return;
+        }
+
+        console.log('Login successful', response);
+        //this.router.navigate(['/dashboard']); // Example redirect to dashboard
+      }, error => {
+        // Handle login error here
+        this.isloading = false;
+        console.error('Login failed', error);
+
+        // Display error message or take appropriate action
+      });
+    }, 2000);
   }
   onSubmit() {
     this.showOtpSection = true;
@@ -155,10 +177,43 @@ export class SigninComponent {
 
   }
 
-isloading=false;
-toggleloading(){
-  this.isloading=true;
-}
+  isloading = false;
+  toggleloading() {
+    this.isloading = true;
+  }
+  // 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

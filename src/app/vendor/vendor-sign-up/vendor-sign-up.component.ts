@@ -43,9 +43,15 @@ export class VendorSignUpComponent implements OnInit {
     this.GetAllCategory();
   }
 
-  handleVerificationCodeChange(index: number, event: Event) {
+  // handleVerificationCodeChange(index: number, event: Event) {
+    // const inputValue = (event.target as HTMLInputElement).value;
+    // this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+  // }
+  handleVerificationCodeChange(event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+    this.confirmSignUp.verificationCode += inputValue;
+    // Convert the OTP code to a string
+    this.confirmSignUp.verificationCode = String(this.confirmSignUp.verificationCode);
   }
 
   isValidated(response: any): boolean {
@@ -70,6 +76,7 @@ export class VendorSignUpComponent implements OnInit {
   }
 
   SignUp() {
+    this.isloading = true;
     // Split full name into first name and last name
     const nameParts = this.fullName.indexOf(' ');
     console.log('Name Parts:', nameParts);
@@ -97,7 +104,9 @@ export class VendorSignUpComponent implements OnInit {
       }
       console.log('Login failed', error);
       // Display error message or take appropriate action
-    });
+    }).add(()=>{
+      this.isloading = false;
+    })
   }
 
   handleUserNotConfirmedError() {
@@ -106,7 +115,7 @@ export class VendorSignUpComponent implements OnInit {
   }
 
   ConfirmSignUp() {
-
+    this.isloading = true;
     this.confirmSignUp.password = this.signUp.password
     this.confirmSignUp.email = this.signUp.email;
     this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
@@ -119,7 +128,9 @@ export class VendorSignUpComponent implements OnInit {
       }
     }, error => {
       console.error(' failed', error);
-    });
+    }).add(()=>{
+      this.isloading = false;
+    })
   }
   ResendSignUpOTP() {
     this.apiService.ResendSignUpOTP(this.signUp.email).subscribe(response => {
@@ -173,6 +184,10 @@ export class VendorSignUpComponent implements OnInit {
     window.location.reload();
   }
 
-
+  isloading=false;
+  toggleloading(){
+    this.isloading=true;
+  }
+  
 
 }

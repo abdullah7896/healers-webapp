@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { apiService } from 'src/app/Service/apiService';
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
+
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
   forgetPasswordVisible = false;
   loginData = { email: '', password: '' };
@@ -22,12 +23,17 @@ export class SigninComponent {
   response = { status: true, message: '' }
   showEmptyEmail = false
 
-  handleVerificationCodeChange(index: number, event: Event) {
+  // handleVerificationCodeChange(index: number, event: Event) {
+  // const inputValue = (event.target as HTMLInputElement).value;
+  // // this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+  // }
+  handleVerificationCodeChange(event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+    this.confirmForgotPassword.verificationCode += inputValue;
+    // Convert the OTP code to a string
+    this.confirmForgotPassword.verificationCode = String(this.confirmForgotPassword.verificationCode);
   }
-
-  toggleForgetPassword() {
+ toggleForgetPassword() {
     this.forgetPasswordVisible = !this.forgetPasswordVisible;
     this.showForgetSection = !this.showForgetSection;
   }
@@ -62,7 +68,7 @@ export class SigninComponent {
         }
         console.error('Email send failed', error);
       }).add(() => {
-       
+
         this.isloading = false;
       });
   }
@@ -78,7 +84,7 @@ export class SigninComponent {
       // Handle login error here
       console.error('Change Password failed', error);
     }).add(() => {
-      
+
       this.isloading = false;
     });
   }
@@ -97,35 +103,35 @@ export class SigninComponent {
     setTimeout(() => {
       const { email, password } = this.loginData;
       const loginData = { email, password, userType: 1 };
-    // const { email, password } = this.loginData;
-    // const loginData = { email, password, userType: 0 };
-    // Validate Fields
-    this.formSubmitted = true
-    if (!this.loginData.email || !this.loginData.password) {
-      console.error('Email and password are required.');
-      this.isloading = false;
-      return;
-    }
-   
-    this.apiService.login(loginData).subscribe(response => {
-      // Validate API Status
-      this.isloading = false;
-      const { status, message } = response;
-      if (!status) {
-        this.response = { status, message };
+      // const { email, password } = this.loginData;
+      // const loginData = { email, password, userType: 0 };
+      // Validate Fields
+      this.formSubmitted = true
+      if (!this.loginData.email || !this.loginData.password) {
+        console.error('Email and password are required.');
+        this.isloading = false;
         return;
       }
-      
-    console.log('Login successful', response);
-    //this.router.navigate(['/dashboard']); // Example redirect to dashboard
-    }, error => {
-      // Handle login error here
-      this.isloading = false;
-      console.error('Login failed', error);
-      
-      // Display error message or take appropriate action
-    });
-    },2000);
+
+      this.apiService.login(loginData).subscribe(response => {
+        // Validate API Status
+        this.isloading = false;
+        const { status, message } = response;
+        if (!status) {
+          this.response = { status, message };
+          return;
+        }
+
+        console.log('Login successful', response);
+        //this.router.navigate(['/dashboard']); // Example redirect to dashboard
+      }, error => {
+        // Handle login error here
+        this.isloading = false;
+        console.error('Login failed', error);
+
+        // Display error message or take appropriate action
+      });
+    }, 2000);
   }
   onSubmit() {
     this.showOtpSection = true;
@@ -171,11 +177,11 @@ export class SigninComponent {
 
   }
 
-isloading=false;
-toggleloading(){
-  this.isloading=true;
-}
-// 
+  isloading = false;
+  toggleloading() {
+    this.isloading = true;
+  }
+  // 
 
 
 

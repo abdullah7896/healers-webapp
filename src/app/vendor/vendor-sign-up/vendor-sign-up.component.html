@@ -76,7 +76,7 @@
                 <div>
                     <button type="submit"
                         class="flex w-[105%] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] "
-                        (click)="SignUp()" (click)="toggleloading()">
+                        (click)="SignUp()" (click)="toggleloading()" [disabled]="isloading">
                         Sign up <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif"
                             alt=""></button>
                 </div>
@@ -103,26 +103,28 @@
                         Please verify to continue.
                     </p>
                     <form class="mt-4 space-y-4 mt-5 space-y-5">
-                        <div class="flex justify-center gap-4 mb-6">
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
-                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                                (change)="handleVerificationCodeChange(0,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
-                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                                (change)="handleVerificationCodeChange(1,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
-                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                                (change)="handleVerificationCodeChange(2,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
-                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                                (change)="handleVerificationCodeChange(3,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
-                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                                (change)="handleVerificationCodeChange(4,$event)" required>
-                            <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1"
-                                pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code"
-                                (change)="handleVerificationCodeChange(5,$event)" required>
-                        </div>
+                        <!-- <div class="flex justify-center gap-4 mb-6"> -->
+                        <!-- <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" -->
+                        <!-- pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                        <!-- (change)="handleVerificationCodeChange(0,$event)" required> -->
+                        <!-- <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" -->
+                        <!-- pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                        <!-- (change)="handleVerificationCodeChange(1,$event)" required> -->
+                        <!-- <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" -->
+                        <!-- pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                        <!-- (change)="handleVerificationCodeChange(2,$event)" required> -->
+                        <!-- <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" -->
+                        <!-- pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                        <!-- (change)="handleVerificationCodeChange(3,$event)" required> -->
+                        <!-- <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" -->
+                        <!-- pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                        <!-- (change)="handleVerificationCodeChange(4,$event)" required> -->
+                        <!-- <input class="w-12 h-12 text-center border  shadow-sm " type="text" maxlength="1" -->
+                        <!-- pattern="[0-9]" inputmode="numeric" autocomplete="one-time-code" -->
+                        <!-- (change)="handleVerificationCodeChange(5,$event)" required> -->
+                        <!-- </div> -->
+                        <ng-otp-input [config]="{length:6}"
+                            (change)="handleVerificationCodeChange($event)"></ng-otp-input>
                         <p class="text-[12px] font-normal ml-[224px] pb-[10px] ">Didn’t receive the code? <button
                                 class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
 
@@ -131,7 +133,7 @@
                     <button type="submit"
                         class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline 
                             focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-[#006A6A]"
-                        (click)="ConfirmSignUp() " (click)="toggleloading()">Verify <img *ngIf="isloading"
+                        (click)="ConfirmSignUp() " (click)="toggleloading()" [disabled]="isloading">Verify <img *ngIf="isloading"
                             class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
                     <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="refreshPage()">
                         <img src="assets/Icon-Wrapper.jpg" alt="Icon"

@@ -25,9 +25,15 @@ export class VendorsigninComponent {
   confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1 };
   showEmptyEmail = false
 
-  handleVerificationCodeChange(index: number, event: Event) {
+  // handleVerificationCodeChange(index: number, event: Event) {
+    // const inputValue = (event.target as HTMLInputElement).value;
+    // this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+  // }
+  handleVerificationCodeChange(event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
+    this.confirmForgotPassword.verificationCode += inputValue;
+    // Convert the OTP code to a string
+    this.confirmForgotPassword.verificationCode = String(this.confirmForgotPassword.verificationCode);
   }
 
   handlevendorSigninOtpChange(index: number, event: Event) {

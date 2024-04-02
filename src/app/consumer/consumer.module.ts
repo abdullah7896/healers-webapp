@@ -6,6 +6,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SigninComponent } from './signin/signin.component';
 import { ConsumerPreferencesComponent } from './consumer-preferences/consumer-preferences.component';
 import { FormsModule } from '@angular/forms';
+import { NgOtpInputModule } from 'ng-otp-input';
 
 
 
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CommonComponentsModule,
-    FormsModule
+    FormsModule,
+    NgOtpInputModule
   ]
 })
 export class ConsumerModule { }

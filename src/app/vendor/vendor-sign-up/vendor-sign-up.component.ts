@@ -43,9 +43,15 @@ export class VendorSignUpComponent implements OnInit {
     this.GetAllCategory();
   }
 
-  handleVerificationCodeChange(index: number, event: Event) {
+  // handleVerificationCodeChange(index: number, event: Event) {
+    // const inputValue = (event.target as HTMLInputElement).value;
+    // this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+  // }
+  handleVerificationCodeChange(event: Event) {
     const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+    this.confirmSignUp.verificationCode += inputValue;
+    // Convert the OTP code to a string
+    this.confirmSignUp.verificationCode = String(this.confirmSignUp.verificationCode);
   }
 
   isValidated(response: any): boolean {

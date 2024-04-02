@@ -10,6 +10,7 @@ import { HomeModule } from './home/home.module';
 import { ConsumerModule } from './consumer/consumer.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgOtpInputModule } from 'ng-otp-input';
 
 
 
@@ -33,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     HomeModule ,
     HttpClientModule,
     FormsModule,
+    NgOtpInputModule
    
   ],
 

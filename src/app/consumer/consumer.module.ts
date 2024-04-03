@@ -7,6 +7,8 @@ import { SigninComponent } from './signin/signin.component';
 import { ConsumerPreferencesComponent } from './consumer-preferences/consumer-preferences.component';
 import { FormsModule } from '@angular/forms';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 
 
@@ -27,7 +29,9 @@ import { NgOtpInputModule } from 'ng-otp-input';
     CommonModule,
     CommonComponentsModule,
     FormsModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    SlickCarouselModule
+    
   ]
 })
 export class ConsumerModule { }

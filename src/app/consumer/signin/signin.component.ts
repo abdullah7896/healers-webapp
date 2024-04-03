@@ -27,11 +27,13 @@ export class SigninComponent {
   // const inputValue = (event.target as HTMLInputElement).value;
   // // this.confirmForgotPassword.verificationCode = this.confirmForgotPassword.verificationCode.substring(0, index) + inputValue + this.confirmForgotPassword.verificationCode.substring(index + 1);
   // }
-  handleVerificationCodeChange(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.confirmForgotPassword.verificationCode += inputValue;
-    // Convert the OTP code to a string
-    this.confirmForgotPassword.verificationCode = String(this.confirmForgotPassword.verificationCode);
+  // handleVerificationCodeChange(event: Event) {
+    // const inputValue = (event.target as HTMLInputElement).value;
+    // this.confirmForgotPassword.verificationCode += inputValue;
+    //  this.confirmForgotPassword.verificationCode = String(this.confirmForgotPassword.verificationCode);
+  // }
+  handleVerificationCodeChange(inputValue: string) {
+    this.confirmForgotPassword.verificationCode = inputValue;
   }
  toggleForgetPassword() {
     this.forgetPasswordVisible = !this.forgetPasswordVisible;

@@ -29,6 +29,9 @@ export class apiService extends BaseHttpService {
     };
     ResendSignUpOTP(resendSignUpOTP: any): Observable<any> {
         return this.post(`${this.apiEndPoints.URL_ResendSignUpOTP}?email=${resendSignUpOTP}`, null)
-    }
+    };
+    ConsumerPreference(consumerPreference: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_ConsumerPreference}`, consumerPreference)
+    };
 
 }

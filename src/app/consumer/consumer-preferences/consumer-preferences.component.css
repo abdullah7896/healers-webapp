@@ -45,3 +45,6 @@
   }
 
 
+  .categorySelected {
+    border: 2px solid #006CF0; 
+}

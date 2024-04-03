@@ -12,7 +12,8 @@ export class apiEndPoint {
     URL_GetAllCategory:string='';
     URL_ResendForgotPasswordOTP:string='';
     URL_ConfirmSignUp:string='';
-    URL_ResendSignUpOTP:string=''
+    URL_ResendSignUpOTP:string='';
+    URL_ConsumerPreference:string=''
     constructor() {
         this.initializeMembers()
     }
@@ -26,5 +27,7 @@ export class apiEndPoint {
         this.URL_ResendForgotPasswordOTP=`${this.URL_APIBase}Auth/ForgotPassword`;
         this.URL_ConfirmSignUp=`${this.URL_APIBase}Auth/ConfirmSignUp`;
         this.URL_ResendSignUpOTP=`${this.URL_APIBase}Auth/ResendSignUpOTP`;
+        this.URL_ConsumerPreference=`${this.URL_APIBase}Consumer/CreateConsumerPreference`;
+
     }
 }

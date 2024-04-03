@@ -160,7 +160,7 @@
                 <!-- inputmode="numeric" autocomplete="one-time-code"  (change)="handleVerificationCodeChange(5,$event)" -->
                 <!-- required> -->
                 <!-- </div> -->
-                <ng-otp-input [config]="{length:6}" (change)="handleVerificationCodeChange($event)"></ng-otp-input>
+                <ng-otp-input [config]="{length:6}" (onInputChange)="handleVerificationCodeChange($event)"></ng-otp-input>
 
               </form>
             </div>

@@ -165,7 +165,8 @@
                         <!-- (change)="handleVerificationCodeChange(5,$event)" required> -->
                         <!-- </div> -->
                         <ng-otp-input [config]="{length:6}"
-                            (change)="handleVerificationCodeChange($event)"></ng-otp-input>
+                            (onInputChange)="handleVerificationCodeChange($event)"></ng-otp-input>
+                            
 
                         <p class="text-[12px] font-normal float-right">Didn’t receive the code? <button
                                 class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>

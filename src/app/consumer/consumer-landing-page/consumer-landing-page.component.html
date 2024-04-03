@@ -6,40 +6,69 @@
         <div class="flex w-full flex-wrap items-center justify-between px-6">
             <div class="flex items-center">
                 <!-- Navbar Brand -->
-                <button class="text-primary dark:text-primary-400" >
-                    <img src="assets/logo white.png" alt="" class="w-[236px] h-[46.91px] ml-[80px]" (click)="navigateTohomepage()">
+                <button class="text-primary dark:text-primary-400">
+                    <img src="assets/logo white.png" alt="" class="w-[236px] h-[46.91px] ml-[80px]"
+                        (click)="navigateTohomepage()">
                 </button>
             </div>
-            <!-- Right elements --> 
-             <div class="my-1 flex items-center lg:my-0 lg:ml-auto">
-                <button (click)="  navigateTosigninconsumer()" 
+            <!-- Right elements -->
+            <div class="my-1 flex items-center lg:my-0 lg:ml-auto">
+                <button (click)="  navigateTosigninconsumer()"
                     class=" text-[#FFFFFF] mr-2 inline-block rounded px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out  focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:text-primary-400 dark:hover:bg-neutral-700 dark:hover:bg-opacity-60 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
-                    data-te-ripple-init data-te-ripple-color="light"  >
+                    data-te-ripple-init data-te-ripple-color="light">
                     Log In
-             </button>
-                <button type="button" data-te-ripple-init data-te-ripple-color="light" (click)="navigatetosignup()" class="button1 text-[#FFFFFF] ">
-                    Sign up for Now 
+                </button>
+                <button type="button" data-te-ripple-init data-te-ripple-color="light" (click)="navigatetosignup()"
+                    class="button1 text-[#FFFFFF] ">
+                    Sign up for Now
                 </button>
             </div>
 
         </div>
 
     </nav>
-     <video class="min-w-full min-h-full absolute object-cover" src="assets/healers vedio.mp4" type="video/mp4" autoplay
-        muted loop></video>
+    <!-- <video class="min-w-full min-h-full absolute object-cover" src="assets/healers vedio.mp4" type="video/mp4" autoplay -->
+    <!-- muted loop></video> -->
+    <ngx-slick-carousel class="carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let slide of slides">
+          <img [src]="slide.img" alt="slide image" />
+        </div>
+      </ngx-slick-carousel>
+
+
+    
+    
+    
+    
+    
+    
+
+
+
 
     <div class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
         <div class="flex h-full items-center justify-center">
             <div class="px-6 text-center text-white md:px-12 mb-[133px]">
-                <h1 class="mt-4 mb-8 text-[50px] font-bold leading-[65px]  w-[559px] h-[130px] text-center size-[72px]" >
+                <h1 class="mt-4 mb-8 text-[50px] font-bold leading-[65px]  w-[559px] h-[130px] text-center size-[72px]">
                     Find an ideal healing experience. <br />
                 </h1>
 
-                <p
-                  class="text-center text-[19px] leading-[32px] tracking-[-0.2px] font-extralight opacity-[70%]">
-                  Explore a world of wellness options and embark on <br> your journey to healing.</p>
+                <p class="text-center text-[19px] leading-[32px] tracking-[-0.2px] font-extralight opacity-[70%]">
+                    Explore a world of wellness options and embark on <br> your journey to healing.</p>
+
+                <div
+                    class="pt-3 relative  mt-[25px] text-gray-600 w-[100%] rounded-lg bg-[#F28500] pb-2 justify-evenly flex ">
+                    <input
+                        class="border-2  border-gray-300 w-[35%] bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                        type="search" name="search" placeholder="Search">
+                    <input
+                        class="border-2 border-gray-300 w-[35%] bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                        type="search" name="search" placeholder="location">
+                    <button type="button"
+                        class="text-white bg-[#006CF0]  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Search</button>
+
+                </div>
             </div>
-            
         </div>
     </div>
 </div>
@@ -103,7 +132,7 @@
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col  w-full mb-20">
             <h1 class="text-2xl font-bold  mb-4  tracking-widest">Explore Categories</h1>
-            
+
         </div>
         <div class="flex flex-wrap -m-4">
             <div class="p-4 lg:w-1/2">

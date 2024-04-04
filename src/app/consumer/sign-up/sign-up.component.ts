@@ -135,7 +135,9 @@ toggleloading(){
   this.isloading=true;
 }
 
-
+navigatetoconsumer() {
+  this.router.navigate(['/consumer']);
+}
 
 
 }

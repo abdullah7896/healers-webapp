@@ -107,7 +107,7 @@ export class VendorsigninComponent {
         console.error('Login failed', error);
       });
   }
-
+   
   onSubmit() {
     this.isloading = true;
     setTimeout(() => {
@@ -218,6 +218,9 @@ export class VendorsigninComponent {
   navigatetoprofiledetailing() {
     this.router.navigate(['/ProfileDetailing']);
   }
+  navigatetovendors() {
+    this.router.navigate(['/vendors']);
+  }
 
   refreshPage() {
     window.location.reload();
@@ -226,4 +229,13 @@ export class VendorsigninComponent {
   toggleloading() {
     this.isloading = true;
   }
+
+  checkboxEnabled = false;
+  enableCheckbox() {
+    this.checkboxEnabled = true;
+  }
+  // showSignInForm = true;
+  // toggleSignInForm() {
+    // this.showSignInForm = !this.showSignInForm;
+  // }
 }

@@ -10,14 +10,14 @@
                 <div>
                     <label for="fullName" class="block text-sm font-medium leading-6 text-color">Full name</label>
                     <div class="mt-2">
-                        <input placeholder="Full Name" type="text" class="w-[400px]" [(ngModel)]="fullName"
+                        <input placeholder="Enter your full name" type="text" class="w-[400px]" [(ngModel)]="fullName"
                             name="fullName" />
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-color">Email</label>
                     <div class="mt-2">
-                        <input placeholder="Email" type="text" class="w-[400px]" [(ngModel)]="signUp.email"
+                        <input placeholder="Enter your email" type="text" class="w-[400px]" [(ngModel)]="signUp.email"
                             name="email" />
                     </div>
                     <div *ngIf="showEmailAlreadyExists">
@@ -45,18 +45,17 @@
                     <label for="phoneNumber" class="block text-sm font-medium leading-6 text-color">Contact
                         No</label>
                     <div class="mt-2">
-                        <input placeholder="Contact Number" type="number" class="w-[400px]" [(ngModel)]="phoneNumber"
+                        <input placeholder="Enter your contact number" type="number" class="w-[400px]" [(ngModel)]="phoneNumber"
                             name="phoneNumber" />
                     </div>
                 </div>
-
                 <div>
                     <div class="flex items-center justify-between">
                         <label for="password" class="block text-sm font-medium leading-6 text-color">Password</label>
 
                     </div>
                     <div class="mt-2">
-                        <input placeholder="Password" type="password" class="w-[400px]" [(ngModel)]="signUp.password"
+                        <input placeholder="Enter your password" type="password" class="w-[400px]" [(ngModel)]="signUp.password"
                             name="password" />
                     </div>
                     <div *ngIf="showEmptyPassword">
@@ -75,7 +74,7 @@
                 </div> -->
                 <div>
                     <button type="submit"
-                        class="flex w-[105%] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] "
+                        class="flex w-[101%] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] "
                         (click)="SignUp()" (click)="toggleloading()" [disabled]="isloading">
                         Sign up <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif"
                             alt=""></button>
@@ -86,8 +85,8 @@
                 <button class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
                     (click)="navigatetosignin()">Sign In</button>
             </p>
-            <button (click)="navigatetohome()" type="button"
-                class="w-full mt-[10px] font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
+            <button (click)="navigatetovendors()" type="button"
+                class="w-[40%] mt-[10px] font-semibold flex items-center justify-center  px-3 py-3 text-sm text-[#434343]  duration-200 bg-[#ffffff] border rounded-[2px] gap-x-2   dark:bg-[#434343]  dark:text-[#434343] border-[#D9D9D9]">
                 <img src="assets/back button.png" alt="">
                 <span>Back to home</span>
             </button>

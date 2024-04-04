@@ -151,14 +151,18 @@ export class SigninComponent {
   navigatetohome() {
     this.router.navigate(['']);
   }
-
-  // 
+  //
+  
   checkboxChecked = {
     characters: false,
     uppercase: false,
     numeric: false,
     special: false
   };
+  
+  
+  
+
   checkPasswordStrength() {
     const password = this.confirmForgotPassword.password;
     // Reset all checkboxes
@@ -190,7 +194,43 @@ export class SigninComponent {
     this.isloading = true;
   }
   // 
+  checkboxEnabled = false;
 
+  enableCheckbox() {
+    this.checkboxEnabled = true;
+  }
+
+  
+navigatetoconsumer() {
+  this.router.navigate(['/consumer']);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+  
+ 
+
+ 
+ 
+ 
+ 
+ 
+  
+  
 
 
 

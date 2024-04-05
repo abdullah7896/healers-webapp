@@ -10,7 +10,7 @@
           <div>
             <label for="email" class="block text-sm leading-6 text-color">Email</label>
             <div class="mt-2">
-              <input placeholder="Email" type="text" style="width: 400px;" [(ngModel)]="loginData.email" name="email" />
+              <input placeholder="Enter your email" type="text" style="width: 400px;" [(ngModel)]="loginData.email" name="email" />
             </div>
             <div *ngIf="formSubmitted">
               <p class="text-red-500 text-xs mt-2" *ngIf="!loginData.email">
@@ -24,7 +24,7 @@
 
             </div>
             <div class="mt-2">
-              <input placeholder="Password" type="password" style="width: 400px;" class="w-400px"
+              <input placeholder="Enter yourPassword" type="password" style="width: 400px;" class="w-400px"
                 [(ngModel)]="loginData.password" name="password" />
             </div>
             <div *ngIf="formSubmitted">
@@ -38,7 +38,8 @@
           </div>
 
 
-        </form>
+        
+        
         <button type="submit"
           class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
           style="background: rgba(242, 133, 0, 1); " (click)="Login()" (click)="toggleloading()" [disabled]="isloading">
@@ -47,7 +48,9 @@
           <button class="font-semibold text-indigo-600 hover:text-indigo-500 ml-[149px] mt-[33px]"
             (click)="toggleForgetPassword()">Forgot password?</button>
         </div>
+      </form>
       </div>
+    
 
 
 
@@ -61,13 +64,13 @@
         <!-- [routerLink]="['/landingPage']" -->
         <div style="width: 476px; height: 32px; gap: 5px;  justify-content: center;">
           <button type="button"
-            class="text-gray-900 bg-white  border border-[#D9D9D9] focus:ring-[#D9D9D9] focus:outline-none focus:ring-[#D9D9D9] font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#D9D9D9] dark:bg-[#D9D9D9] dark:border-[#D9D9D9] dark:text-white dark:hover:bg-[#D9D9D9] me-2 mb-2 rounded-[50px]"
+            class="text-[#262626]  bg-[#ffffff]  border border-[#D9D9D9] focus:ring-[#D9D9D9] focus:outline-none focus:ring-[#D9D9D9] font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#D9D9D9] dark:bg-[#D9D9D9] dark:border-[#D9D9D9] dark:text-[#ffffff] dark:hover:bg-[#D9D9D9] me-2 mb-2 rounded-[50px]"
             style=" width: 192px; height: 35px;   gap: 10px; ">
             <img src="assets/icons8-google 1.svg" alt="">
             Sign in with Google
           </button>
           <button type="button"
-          class="text-gray-900 bg-white  border border-[#D9D9D9] focus:ring-[#D9D9D9] focus:outline-none focus:ring-[#D9D9D9] font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#D9D9D9] dark:bg-[#D9D9D9] dark:border-[#D9D9D9] dark:text-white dark:hover:bg-[#D9D9D9] me-2 mb-2 rounded-[50px]"
+          class="text-[#262626] bg-[#ffffff]  border border-[#D9D9D9] focus:ring-[#D9D9D9] focus:outline-none focus:ring-[#D9D9D9] font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#D9D9D9] dark:bg-[#D9D9D9] dark:border-[#D9D9D9] dark:text-[#ffffff] dark:hover:bg-[#D9D9D9] me-2 mb-2 rounded-[50px]"
             style=" width: 200px; height: 34px;   gap: 10px;">
             <img src="assets/Facebook.png" alt="">
             Sign in with Facebook
@@ -79,7 +82,7 @@
               class="text-[#161C2D]">Don’t have an account?</span> Sign Up</button>
         </p>
       </div>
-      <button (click)="navigatetohome()" type="button"
+      <button (click)="navigatetoconsumer()" type="button"
         class="w-full mt-[10px] font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
         <img src="assets/back button.png" alt="">
         <span>Back to home</span>
@@ -180,7 +183,7 @@
           Password</label>
 
         <div class="mt-2">
-          <input type="password" style="width: 355px;" [(ngModel)]="confirmForgotPassword.password" name="password"
+          <input type="password" style="width: 355px;" placeholder="Enter your new password" [(ngModel)]="confirmForgotPassword.password" name="password"  (input)="enableCheckbox()" 
             (input)="checkPasswordStrength()" />
         </div>
       </div>
@@ -188,12 +191,12 @@
         <div>
           <div class="flex items-center justify-between text-color">
             <label for="password" class="block text-[12px]  leading-6  border-[
-            #00000042]  gap-[5.5px] w-[380px]">Correct
+            #00000042]  gap-[5.5px] w-[380px]">Confirm
               password </label>
 
           </div>
           <div class="mt-2">
-            <input type="password" style="width: 355px;" class="w-400px" />
+            <input type="password" placeholder="Enter your confirm password" style="width: 355px;" class="w-400px" />
           </div>
         </div>
       </form>
@@ -205,26 +208,26 @@
           <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">
             <input
               class="checkbox relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] rounded-[0.25rem] border-[0.5rem]"
-              type="checkbox" id="default-checkbox" value="option2" [checked]="checkboxChecked.characters" />
+              type="checkbox" id="default-checkbox" value="option2" [checked]="checkboxChecked.characters" [disabled]="!checkboxEnabled" onclick="return false;" />
             <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="default-checkbox">8+ Characters</label>
           </div>
           <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[-22px]">
             <input
               class=" ml-[65px] relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] "
-              type="checkbox" id="uppercaseCheckbox" value="option2" [checked]="checkboxChecked.uppercase" />
+              type="checkbox" id="uppercaseCheckbox" value="option2" [checked]="checkboxChecked.uppercase" [disabled]="!checkboxEnabled" onclick="return false;"/>
             <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Uppercase</label>
           </div>
         </div>
         <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem]">
           <input
             class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] "
-            type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.numeric" />
+            type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.numeric" [disabled]="!checkboxEnabled" onclick="return false;"/>
           <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1Numeric</label>
         </div>
         <div class="mb-[0.125rem] me-4 inline-block min-h-[1.5rem] ps-[1.5rem] ml-[96px]">
           <input
             class="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem]"
-            type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.special" />
+            type="checkbox" id="inlineCheckbox2" value="option2" [checked]="checkboxChecked.special" [disabled]="!checkboxEnabled" onclick="return false;"/>
           <label class="inline-block ps-[0.15rem] hover:cursor-pointer" for="inlineCheckbox2">1 Special
             Character</label>
         </div>

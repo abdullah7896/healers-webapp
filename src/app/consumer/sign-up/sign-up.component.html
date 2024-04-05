@@ -34,7 +34,7 @@
                         <label for="firstName" class="block text-sm font-medium leading-6 text-[#00000042]">First
                             Name</label>
                         <div class="mt-2">
-                            <input placeholder="" type="text" style="width: 400px;" [(ngModel)]="signUp.firstName"
+                            <input placeholder="Enter your first name" type="text" style="width: 400px;" [(ngModel)]="signUp.firstName"
                                 name="firstName" />
                         </div>
                     </div>
@@ -42,14 +42,14 @@
                         <label for="lastName" class="block text-sm font-medium leading-6 text-[#00000042]">Last
                             Name</label>
                         <div class="mt-2">
-                            <input placeholder="" type="text" style="width: 400px;" [(ngModel)]="signUp.lastName"
+                            <input placeholder="Enter your last name" type="text" style="width: 400px;" [(ngModel)]="signUp.lastName"
                                 name="lastName" />
                         </div>
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium leading-6 text-[#00000042]">Email</label>
                         <div class="mt-2">
-                            <input placeholder="Email" type="text" style="width: 400px;" [(ngModel)]="signUp.email"
+                            <input placeholder="Enter your email" type="text" style="width: 400px;" [(ngModel)]="signUp.email"
                                 name="email" />
                         </div>
                         <div *ngIf="showEmailAlreadyExists">
@@ -70,7 +70,7 @@
 
                         </div>
                         <div class="mt-2">
-                            <input placeholder="Password" type="password" style="width: 400px;" class="w-400px"
+                            <input placeholder="Enter your password" type="password" style="width: 400px;" class="w-400px"
                                 [(ngModel)]="signUp.password" name="password" />
                         </div>
                         <div *ngIf="showEmptyPassword">
@@ -89,7 +89,7 @@
                                 signed in</label>
 
                         </div> -->
-                </form>
+                
                 <button type="submit"
                     class="flex  justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] w-[400px]"
                     style="background: rgba(242, 133, 0, 1); " (click)="SignUp() " (click)="toggleloading()"
@@ -97,7 +97,7 @@
 
                     Sign Up <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt="">
                 </button>
-
+            </form>
             </div>
             <div class="mr-[-96px]">
                 <div class="flex items-center w-[83%] mt-[23px] mb-[23px]">
@@ -107,13 +107,13 @@
                 </div>
                 <div style="width: 476px; height: 32px; gap: 5px;  justify-content: center;">
                     <button type="button"
-                        class="text-gray-900 bg-white  border border-[#D9D9D9] focus:ring-[#D9D9D9] focus:outline-none focus:ring-[#D9D9D9] font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#D9D9D9] dark:bg-[#D9D9D9] dark:border-[#D9D9D9] dark:text-white dark:hover:bg-[#D9D9D9] me-2 mb-2 rounded-[50px]"
+                        class="text-[#262626] bg-[#ffffff] border border-[#D9D9D9] focus:ring-[#D9D9D9] focus:outline-none focus:ring-[#D9D9D9] font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#D9D9D9] dark:bg-[#D9D9D9] dark:border-[#D9D9D9] dark:text-[#ffffff] dark:hover:bg-[#D9D9D9] me-2 mb-2 rounded-[50px]"
                         style="width: 192px; height: 35px;   gap: 10px; ">
                         <img src="assets/icons8-google 1.svg" alt="">
                         Sign in with Google
                     </button>
                     <button type="button"
-                        class="text-gray-900 bg-white  border border-[#D9D9D9] focus:ring-[#D9D9D9] focus:outline-none focus:ring-[#D9D9D9] font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#D9D9D9] dark:bg-[#D9D9D9] dark:border-[#D9D9D9] dark:text-white dark:hover:bg-[#D9D9D9] me-2 mb-2 rounded-[50px]"
+                        class="text-[#262626] bg-[#ffffff]  border border-[#D9D9D9] focus:ring-[#D9D9D9] focus:outline-none focus:ring-[#D9D9D9] font-medium  text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#D9D9D9] dark:bg-[#D9D9D9] dark:border-[#D9D9D9] dark:text-[#ffffff] dark:hover:bg-[#D9D9D9] me-2 mb-2 rounded-[50px]"
                         style=" width: 200px; height: 34px;   gap: 10px;">
                         <img src="assets/Facebook.png" alt="">
                         Sign in with Facebook
@@ -126,7 +126,7 @@
                         In</button>
                 </p>
             </div>
-            <button (click)="navigatetohome()" type="button"
+            <button (click)="navigatetoconsumer()" type="button"
                 class="w-full mt-[10px] font-semibold flex items-center justify-center w-1/2 px-5 py-2 text-sm text-[#434343] transition-colors duration-200 bg-white border rounded-[2px] gap-x-2 sm:w-auto d dark:bg-gray-900  dark:text-gray-200 border-[#D9D9D9]">
                 <img src="assets/back button.png" alt="">
                 <span>Back to home</span>

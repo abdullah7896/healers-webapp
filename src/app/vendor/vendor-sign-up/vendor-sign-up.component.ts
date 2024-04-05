@@ -190,6 +190,8 @@ export class VendorSignUpComponent implements OnInit {
   toggleloading(){
     this.isloading=true;
   }
-  
+  navigatetovendors() {
+    this.router.navigate(['/vendors']);
+  }
 
 }

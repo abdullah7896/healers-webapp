@@ -6,19 +6,22 @@ import { environment } from '../../../environments/environment';
 export class apiEndPoint {
     URL_APIBase = '';
     URL_Login:string='';
+    URL_Refresh:string='';
     URL_ForgotPassword:string='';
     URL_ConfirmForgotPassword:string='';
     URL_SignUp:string='';
     URL_GetAllCategory:string='';
     URL_ResendForgotPasswordOTP:string='';
     URL_ConfirmSignUp:string='';
-    URL_ResendSignUpOTP:string=''
+    URL_ResendSignUpOTP:string='';
+    URL_ConsumerPreference:string=''
     constructor() {
         this.initializeMembers()
     }
     private initializeMembers() {
         this.URL_APIBase = environment.apiUrl;
         this.URL_Login=`${this.URL_APIBase}Auth/Login`;
+        this.URL_Refresh=`${this.URL_APIBase}Auth/RefreshAccessToken`;
         this.URL_ForgotPassword=`${this.URL_APIBase}Auth/ForgotPassword`;
         this.URL_ConfirmForgotPassword=`${this.URL_APIBase}Auth/ConfirmForgotPassword`;
         this.URL_SignUp=`${this.URL_APIBase}Auth/SignUp`;
@@ -26,5 +29,7 @@ export class apiEndPoint {
         this.URL_ResendForgotPasswordOTP=`${this.URL_APIBase}Auth/ForgotPassword`;
         this.URL_ConfirmSignUp=`${this.URL_APIBase}Auth/ConfirmSignUp`;
         this.URL_ResendSignUpOTP=`${this.URL_APIBase}Auth/ResendSignUpOTP`;
+        this.URL_ConsumerPreference=`${this.URL_APIBase}Consumer/CreateConsumerPreference`;
+
     }
 }

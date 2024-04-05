@@ -86,7 +86,12 @@ export class SignUpComponent {
     this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
       console.log('Email send successful', response);
       if (response.status) {
-        this.router.navigate(['/Preferences']);
+        if(response.result)
+        {
+          localStorage.setItem('userData',JSON.stringify(response.result[0]))
+          this.router.navigate(['/Preferences']);
+        }
+        
       }
       else {
         alert(response.message)

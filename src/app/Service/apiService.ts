@@ -9,6 +9,9 @@ export class apiService extends BaseHttpService {
     login(logina: any): Observable<any> {
         return this.post(`${this.apiEndPoints.URL_Login}`, logina)
     };
+    refreshAccessToken(refreshToken: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_Refresh}`, refreshToken)
+    };
     ForgotPassword(forgotPassword: any, userType: any): Observable<any> {
         return this.post(`${this.apiEndPoints.URL_ForgotPassword}?email=${forgotPassword}&userType=${userType}`, null)
     };
@@ -29,6 +32,9 @@ export class apiService extends BaseHttpService {
     };
     ResendSignUpOTP(resendSignUpOTP: any): Observable<any> {
         return this.post(`${this.apiEndPoints.URL_ResendSignUpOTP}?email=${resendSignUpOTP}`, null)
-    }
+    };
+    ConsumerPreference(consumerPreference: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.URL_ConsumerPreference}`, consumerPreference)
+    };
 
 }

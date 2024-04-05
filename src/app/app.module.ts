@@ -8,10 +8,11 @@ import { CommonComponentsModule } from './common-components/common-components.mo
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { ConsumerModule } from './consumer/consumer.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { AuthInterceptor } from './Http/authInterceptor';
 
 
 
@@ -39,10 +40,15 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     NgOtpInputModule,
     SlickCarouselModule
     
+
+    
    
   ],
-
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
   exports:[]
 })

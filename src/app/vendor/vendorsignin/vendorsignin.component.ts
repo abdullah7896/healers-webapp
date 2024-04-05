@@ -89,7 +89,7 @@ export class VendorsigninComponent {
       this.confirmForgotPassword.email = storedemail;
     this.apiService.ConfirmForgotPassword(this.confirmForgotPassword).subscribe(response => {
       console.log('Change Password successful', response);
-    }, error => {
+     }, error => {
       console.error('Change Password failed', error);
       // Display error message or take appropriate action
     }).add(() => {
@@ -214,7 +214,6 @@ export class VendorsigninComponent {
       console.error(' failed', error);
     });
   }
-
   navigatetoprofiledetailing() {
     this.router.navigate(['/ProfileDetailing']);
   }
@@ -234,4 +233,18 @@ export class VendorsigninComponent {
   enableCheckbox() {
     this.checkboxEnabled = true;
   }
+
+  
+  click(){
+  this.forgetPasswordUi= !this.forgetPasswordUi
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
 }

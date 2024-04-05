@@ -21,7 +21,8 @@ export class ConsumerLandingPageComponent {
       { img: "assets/p 4 (1).png" },
       { img: "assets/p 4 (3).png" },
       { img: "assets/p 4 (4).png" },
-      { img: "assets/p 5.png" }
+      { img: "assets/p 5.png" },
+      {img: "assets/p 4 (2).png"}
     ];
   slideConfig = {
     slidesToShow: 1,
@@ -29,7 +30,7 @@ export class ConsumerLandingPageComponent {
     dots: true,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 1000
+    autoplaySpeed: 3000
   };
   
 

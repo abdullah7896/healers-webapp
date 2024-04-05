@@ -2,6 +2,7 @@ input {
   outline: 0;
   border-width: 0 0 2px;
    border-color:#00000042
+   
   
 }
 input:focus {
@@ -10,4 +11,7 @@ input:focus {
 }
 .text-color{
   color: rgba(0, 0, 0, 0.6)
+}
+input{
+  font-family: initial;
 }

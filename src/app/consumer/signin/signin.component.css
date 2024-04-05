@@ -14,7 +14,9 @@ input {
   .checkbox{
   background-color: yellow !important;
   }
-  
+  input{
+    font-family: initial;
+  }
   
   
   

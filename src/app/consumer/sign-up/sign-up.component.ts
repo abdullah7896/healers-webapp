@@ -28,6 +28,9 @@ export class SignUpComponent {
   //  }
   handleVerificationCodeChange(inputValue: string) {
     this.confirmSignUp.verificationCode = inputValue;
+    // if (inputValue.length === 6) {
+      // this.confirmSignUp.verificationCode = inputValue;
+    // }
   }
    // this.confirmSignUp.verificationCode = String(this.confirmSignUp.verificationCode);
 

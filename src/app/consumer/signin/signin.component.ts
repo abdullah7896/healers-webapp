@@ -81,6 +81,7 @@ export class SigninComponent {
     if (storedemail)
       this.confirmForgotPassword.email = storedemail;
     this.apiService.ConfirmForgotPassword(this.confirmForgotPassword).subscribe(response => {
+      
       console.log('Change Password successfully', response);
     }, error => {
       // Handle login error here

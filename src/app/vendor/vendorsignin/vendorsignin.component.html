@@ -64,16 +64,16 @@
         </p>
 
         <button (click)="navigatetovendors()" type="button"
-          class="w-[40%] mt-[10px] font-semibold flex items-center justify-center  px-4 py-3 text-sm text-[#434343]  duration-200 bg-[#ffffff] border rounded-[2px] gap-x-2   dark:bg-[#434343]  dark:text-[#434343] border-[#D9D9D9]">
+          class="w-[40%] mt-[10px] font-semibold flex items-center justify-center   py-3 text-sm text-[#434343]  duration-200 bg-[#ffffff] border rounded-[2px] gap-x-2   dark:bg-[#434343]  dark:text-[#434343] border-[#D9D9D9]">
 
           <img src="assets/back button.png" alt="">
           <span>Back to home</span>
         </button>
       </form>
     </div>
-
-    <section class="" *ngIf="showForgetSectionvendor">
-      <div class="flex  items-center justify-center " *ngIf="showForgetSectionvendor">
+  
+    <section class="" *ngIf="showForgetSectionvendor && forgetPasswordUi">
+      <div class="flex  items-center justify-center ">
         <div class=" ">
           <h1 class=" text-xl font-bold leading-tight tracking-tight py-2">
             Forgot password?
@@ -95,10 +95,9 @@
           </form>
           <button type="submit"
             class="flex w-[400px] justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A]"
-            (click)="ForgotPassword()" (click)="toggleloading()">Submit <img *ngIf="isloading"
-              class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
-          <button class="text-[#006CF0] text-[14px] font-medium py-4 underline">
-            <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
+            (click)="ForgotPassword()" (click)="toggleloading()">Submit <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
+          <button   class="text-[#006CF0] text-[14px] font-medium py-4 underline" (click)="click()">
+            <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;" > Back to
             Sign In
           </button>
         </div>
@@ -106,7 +105,7 @@
       </div>
 
     </section>
-    <div class="" *ngIf="showOtpSectionvendor">
+    <div class="" *ngIf="showOtpSectionvendor && forgetPasswordUi">
       <div class="relative flex  flex-col justify-center overflow-hidden w-[400px] h-[205px] ml-[-21px]">
         <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl mb-[-58px]">
           <div class="mx-auto flex w-full max-w-md flex-col">
@@ -202,7 +201,7 @@
           focus-visible:outline-offset-2 focus-visible:outline-indigo-600  mt-[23px] bg-[#006A6A] w-[373px]"
         (click)="ConfirmForgotPassword()" (click)="toggleloading()" [disabled]="isloading">Update
         password <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""></button>
-      <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline ml-[-3px] mt-[23px]"
+      <button class="text-[#006CF0] text-[14px] font-medium mr-[340px] underline ml-[-3px] mt-[23px]" (click)="click()"
         (click)="navigatetosignin()">
         <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
         Sign In

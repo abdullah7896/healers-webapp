@@ -29,9 +29,9 @@
     </nav>
     <!-- <video class="min-w-full min-h-full absolute object-cover" src="assets/healers vedio.mp4" type="video/mp4" autoplay -->
     <!-- muted loop></video> -->
-    <ngx-slick-carousel  [config]="slideConfig" class="carousel-img">
+    <ngx-slick-carousel  [config]="slideConfig" class="">
         <div ngxSlickItem *ngFor="let slide of slides">
-            <img [src]="slide.img" alt="slide image" />
+            <img [src]="slide.img" alt="slide image" class="w-[100%]" />
         </div>
     </ngx-slick-carousel>
 
@@ -53,7 +53,7 @@
                     Find an ideal healing experience. <br />
                 </h1>
 
-                <p class="text-center text-[19px] leading-[32px] tracking-[-0.2px] font-extralight opacity-[70%]">
+                <p class="text-center text-[19px] leading-[32px] tracking-[-0.2px] font-normal opacity-[70%]">
                     Explore a world of wellness options and embark on <br> your journey to healing.</p>
 
                 <div
@@ -79,17 +79,17 @@
             <img alt="feature" class="object-cover object-center" src="assets/Bitmap.jpg">
         </div>
         <div class="flex  flex-wrap lg:py-6 -mb-10 lg:w-1/2 ml-[-100px] lg:text-left text-center">
-            <h2 class="  font-medium mb-3 text-[48px]">Your Path to Holistic Wellness </h2>
-            <p class="leading-[32px] text-[19px] opacity-[70%]">People choose us because we serve <br> the best for
+            <h2 class="  font-normal mb-3 text-[48px]">Your Path to Holistic Wellness </h2>
+            <p class="leading-[32px] text-[19px] opacity-[70%] font-normal   ">People choose us because we serve <br> the best for
                 everyone.</p>
             <div class="flex flex-col mb-10 lg:items-start items-center">
 
                 <div class="flex">
                     <img src="assets/Icon.png" alt="" class="">
-                    <h2 class="  font-bold mb-3 text-[21px] ml-[13px]">Diverse Healing Modalities</h2>
+                    <h2 class="  font-normal mb-3 text-[21px] ml-[13px]">Diverse Healing Modalities</h2>
 
                 </div>
-                <p class="leading-[29px] text-[17px] ml-[95px] mt-[-39px] opacity-[70%] tracking-[-0.2px]">Explore
+                <p class="leading-[29px] text-[17px] ml-[95px] mt-[-39px] font-normal opacity-[70%] tracking-[-0.2px]">Explore
                     varied healing options for your holistic well-being.</p>
 
             </div>
@@ -97,10 +97,10 @@
 
                 <div class="flex">
                     <img src="assets/Icon.png" alt="">
-                    <h2 class="font-bold mb-3 text-[21px] ml-[13px]">Instant Notifications</h2>
+                    <h2 class="font-normal mb-3 text-[21px] ml-[13px]">Instant Notifications</h2>
 
                 </div>
-                <p class="leading-[29px]  text-[17px]  ml-[95px] mt-[-39px] opacity-[70%] tracking-[-0.2px]">Receive
+                <p class="leading-[29px]  text-[17px]  ml-[95px] mt-[-39px] opacity-[70%] font-normal tracking-[-0.2px]">Receive
                     instant notifications for appointment reminders.</p>
 
             </div>
@@ -108,9 +108,9 @@
 
                 <div class="flex">
                     <img src="assets/Icon.png" alt="">
-                    <h2 class="  font-bold mb-3 text-[21px] ml-[13px]">Expert Practitioners</h2>
+                    <h2 class="  font-normal mb-3 text-[21px] ml-[13px]">Expert Practitioners</h2>
                 </div>
-                <p class="leading-[29px] text-[17px]  ml-[95px] mt-[-39px] opacity-[70%] tracking-[-0.2px]">Connect with
+                <p class="leading-[29px] text-[17px]  ml-[95px] mt-[-39px] opacity-[70%] font-normal tracking-[-0.2px]">Connect with
                     skilled practitioners for personalized wellness guidance.</p>
 
             </div>
@@ -118,9 +118,9 @@
 
                 <div class="flex">
                     <img src="assets/Icon.png" alt="">
-                    <h2 class=" font-bold mb-3 text-[21px] ml-[13px]">Personalized Experiences</h2>
+                    <h2 class=" font-normal mb-3 text-[21px] ml-[13px]">Personalized Experiences</h2>
                 </div>
-                <p class="leading-[29px]  text-[17px]  ml-[95px] mt-[-39px] opacity-[70%] tracking-[-0.2px]">Tailored
+                <p class="leading-[29px]  text-[17px]  ml-[95px] font-normal mt-[-39px] opacity-[70%] tracking-[-0.2px]">Tailored
                     services to meet your unique wellness needs.</p>
 
             </div>

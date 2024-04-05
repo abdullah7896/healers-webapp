@@ -6,6 +6,7 @@ import { environment } from '../../../environments/environment';
 export class apiEndPoint {
     URL_APIBase = '';
     URL_Login:string='';
+    URL_Refresh:string='';
     URL_ForgotPassword:string='';
     URL_ConfirmForgotPassword:string='';
     URL_SignUp:string='';
@@ -20,6 +21,7 @@ export class apiEndPoint {
     private initializeMembers() {
         this.URL_APIBase = environment.apiUrl;
         this.URL_Login=`${this.URL_APIBase}Auth/Login`;
+        this.URL_Refresh=`${this.URL_APIBase}Auth/RefreshAccessToken`;
         this.URL_ForgotPassword=`${this.URL_APIBase}Auth/ForgotPassword`;
         this.URL_ConfirmForgotPassword=`${this.URL_APIBase}Auth/ConfirmForgotPassword`;
         this.URL_SignUp=`${this.URL_APIBase}Auth/SignUp`;

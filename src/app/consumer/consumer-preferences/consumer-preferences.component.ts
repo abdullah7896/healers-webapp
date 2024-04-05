@@ -30,7 +30,7 @@ export class ConsumerPreferencesComponent {
   public heightUnit = HeightUnit;
   public categories: any[] = [];
   public selectedCategoryIds: any[] = [];
-  consumerPreference = { id:'',gender: 0, weight: 0, weightUnit: 0, height: 0, heightUnit: 0, birthDate: '', selectedCategoryIds: this.selectedCategoryIds };
+  consumerPreference = { id:'',gender: 0, weight: 0, weightUnit: 0, height: 0, heightUnit: 0, dateofbirth: '', selectedCategoryIds: this.selectedCategoryIds };
 
   ngOnInit(): void {
     this.GetAllCategory();
@@ -91,7 +91,7 @@ export class ConsumerPreferencesComponent {
 
 
   genderbutton = true;
-  dateofbirth = false;
+  birthDate = false;
   physicalprofile = false;
   wellnessGoals = false;
 
@@ -99,13 +99,13 @@ export class ConsumerPreferencesComponent {
     switch (section) {
       case 'gender':
         this.genderbutton = true;
-        this.dateofbirth = false;
+        this.birthDate = false;
         this.physicalprofile = false;
         this.wellnessGoals = false;
 
         break;
-      case 'dateofbirth':
-        this.dateofbirth = true;
+      case 'birthDate':
+        this.birthDate = true;
         this.genderbutton = false;
         this.physicalprofile = false;
         this.wellnessGoals = false;
@@ -114,13 +114,13 @@ export class ConsumerPreferencesComponent {
       case 'physicalprofile':
         this.physicalprofile = true;
         this.genderbutton = false;
-        this.dateofbirth = false;
+        this.birthDate = false;
         this.wellnessGoals = false;
         break;
       case 'wellnessGoals':
         this.wellnessGoals = true;
         this.genderbutton = false;
-        this.dateofbirth = false;
+        this.birthDate = false;
         this.physicalprofile = false;
 
 

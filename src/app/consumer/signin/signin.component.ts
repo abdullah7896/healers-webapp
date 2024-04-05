@@ -104,7 +104,7 @@ export class SigninComponent {
     this.isloading = true;
     setTimeout(() => {
       const { email, password } = this.loginData;
-      const loginData = { email, password, userType: 1 };
+      const loginData = { email, password, userType: 0 };
       // const { email, password } = this.loginData;
       // const loginData = { email, password, userType: 0 };
       // Validate Fields
@@ -118,6 +118,12 @@ export class SigninComponent {
       this.apiService.login(loginData).subscribe(response => {
         // Validate API Status
         this.isloading = false;
+        if(response.status){
+          if(response.result)
+          {
+            localStorage.setItem('userData',JSON.stringify(response.result[0]))
+          }
+        }
         const { status, message } = response;
         if (!status) {
           this.response = { status, message };

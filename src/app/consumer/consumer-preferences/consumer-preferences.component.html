@@ -92,13 +92,13 @@
             <div class=" pb-[10px]">
 
                 <div class="flex items-center flex-col">
-                    <button *ngIf="!dateofbirth"
+                    <button *ngIf="!birthDate"
                         class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center   justify-center    flex-shrink-0 rounded-[16px]">
-                        <img src="assets/birth.png" alt="" (click)="toggleSection('dateofbirth')">
+                        <img src="assets/birth.png" alt="" (click)="toggleSection('birthDate')">
                     </button>
-                    <button *ngIf="dateofbirth"
+                    <button *ngIf="birthDate"
                         class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center  justify-center    flex-shrink-0 rounded-[16px]">
-                        <img src="assets/date of.png" alt="" (click)="toggleSection('dateofbirth')">
+                        <img src="assets/date of.png" alt="" (click)="toggleSection('birthDate')">
                     </button>
 
 
@@ -136,7 +136,7 @@
 
         <div *ngIf="gendersection" class="flex flex-col items-center">
             <!-- gender div -->
-            <div class="" *ngIf="!dateofbirth">
+            <div class="" *ngIf="!birthDate">
                 <div *ngIf="!physicalprofile && !wellnessGoals">
                     <h2 class="text-gray-900 text-[32px]  title-font font-medium ">What is your gender?</h2>
                     <p class="leading-relaxed text-base text-[16px] font-normal">To provide you the best experience we
@@ -165,7 +165,7 @@
                     </div>
                     <form class="flex gap-[32px]">
                         <mat-form-field>
-                            <input matInput [matDatepicker]="picker" name="DOB" [(ngModel)]="consumerPreference.birthDate" placeholder="MM/DD/YYYY">
+                            <input matInput [matDatepicker]="picker" name="DOB" [(ngModel)]="consumerPreference.dateofbirth" placeholder="MM/DD/YYYY">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                           </mat-form-field>
@@ -174,7 +174,7 @@
             </div>
             <!-- physical div -->
             <div class="" *ngIf="!genderbutton">
-                <div *ngIf="!dateofbirth && !wellnessGoals">
+                <div *ngIf="!birthDate && !wellnessGoals">
                     <div>
                         <h2 class="text-[#18181B] text-[32px]  title-font font-medium leading-[48px]">Let us know your
                             weight and height</h2>
@@ -244,7 +244,7 @@
                 </div>
             </div>
 
-            <div class="" *ngIf="!genderbutton && !dateofbirth && !physicalprofile">
+            <div class="" *ngIf="!genderbutton && !birthDate && !physicalprofile">
                 <div>
                     <div>
                         <h2 class="text-unselectable text-[#18181B] text-[32px] title-font font-medium leading-[48px]">What would you like to focus on?</h2>

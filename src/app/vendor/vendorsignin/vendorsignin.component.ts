@@ -234,8 +234,4 @@ export class VendorsigninComponent {
   enableCheckbox() {
     this.checkboxEnabled = true;
   }
-  // showSignInForm = true;
-  // toggleSignInForm() {
-    // this.showSignInForm = !this.showSignInForm;
-  // }
 }

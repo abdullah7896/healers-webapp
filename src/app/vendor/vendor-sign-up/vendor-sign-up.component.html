@@ -35,7 +35,7 @@
                     <label for="Category" class="block text-sm font-medium leading-6 text-color">Choose
                         Category</label>
                     <div class="mt-2">
-                        <ng-multiselect-dropdown [data]="categories" [(ngModel)]="selectedCategoryIds"
+                        <ng-multiselect-dropdown [data]="categories" 
                             [settings]="dropdownSettings" [placeholder]="placeholder"
                             (onSelect)="onCategorySelect($event)"
                             (onDeSelect)="onCategoryUnselect($event)"></ng-multiselect-dropdown>

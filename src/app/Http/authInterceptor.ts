@@ -31,15 +31,16 @@ export class AuthInterceptor implements HttpInterceptor {
             let refreshToken = { id: userData?.user?.id ?? '', refreshToken: userData?.refreshToken ?? '' }
             return this.apiService.refreshAccessToken(refreshToken).pipe(
                 switchMap((response: any) => {
-                    // if(response.status)
+                    if(response.status)
                     {
                         console.log(`Refresh token API returned: ${response}`);
                         this.tokenSubject.next(response.accessToken); // Update the new access token
                         this.refreshTokenInProgress = false;
                         localStorage.setItem('userData', JSON.stringify(response.result[0]))
                         return next.handle(this.attachTokenToRequest(request, response.result[0]?.accessToken));
+                    }else {
+                        return throwError(response.message);
                     }
-                    // return throwError;
                 }),
                 catchError((error) => {
                     // Handle refresh token failure (e.g., redirect to login page)

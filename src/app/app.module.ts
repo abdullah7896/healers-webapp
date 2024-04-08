@@ -9,13 +9,14 @@ import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { ConsumerModule } from './consumer/consumer.module';
 import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AuthInterceptor } from './Http/authInterceptor';
+import { TagInputModule } from 'ngx-chips';
 
 
 
@@ -41,7 +42,10 @@ import { AuthInterceptor } from './Http/authInterceptor';
     HttpClientModule,
     FormsModule,
     NgOtpInputModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    ReactiveFormsModule,
+    TagInputModule,
+    BrowserAnimationsModule
     
 
     

@@ -6,10 +6,12 @@ import { CommonComponentsModule } from '../common-components/common-components.m
 import { VendorLandingPageComponent } from './vendor-landing-page/vendor-landing-page.component';
 import { VendorSignUpComponent } from './vendor-sign-up/vendor-sign-up.component';
 import { ProfileDetailingComponent } from './profile-detailing/profile-detailing.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { VendorLoginLandingPageComponent } from './vendor-login-landing-page/vendor-login-landing-page.component';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { TagInputModule } from 'ngx-chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -30,7 +32,11 @@ import { NgOtpInputModule } from 'ng-otp-input';
     CommonComponentsModule,
     FormsModule,
     NgMultiSelectDropDownModule.forRoot(),
-    NgOtpInputModule
+    NgOtpInputModule,
+    TagInputModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   
 })

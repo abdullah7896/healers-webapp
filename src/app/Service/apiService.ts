@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class apiService extends BaseHttpService {
+    subscribe(arg0: (response: any) => void) {
+      throw new Error('Method not implemented.');
+    }
     login(logina: any): Observable<any> {
         return this.post(`${this.apiEndPoints.URL_Login}`, logina)
     };
@@ -35,6 +38,9 @@ export class apiService extends BaseHttpService {
     };
     ConsumerPreference(consumerPreference: any): Observable<any> {
         return this.post(`${this.apiEndPoints.URL_ConsumerPreference}`, consumerPreference)
+    };
+    ParctitionerPreferences(ParctitionerPreferences: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.Url_PractitionerPrefrences}`, ParctitionerPreferences)
     };
 
 }

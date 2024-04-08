@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { apiService } from 'src/app/Service/apiService';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-profile-detailing',
   templateUrl: './profile-detailing.component.html',
   styleUrls: ['./profile-detailing.component.css']
 })
 export class ProfileDetailingComponent {
-  constructor(private router: Router) { }
-  firstsection= false;
+  constructor(private router: Router, private apiService: apiService, private httpClient: HttpClient,) { }
+  firstsection = false;
 
   togglefirstsection() {
     this.firstsection = !this.firstsection;
   }
-  secondsection= false;
+  secondsection = false;
 
   togglesecondsection() {
     this.secondsection = !this.secondsection;
@@ -32,10 +33,11 @@ export class ProfileDetailingComponent {
       this.previewImageUrl = reader.result as string;
     };
   }
-  navigatetohome(){
-    this.router.navigate(['']); 
+  navigatetohome() {
+    this.router.navigate(['']);
   }
-
-
-
+  
+  
+  
+  
 }

@@ -14,3 +14,6 @@ input:focus {
 input{
   font-family: initial;
 }
+.para{
+  font-weight: 400;
+}

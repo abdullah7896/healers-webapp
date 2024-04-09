@@ -44,14 +44,14 @@ export class VendorSignUpComponent implements OnInit {
   }
 
   // handleVerificationCodeChange(index: number, event: Event) {
-    // const inputValue = (event.target as HTMLInputElement).value;
-    // this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
+  // const inputValue = (event.target as HTMLInputElement).value;
+  // this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
   // }
   // handleVerificationCodeChange(event: Event) {
-    // const inputValue = (event.target as HTMLInputElement).value;
-    // this.confirmSignUp.verificationCode += inputValue;
+  // const inputValue = (event.target as HTMLInputElement).value;
+  // this.confirmSignUp.verificationCode += inputValue;
   //  
-    // this.confirmSignUp.verificationCode = String(this.confirmSignUp.verificationCode);
+  // this.confirmSignUp.verificationCode = String(this.confirmSignUp.verificationCode);
   // }
   handleVerificationCodeChange(inputValue: string) {
     this.confirmSignUp.verificationCode = inputValue;
@@ -106,7 +106,7 @@ export class VendorSignUpComponent implements OnInit {
       }
       console.log('Login failed', error);
       // Display error message or take appropriate action
-    }).add(()=>{
+    }).add(() => {
       this.isloading = false;
     })
   }
@@ -123,14 +123,18 @@ export class VendorSignUpComponent implements OnInit {
     this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
       console.log(' successful', response);
       if (response.status) {
-        this.router.navigate(['/ProfileDetailing']);
+        if (response.result) {
+          localStorage.setItem('userData', JSON.stringify(response.result[0]))
+          this.router.navigate(['/ProfileDetailing']);
+        }
+
       }
       else {
         alert(response.message)
       }
     }, error => {
       console.error(' failed', error);
-    }).add(()=>{
+    }).add(() => {
       this.isloading = false;
     })
   }
@@ -186,9 +190,9 @@ export class VendorSignUpComponent implements OnInit {
     window.location.reload();
   }
 
-  isloading=false;
-  toggleloading(){
-    this.isloading=true;
+  isloading = false;
+  toggleloading() {
+    this.isloading = true;
   }
   navigatetovendors() {
     this.router.navigate(['/vendors']);

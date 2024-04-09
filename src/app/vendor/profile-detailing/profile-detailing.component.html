@@ -35,37 +35,37 @@
             *ngIf="!firstsection">
 
 
-            <div class="h-[470px] w-[100%]" >
+            <div class="h-[470px] w-[100%]">
                 <div class=" justify-between">
-                    <div >
+                    <div>
                         <p class="text-[32px] font-semibold leading-[48px] text-[#000000]"> Add Tags</p>
                     </div>
-                    <div >
+                    <div>
                         <p class="text-[14px] leading-[22px] font-normal">Add related tags for respective
                             categories,
                             this will help users find you easily.</p>
                     </div>
                 </div>
-                
+
                 <div class="w-full">
                     <div class="pb-[23px]">
-                        <p class="text-[16px] leading-[24px] font-semibold text-[#000000]">Mind:</p>
+                        <p class="text-[16px] leading-[24px] font-semibold text-[#000000]" >{{categoryNames[0]}}:</p>
                     </div>
                     <div class="relative ">
                         <label
                             class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                             Add Tags
                         </label>
-                        <tag-input [maxItems]="8" class="pt-5"> </tag-input>
+                        <tag-input  [(ngModel)]="tags1" [maxItems]="8" class="pt-5"> </tag-input>
                     </div>
                     <p class="text-[12px] font-normal text-color"> You can add 3 to 8 tags.</p>
-                     <div class="pt-[16px] ">
+                    <div class="pt-[16px] ">
                         <div class=" ">
-                            <p class="text-[16px] leading-[24px] font-semibold text-[#000000]">Body:</p>
+                            <p class="text-[16px] leading-[24px] font-semibold text-[#000000]">{{categoryNames[1]}}:</p>
                         </div>
                         <div class=" pt-[23px]">
                             <div class="relative">
-                                <tag-input [maxItems]="8" class="pt-5"></tag-input>
+                                <tag-input [(ngModel)]="tags2"  [maxItems]="8" class="pt-5"></tag-input>
                                 <label
                                     class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                                     Add Tags
@@ -73,11 +73,11 @@
 
                             </div>
                             <p class="text-[12px] font-normal text-color"> You can add 3 to 8 tags.</p>
-                            
-                            
+
+
                             <div class="pt-16">
-                                <button type="submit" (click)="togglefirstsection()" 
-                                    class="w-[100%] h-[40px] justify-center rounded-md hover:bg-[#F28500]  text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
+                                <button type="submit"  (click)="addtags()"
+                                    class="w-[100%] h-[40px] justify-center rounded-md  text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
                                     Next</button>
                             </div>
                         </div>
@@ -153,10 +153,11 @@
                             </label>
                         </div>
                         <div class="w-[652px] h-[60px] pt-[20px]">
-                            <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px]  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15) ">   
+                            <button
+                                class="w-[50px] h-[50px] rounded-[96px] gap-[8px]  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15) ">
                                 <img src="assets/arrow back.png" alt="" class="pl-[5px]">
                             </button>
-                            <button type="submit" (click)="togglesecondsection()" 
+                            <button type="submit" (click)="togglesecondsection()"
                                 class="w-[92%] h-[40px] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
                                 Next </button>
                         </div>
@@ -237,16 +238,16 @@
                             </div>
 
                             <div class="w-[652px] h-[60px] pt-[24px]">
-                            <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px] text-[#ffffff]">
-                                <img src="assets/arrow back.png" alt="" class="pl-[5px]">
-                            </button>
-                            <button type="submit"
-                                class="w-[92%] h-[40px] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
-                                Next</button>
+                                <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px] text-[#ffffff]">
+                                    <img src="assets/arrow back.png" alt="" class="pl-[5px]">
+                                </button>
+                                <button type="submit"
+                                    class="w-[92%] h-[40px] justify-center rounded-md hover:bg-[#F28500]   font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
+                                    Next</button>
                             </div>
                         </div>
 
-                       
+
 
                     </div>
                 </div>

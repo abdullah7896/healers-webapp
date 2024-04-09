@@ -14,8 +14,8 @@ export class apiEndPoint {
     URL_ResendForgotPasswordOTP:string='';
     URL_ConfirmSignUp:string='';
     URL_ResendSignUpOTP:string='';
-    URL_ConsumerPreference:string=''
-    Url_PractitionerPrefrences:string=''
+    URL_ConsumerPreference:string='';
+    Url_PractitionerPrefrences:string='';
     constructor() {
         this.initializeMembers()
     }

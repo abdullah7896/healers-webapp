@@ -16,6 +16,7 @@ export class apiEndPoint {
     URL_ResendSignUpOTP:string='';
     URL_ConsumerPreference:string='';
     Url_PractitionerPrefrences:string='';
+    Url_PractitionerUploadUserImg:string='';
     constructor() {
         this.initializeMembers()
     }
@@ -32,6 +33,6 @@ export class apiEndPoint {
         this.URL_ResendSignUpOTP=`${this.URL_APIBase}Auth/ResendSignUpOTP`;
         this.URL_ConsumerPreference=`${this.URL_APIBase}Consumer/CreateConsumerPreference`;
         this.Url_PractitionerPrefrences=`${this.URL_APIBase}Practitioner/AddPractitionerTag`;
-        
+        this.Url_PractitionerUploadUserImg=`${this.URL_APIBase}Practitioner/UploadUserImages`;
     }
 }

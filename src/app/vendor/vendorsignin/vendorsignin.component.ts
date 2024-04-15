@@ -44,8 +44,15 @@ export class VendorsigninComponent {
   }
 
   toggleForgetPassword() {
-    this.forgetPasswordUi = !this.forgetPasswordUi;
-    this.showForgetSectionvendor = !this.showForgetSectionvendor;
+   if (!this.forgetPasswordUi) {
+      this.showForgetSectionvendor = true;
+      this.forgetPasswordUi = true;
+    } else {
+      this.showForgetSectionvendor = false;
+      this.forgetPasswordUi = false;
+    }
+   
+   
   }
   showOtpSectionvendor: boolean = false;
   showForgetSectionvendor: boolean = false;

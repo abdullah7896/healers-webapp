@@ -117,9 +117,9 @@
             style="background: rgba(242, 133, 0, 1); " (click)="ForgotPassword()" (click)="toggleloading()"
             [disabled]="isloading">Submit <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]"
               src="assets/loading.gif" alt=""></button>
-          <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="naviagtetosignup()">
+          <button class="text-[#006CF0] text-[14px] font-medium  underline mt-[23px]" (click)="click()">
             <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle; "> Back to
-            log In
+            SignIn
           </button>
         </div>
 
@@ -238,9 +238,9 @@
         [disabled]="isloading"> Update
         password <img *ngIf="isloading" class="w-[5%] ml-[10px] pt-[2px]" src="assets/loading.gif" alt=""> </button>
       <button class="text-[#006CF0] text-[14px] font-medium mr-[334px] underline mt-[23px]"
-        (click)="naviagtetosignup()">
+         (click)="click()">
         <img src="assets/Icon-Wrapper.jpg" alt="Icon" style="display:inline-block;vertical-align:middle;"> Back to
-        log In
+        SignIn
       </button>
 
     </div>

@@ -47,9 +47,11 @@ export class VendorsigninComponent {
    if (!this.forgetPasswordUi) {
       this.showForgetSectionvendor = true;
       this.forgetPasswordUi = true;
+      this.showOtpSectionvendor=false;
     } else {
       this.showForgetSectionvendor = false;
       this.forgetPasswordUi = false;
+      
     }
    
    

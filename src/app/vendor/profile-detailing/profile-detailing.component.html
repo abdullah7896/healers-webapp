@@ -49,14 +49,14 @@
 
                 <div class="w-full">
                     <div class="pb-[23px]">
-                        <p class="text-[16px] leading-[24px] font-semibold text-[#000000]" >{{categoryNames[0]}}:</p>
+                        <p class="text-[16px] leading-[24px] font-semibold text-[#000000]">{{categoryNames[0]}}:</p>
                     </div>
                     <div class="relative ">
                         <label
                             class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                             Add Tags
                         </label>
-                        <tag-input  [(ngModel)]="tags1" [maxItems]="8" class="pt-5"> </tag-input>
+                        <tag-input [(ngModel)]="tags1" [maxItems]="8" class="pt-5"> </tag-input>
                     </div>
                     <p class="text-[12px] font-normal text-color"> You can add 3 to 8 tags.</p>
                     <div class="pt-[16px] ">
@@ -65,7 +65,7 @@
                         </div>
                         <div class=" pt-[23px]">
                             <div class="relative">
-                                <tag-input [(ngModel)]="tags2"  [maxItems]="8" class="pt-5"></tag-input>
+                                <tag-input [(ngModel)]="tags2" [maxItems]="8" class="pt-5"></tag-input>
                                 <label
                                     class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                                     Add Tags
@@ -76,7 +76,7 @@
 
 
                             <div class="pt-16">
-                                <button type="submit"  (click)="addtags()"
+                                <button type="submit" (click)="addtags()"
                                     class="w-[100%] h-[40px] justify-center rounded-md  text-sm font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
                                     Next</button>
                             </div>
@@ -125,7 +125,7 @@
                     </div>
                     <div class=" gap-[5.5px] pt-[10px]">
                         <div class="relative  w-[652px] h-[57px] gap-[6px] ">
-                            <input placeholder="Address" 
+                            <input placeholder="Address"
                                 class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
                             <label
                                 class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -135,7 +135,7 @@
                     </div>
                     <div class="w-[652px] h-[57px] gap-[5.5px] pt-[30px]">
                         <div class="relative  w-[652px] h-[57px] gap-[6px] ">
-                            <input placeholder="Time-Zone" 
+                            <input placeholder="Time-Zone"
                                 class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
                             <label
                                 class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -145,7 +145,7 @@
                     </div>
                     <div class="w-[652px] h-[105px] pt-[50px]">
                         <div class="relative  w-[652px] h-[105px] gap-[6px] ">
-                            <input placeholder="Description" 
+                            <input placeholder="Description"
                                 class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
                             <label
                                 class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -157,7 +157,7 @@
                                 class="w-[50px] h-[50px] rounded-[96px] gap-[8px]  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15) ">
                                 <img src="assets/arrow back.png" alt="" class="pl-[5px]">
                             </button>
-                            <button type="submit"  (click)="togglesecondsection()"
+                            <button type="submit" (click)="togglesecondsection()"
                                 class="w-[92%] h-[40px] justify-center rounded-md    font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
                                 Next </button>
                         </div>
@@ -193,7 +193,7 @@
                                     image, size less than 100KB</label>
                                 <label class="block">
                                     <span class="sr-only">Choose profile photo</span>
-                                    <input type="file"   id="file-upload" class="block w-[67%] text-sm text-[#000000]
+                                    <input type="file" id="file-upload" class="block w-[67%] text-sm text-[#000000]
                                           file:me-4 file:py-2 file:px-4
                                           file:rounded-[5px] file:border-0
                                           file:text-sm file:font-semibold
@@ -206,7 +206,7 @@
                                           border-solid
                                           border-[#10B981]
                                           rounded-[5px]
-                                        "    (change)="onFileSelected($event)">
+                                        " (change)="onFileSelected($event)">
                                 </label>
                             </div>
                         </div>
@@ -216,8 +216,7 @@
                         <div class=" gap-[16px]">
                             <div class=" relative border-2 border-gray-300 border-dashed rounded-lg p-[10px]"
                                 id="dropzone">
-                                <input type="file" class="absolute inset-0 w-full h-full opacity-0 z-50"
-                                     >
+                                <input type="file" class="absolute inset-0 w-full h-full opacity-0 z-50">
                                 <div class="text-center">
                                     <img class="mx-auto w-[10%]" src="assets/Component Placeholder Image.png" alt="">
 
@@ -226,7 +225,8 @@
                                             <span>Drag and drop</span>
                                             <span class="text-indigo-600"> or browse</span>
 
-                                            <input id="file" name="file-upload" type="file" id="file-upload" class="sr-only" (change)="onFileSelected($event)">
+                                            <input id="file" name="file-upload" type="file" multiple id="file-upload"
+                                                class="sr-only">
                                         </label>
                                     </h3>
                                     <p class="mt-1 text-xs text-gray-500">

@@ -92,9 +92,11 @@ export class ProfileDetailingComponent {
     }
 
     const file: File = fileInput.files[0];
+    
     const formData = new FormData();
-    formData.append('image', file, file.name);
+    formData.append('ProfileImage', file, file.name);
     formData.append('userId', userId);
+   
     console.log(formData);
    
     this.apiService.PractitionerUploadUserImg(formData).subscribe(
@@ -121,6 +123,18 @@ export class ProfileDetailingComponent {
       this.previewImageUrl = reader.result as string;
     };
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   firstsection = false;
 
   togglefirstsection() {

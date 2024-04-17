@@ -42,6 +42,11 @@ export class apiService extends BaseHttpService {
     ParctitionerPreferences(ParctitionerPreferences: any): Observable<any> {
         return this.post(`${this.apiEndPoints.Url_PractitionerPrefrences}`, ParctitionerPreferences)
     };
+    PractitionerBussinessPrefrences(PractitionerBussinessPrefrences: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.Url_PractitionerBussinessPrefrences}`, PractitionerBussinessPrefrences)
+    };
+
+
     PractitionerUploadUserImg(PractitionerUploadUserImg: any): Observable<any> {
         return this.postFile(`${this.apiEndPoints.Url_PractitionerUploadUserImg}`,PractitionerUploadUserImg)
     };

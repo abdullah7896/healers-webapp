@@ -37,12 +37,12 @@ export class SigninComponent {
   }
  toggleForgetPassword() {
   if(!this.forgetPasswordVisible){
-    this.showForgetSection=true;
-    this.forgetPasswordVisible=true;
-    this.showOtpSection=false;
+    this.showForgetSection = true;
+    this.forgetPasswordVisible = true;
+    this.showOtpSection = false;
   } else{
-    this.showForgetSection=false;
-    this.forgetPasswordVisible=false;
+    this.showForgetSection = false;
+    this.forgetPasswordVisible = false;
     
   }
     // this.forgetPasswordVisible = !this.forgetPasswordVisible;
@@ -207,7 +207,7 @@ navigatetoconsumer() {
   this.router.navigate(['/consumer']);
 }
 click(){
-  this.forgetPasswordVisible=!this.forgetPasswordVisible
+  this.forgetPasswordVisible= !this.forgetPasswordVisible
 }
 
 }

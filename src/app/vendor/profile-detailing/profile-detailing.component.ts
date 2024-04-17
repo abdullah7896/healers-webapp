@@ -2,23 +2,37 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { apiService } from 'src/app/Service/apiService';
 import { HttpClient } from '@angular/common/http';
-
 @Component({
   selector: 'app-profile-detailing',
   templateUrl: './profile-detailing.component.html',
   styleUrls: ['./profile-detailing.component.css']
 })
+
 export class ProfileDetailingComponent {
+
   categoryNames: string[] = [];
   userData: any;
   tags1: string[] = [];
   tags2: string[] = []
-
-
-
-
+  address: any;
+  timeZone: any;
+  description: any;
+  isOnSite: boolean = false;
+  isOnline: boolean = false;
+  
+  sessiontype: number | undefined;
   constructor(private router: Router, private apiService: apiService, private httpClient: HttpClient) { }
-
+  onSessionTypeChange(event:any){
+    if (this.isOnline && this.isOnSite) {
+      this.sessiontype = 2; 
+    } else if (this.isOnline) {
+      this.sessiontype = 0;
+    } else if (this.isOnSite) {
+      this.sessiontype = 1; 
+    } else {
+      this.sessiontype = -1; 
+    }
+  }
   ngOnInit(): void {
     const userDataString = localStorage.getItem('userData');
     console.log('userDataString:', userDataString); // Log the userDataString
@@ -39,9 +53,6 @@ export class ProfileDetailingComponent {
 
 
   }
-
-
-
 
   addtags() {
     const userData = JSON.parse(localStorage.getItem('userData') ?? '');
@@ -77,10 +88,30 @@ export class ProfileDetailingComponent {
     );
   }
 
+  bussinessdetailsapi() {
+    const userData = JSON.parse(localStorage.getItem('userData') ?? '');
+    const userId = userData?.user?.id?.toString() ?? '';
+    const payload = {
+      userId: userId,
+      sessiontype: this.sessiontype,
+      address: this.address,
+      timeZone: this.timeZone,
+      description: this.description
+    }
+    this.apiService.PractitionerBussinessPrefrences(payload).subscribe(
+      (response) => {
+        console.log('ParctitionerPreferences API Response:', response);
+        this.secondsection = !this.secondsection;
+      },
+      (error) => {
+        console.error('ParctitionerPreferences API Error:', error);
+      }
+    );
+  }
   uploaduserimage() {
     const userData = JSON.parse(localStorage.getItem('userData') ?? '');
     const userId = userData?.user?.id?.toString() ?? '';
-     if (!userId) {
+    if (!userId) {
       console.error('User ID not found');
       return;
     }
@@ -92,13 +123,13 @@ export class ProfileDetailingComponent {
     }
 
     const file: File = fileInput.files[0];
-    
+
     const formData = new FormData();
     formData.append('ProfileImage', file, file.name);
     formData.append('userId', userId);
-   
+
     console.log(formData);
-   
+
     this.apiService.PractitionerUploadUserImg(formData).subscribe(
       (response) => {
 
@@ -123,19 +154,7 @@ export class ProfileDetailingComponent {
       this.previewImageUrl = reader.result as string;
     };
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  firstsection = false;
+firstsection = false;
 
   togglefirstsection() {
     this.firstsection = !this.firstsection;
@@ -145,26 +164,8 @@ export class ProfileDetailingComponent {
   togglesecondsection() {
     this.secondsection = !this.secondsection;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  navigatetohome() {
+ navigatetohome() {
     this.router.navigate(['']);
   }
-
-
-
-
 
 }

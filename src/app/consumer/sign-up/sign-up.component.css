@@ -12,6 +12,6 @@ input:focus {
 .text-color{
   color: rgba(0, 0, 0, 0.6)
 }
-input{
-  font-family: initial;
-}
+/* input{ */
+  /* font-family: initial; */
+/* } */

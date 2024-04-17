@@ -92,7 +92,7 @@
 
         <div class=" rounded-[16px] bg-[#ffffff] gap-[24px] p-[10px] drop-shadow-[0px_3px_6px_rgba(0,0,0,0.20)] via-[#000000] spread-[-4px]    flex-col"
             *ngIf="firstsection &&!secondsection">
-            <div class="w-[100%] h-[470px] gap-[23px] ">
+            <div class="w-[100%] h-[425px] gap-[23px] ">
                 <div class="justify-between">
                     <div class=" ">
                         <div class=" ">
@@ -108,7 +108,7 @@
                         <p class="w-[314px] h-[24px] gap-[16px]  flex inline-flex">
                             <span>
                                 <div class="flex items-center">
-                                    <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 ">
+                                    <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 " [(ngModel)]="isOnline" (change)="onSessionTypeChange($event)">
                                     <label for="link-checkbox" class="ms-2 text-sm">Online</label>
                                 </div>
                             </span>
@@ -117,15 +117,15 @@
                         <p class="w-[314px] h-[24px] gap-[16px]  flex inline-flex">
                             <span>
                                 <div class="flex items-center">
-                                    <input id="link-checkbox" type="checkbox" disabled="" class="w-4 h-4">
+                                    <input id="link-checkbox" type="checkbox" [(ngModel)]="isOnSite" (change)="onSessionTypeChange($event)" class="w-4 h-4">
                                     <label for="link-checkbox" class="ms-2 text-sm">On-site</label>
                                 </div>
                             </span>
                         </p>
                     </div>
-                    <div class=" gap-[5.5px] pt-[10px]">
+                    <div class=" gap-[5.5px] pt-[10px]" [hidden]="!isOnSite">
                         <div class="relative  w-[652px] h-[57px] gap-[6px] ">
-                            <input placeholder="Address"
+                            <input placeholder="Address" [(ngModel)]="address" 
                                 class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
                             <label
                                 class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -133,19 +133,19 @@
                             </label>
                         </div>
                     </div>
-                    <div class="w-[652px] h-[57px] gap-[5.5px] pt-[30px]">
-                        <div class="relative  w-[652px] h-[57px] gap-[6px] ">
-                            <input placeholder="Time-Zone"
-                                class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
-                            <label
-                                class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                                Time Zone
-                            </label>
-                        </div>
-                    </div>
+                    <!-- <div class="w-[652px] h-[57px] gap-[5.5px] pt-[30px]"> -->
+                        <!-- <div class="relative  w-[652px] h-[57px] gap-[6px] "> -->
+                            <!-- <input placeholder="Time-Zone" [(ngModel)]="timeZone" -->
+                                <!-- class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" /> -->
+                            <!-- <label -->
+                                <!-- class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"> -->
+                                <!-- Time Zone -->
+                            <!-- </label> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
                     <div class="w-[652px] h-[105px] pt-[50px]">
                         <div class="relative  w-[652px] h-[105px] gap-[6px] ">
-                            <input placeholder="Description"
+                            <input placeholder="Description" [(ngModel)]="description"
                                 class="peer h-full w-full border-b border-blue-gray-200  pt-[2rem] pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" />
                             <label
                                 class="after:content[' '] pointer-events-none absolute left-0  -top-2.5 flex h-full w-full select-none !overflow-visible truncate text-sm font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
@@ -157,7 +157,7 @@
                                 class="w-[50px] h-[50px] rounded-[96px] gap-[8px]  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15) ">
                                 <img src="assets/arrow back.png" alt="" class="pl-[5px]">
                             </button>
-                            <button type="submit" (click)="togglesecondsection()"
+                            <button type="submit"  (click)="bussinessdetailsapi()"
                                 class="w-[92%] h-[40px] justify-center rounded-md    font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
                                 Next </button>
                         </div>
@@ -206,6 +206,7 @@
                                           border-solid
                                           border-[#10B981]
                                           rounded-[5px]
+                                          mt-[10px]
                                         " (change)="onFileSelected($event)">
                                 </label>
                             </div>

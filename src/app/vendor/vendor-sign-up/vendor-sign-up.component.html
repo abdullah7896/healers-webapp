@@ -97,7 +97,7 @@
                     <h1 class="text-[20px] font-bold leading-tight tracking-tight">
                         Verify Email
                     </h1>
-                    <p class="Thin 100 text-[14px] leading-[24px]">A 6 digit OTP has been sent to <span class="font-bold text-[14px] leading-[24px]">{{ signUp.email
+                    <p class="font-thin text-[17px] leading-[24px]">A 6 digit OTP has been sent to <span class="font-bold text-[14px] leading-[24px]">{{ signUp.email
                             }}</span><br>
                       <span class=" text-[14px] leading-[24px]"> Please verify to continue.</span> 
                     </p>
@@ -124,7 +124,7 @@
                         <!-- </div> -->
                         <ng-otp-input [config]="{length:6}"
                             (onInputChange)="handleVerificationCodeChange($event)"></ng-otp-input>
-                        <p class="text-[12px] font-normal ml-[205px] pb-[10px] ">Didn’t receive the code? <button
+                        <p class="text-[12px] font-normal ml-[227px] pb-[10px] ">Didn’t receive the code? <button
                                 class="underline text-[#006CF0]" (click)="ResendSignUpOTP()"> Resend</button></p>
 
                     </form>

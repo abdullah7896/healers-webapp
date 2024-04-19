@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { apiService } from 'src/app/Service/apiService';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,7 +10,7 @@ import { apiService } from 'src/app/Service/apiService';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
+  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService, private toster:ToastrService) { }
   signUp = { firstName: '', lastName: '', email: '', password: '', role: 0 };
   userEmail = '';
   signup = false;
@@ -49,36 +50,50 @@ export class SignUpComponent {
     if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
 
     else {
-      alert(response.message)
+      // this.toster.error('Error occurred!', 'Toastr Error!', { positionClass: 'toast-top-right' });
+
     }
 
     return false;
   }
 
   SignUp() {
+    
     this.apiService.SignUp(this.signUp).subscribe(response => {
+      
       const isValidatedResponse = this.isValidated(response)
       console.log('isValidatedResponse', isValidatedResponse)
       if (!isValidatedResponse){
         this.isloading = false; 
+       this.toster.error(response.message, response.errorCode, { positionClass: 'toast-top-right' });
+
         return};
 
       if (response.status) {
+        
         this.signup = !this.signup;
+       
         localStorage.setItem('userPasswordEmail', this.userEmail);
         console.log('SignUp successful', response);
+        
+        
       }
       else {
-        alert(response.message)
+       
+        alert(response.status.message)
+        
       }
       this.isloading = false;
     }, error => {
+      
       // Handle login error here
       if (error.status == 400) {
         this.showEmptyEmail = !this.showEmptyEmail
       }
       console.error('SignUp failed', error);
-      this.isloading = false;
+       this.isloading = false;
+      this.toster.error('Error occurred!', 'Toastr Error!', { positionClass: 'toast-top-right' });
+
       // Display error message or take appropriate action
     });
   }
@@ -88,10 +103,11 @@ export class SignUpComponent {
     this.isloading = true;
     this.apiService.ConfirmSignUp(this.confirmSignUp).subscribe(response => {
       console.log('Email send successful', response);
-      if (response.status) {
+     if (response.status) {
         if(response.result)
         {
           localStorage.setItem('userData',JSON.stringify(response.result[0]))
+         
           this.router.navigate(['/Preferences']);
         }
         

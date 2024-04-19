@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { apiService } from 'src/app/Service/apiService';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -13,7 +14,7 @@ import { apiService } from 'src/app/Service/apiService';
 
 })
 export class VendorsigninComponent {
-  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService,) { }
+  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService,private toster:ToastrService) { }
   forgetPasswordUi = false;
   loginData = { email: '', password: '' };
   confirmForgotPassword = { email: '', verificationCode: '', password: '', userType: 1 };
@@ -63,7 +64,7 @@ export class VendorsigninComponent {
     console.log('response.status', response.status);
     if (response.status) return true;
 
-    alert(response.message);
+    
     return false;
   }
 
@@ -72,12 +73,15 @@ export class VendorsigninComponent {
     this.apiService.ForgotPassword(this.userEmail, this.userType).subscribe(response => {
       const isValidatedResponse = this.isValidated(response);
       console.log('isValidatedResponse', isValidatedResponse);
-      if (!isValidatedResponse) return;
+      if (!isValidatedResponse){ 
+        this.toster.error(response.message, response.errorCode,{ positionClass: 'toast-top-right' });
+        return};
 
       this.showForgetSectionvendor = false;
       this.showOtpSectionvendor = true;
       localStorage.setItem('userPasswordEmail', this.userEmail);
       console.log('Email Send successful', response);
+      
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     },
       error => {

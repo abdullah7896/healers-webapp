@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { apiService } from 'src/app/Service/apiService';
+import { ToastrService } from 'ngx-toastr';
+
 
 
 @Component({
@@ -15,7 +17,7 @@ export class VendorSignUpComponent implements OnInit {
   fullName: string = '';
   phoneNumber = '';
   placeholder: string = 'Select upto 2 categories'
-  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
+  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService ,private toster:ToastrService) { }
   signUp = { firstName: '', lastName: '', email: '', phoneNumber: '', password: '', role: 1, selectedCategoryIds: this.selectedCategoryIds };
   userEmail = '';
   confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1 };
@@ -71,7 +73,7 @@ export class VendorSignUpComponent implements OnInit {
     if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
 
     else {
-      alert(response.message)
+      // alert(response.message)
     }
 
     return false;
@@ -92,13 +94,24 @@ export class VendorSignUpComponent implements OnInit {
     this.signUp.selectedCategoryIds = this.selectedCategoryIds;
 
     this.apiService.SignUp(this.signUp).subscribe(response => {
+      
+      
+        
+      
       const isValidatedResponse = this.isValidated(response)
+      
       console.log('isValidatedResponse', isValidatedResponse)
-      if (!isValidatedResponse) return;
-
+      if (!isValidatedResponse){
+        this.toster.error(response.message, response.errorCode, { positionClass: 'toast-top-right' });
+        return};
+      
       this.vendorsignup = !this.vendorsignup;
       localStorage.setItem('practitionerPasswordEmail', this.userEmail);
       console.log('Signup successful', response);
+      
+    
+        
+      
     }, error => {
       // Handle login error here
       if (error.status == 400) {

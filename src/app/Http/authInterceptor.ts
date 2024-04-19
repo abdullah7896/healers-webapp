@@ -3,6 +3,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
 import { apiService } from '../Service/apiService';
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
     private refreshTokenInProgress = false;
@@ -75,11 +76,19 @@ export class AuthInterceptor implements HttpInterceptor {
     getUserData() {
         return JSON.parse(localStorage.getItem('userData') ?? '')
     }
+    
     private attachTokenToRequest(request: HttpRequest<any>, token: string): HttpRequest<any> {
+    //    let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    let timeZoneOffset = new Date().getTimezoneOffset()/60;
         return request.clone({
             setHeaders: {
                 Authorization: `Bearer ${token}`,
+                TimeZoneOffset: `${timeZoneOffset}`,
             },
         });
+        
     }
+     
+
+
 }

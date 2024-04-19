@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { apiService } from 'src/app/Service/apiService';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-profile-detailing',
   templateUrl: './profile-detailing.component.html',
@@ -21,7 +22,7 @@ export class ProfileDetailingComponent {
   isOnline: boolean = false;
   
   sessiontype: number | undefined;
-  constructor(private router: Router, private apiService: apiService, private httpClient: HttpClient) { }
+  constructor(private router: Router, private apiService: apiService, private httpClient: HttpClient, private toster:ToastrService) { }
   onSessionTypeChange(event:any){
     if (this.isOnline && this.isOnSite) {
       this.sessiontype = 2; 
@@ -55,6 +56,10 @@ export class ProfileDetailingComponent {
   }
 
   addtags() {
+    if (this.tags2.length === 0) {
+      this.toster.error('Tags field is required','Error',{ positionClass: 'toast-top-right' });
+      return;
+    }
     const userData = JSON.parse(localStorage.getItem('userData') ?? '');
     const userId = userData?.user?.id?.toString() ?? '';
     const categoryId1 = userData?.user?.categories?.[0]?.id;
@@ -82,21 +87,37 @@ export class ProfileDetailingComponent {
         this.firstsection = !this.firstsection;
       },
       (error) => {
-
+        this.toster.error('forbidden','Error',{ positionClass: 'toast-top-right' });
         console.error('ParctitionerPreferences API Error:', error);
       }
     );
   }
 
   bussinessdetailsapi() {
-    const userData = JSON.parse(localStorage.getItem('userData') ?? '');
+   
+    if (!this.description) {
+      this.toster.error('Please enter a description','Error',{ positionClass: 'toast-top-right' });
+      return;
+    }
+    if (!this.address) {
+      this.toster.error('Please enter an address','Error',{ positionClass: 'toast-top-right' });
+      return;
+    }
+   if (!this.description && !this.address) {
+    this.toster.error('You have not entred both Address & description ','Error',{ positionClass: 'toast-top-right' });
+    }
+   const userData = JSON.parse(localStorage.getItem('userData') ?? '');
     const userId = userData?.user?.id?.toString() ?? '';
+    
+    // const utcTimeZone = new Date().toLocaleString('en', {timeZone: timeZone, timeZoneName: 'short'}).split(' ')[2];
+
+    const currentDate = new Date().toISOString().split('T')[0];
     const payload = {
       userId: userId,
       sessiontype: this.sessiontype,
       address: this.address,
-      timeZone: this.timeZone,
-      description: this.description
+      description: this.description,
+      date: currentDate
     }
     this.apiService.PractitionerBussinessPrefrences(payload).subscribe(
       (response) => {
@@ -104,6 +125,7 @@ export class ProfileDetailingComponent {
         this.secondsection = !this.secondsection;
       },
       (error) => {
+        this.toster.error('forbidden','Error',{ positionClass: 'toast-top-right' });
         console.error('ParctitionerPreferences API Error:', error);
       }
     );
@@ -112,12 +134,14 @@ export class ProfileDetailingComponent {
     const userData = JSON.parse(localStorage.getItem('userData') ?? '');
     const userId = userData?.user?.id?.toString() ?? '';
     if (!userId) {
+      this.toster.error('User ID not found','Error',{ positionClass: 'toast-top-right' });
       console.error('User ID not found');
       return;
     }
 
     const fileInput = document.getElementById('file-upload') as HTMLInputElement;
     if (!fileInput.files || !fileInput.files[0]) {
+      this.toster.error('No file selected','Error',{ positionClass: 'toast-top-right' });
       console.error('No file selected');
       return;
     }
@@ -137,7 +161,7 @@ export class ProfileDetailingComponent {
 
       },
       (error) => {
-
+        this.toster.error('forbidden','Error',{ positionClass: 'toast-top-right' });
         console.error('ParctitionerPreferences API Error:', error);
       }
     );

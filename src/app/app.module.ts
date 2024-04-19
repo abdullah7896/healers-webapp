@@ -13,11 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 import { AuthInterceptor } from './Http/authInterceptor';
 import { TagInputModule } from 'ngx-chips';
-
+import { ToastrModule} from 'ngx-toastr';
 
 
 
@@ -45,7 +43,13 @@ import { TagInputModule } from 'ngx-chips';
     SlickCarouselModule,
     ReactiveFormsModule,
     TagInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(
+)
+  
+    
+    
+    
     
 
     

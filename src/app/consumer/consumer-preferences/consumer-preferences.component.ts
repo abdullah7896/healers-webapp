@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { empty } from 'rxjs';
 import { apiService } from 'src/app/Service/apiService';
 
@@ -23,7 +24,7 @@ export enum HeightUnit {
   styleUrls: ['./consumer-preferences.component.css']
 })
 export class ConsumerPreferencesComponent {
-  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
+  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService, private toster:ToastrService) { }
 
   public gender = Gender;
   public weightUnit = WeightUnit;
@@ -57,7 +58,9 @@ export class ConsumerPreferencesComponent {
       console.log('Categories:', this.categories);
     },
       error => {
+        this.toster.error('forbidden','Error',{ positionClass: 'toast-top-right' });
         console.error('Login failed', error);
+        
       });
   }
   toggleCategorySelection(category: any) {
@@ -85,7 +88,8 @@ export class ConsumerPreferencesComponent {
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     },
       error => {
-        console.error('failed', error);
+        // console.error('failed', error);
+        this.toster.error('forbidden','Error',{ positionClass: 'toast-top-right' });
       });
   }
 

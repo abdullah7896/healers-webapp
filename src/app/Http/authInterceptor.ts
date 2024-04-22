@@ -79,11 +79,11 @@ export class AuthInterceptor implements HttpInterceptor {
     
     private attachTokenToRequest(request: HttpRequest<any>, token: string): HttpRequest<any> {
     //    let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    let timeZoneOffset = new Date().getTimezoneOffset()/60;
+    let timeZoneOffSet = new Date().getTimezoneOffset()/60;
         return request.clone({
             setHeaders: {
                 Authorization: `Bearer ${token}`,
-                TimeZoneOffset: `${timeZoneOffset}`,
+                TimeZoneOffSet: `${timeZoneOffSet}`,
             },
         });
         

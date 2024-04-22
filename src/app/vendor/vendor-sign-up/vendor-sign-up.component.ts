@@ -14,7 +14,7 @@ export class VendorSignUpComponent implements OnInit {
   fullName: string = '';
   phoneNumber = '';
   placeholder: string = 'Select upto 2 categories'
-  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService ,private toster:ToastrService) { }
+  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService, private toster: ToastrService) { }
   signUp = { firstName: '', lastName: '', email: '', phoneNumber: '', password: '', role: 1, selectedCategoryIds: this.selectedCategoryIds };
   userEmail = '';
   confirmSignUp = { email: '', verificationCode: '', password: '', userType: 1 };
@@ -41,7 +41,6 @@ export class VendorSignUpComponent implements OnInit {
   ngOnInit(): void {
     this.GetAllCategory();
   }
-
   // handleVerificationCodeChange(index: number, event: Event) {
   // const inputValue = (event.target as HTMLInputElement).value;
   // this.confirmSignUp.verificationCode = this.confirmSignUp.verificationCode.substring(0, index) + inputValue + this.confirmSignUp.verificationCode.substring(index + 1);
@@ -57,7 +56,6 @@ export class VendorSignUpComponent implements OnInit {
   }
   isValidated(response: any): boolean {
     if (response.status) return true;
-
     if (this.signUp.email == '') {
       this.showEmptyEmail = !this.showEmptyEmail;
       if (this.showEmailAlreadyExists == true) this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
@@ -66,13 +64,7 @@ export class VendorSignUpComponent implements OnInit {
       this.showEmailAlreadyExists = !this.showEmailAlreadyExists;
       if (this.showEmptyEmail == true) this.showEmptyEmail = !this.showEmptyEmail;
     }
-
     if (this.signUp.password == '') this.showEmptyPassword = !this.showEmptyPassword;
-
-    else {
-      // alert(response.message)
-    }
-
     return false;
   }
 
@@ -89,18 +81,17 @@ export class VendorSignUpComponent implements OnInit {
       this.signUp.firstName = this.fullName
     this.signUp.phoneNumber = this.phoneNumber.toString();
     this.signUp.selectedCategoryIds = this.selectedCategoryIds;
-
     this.apiService.SignUp(this.signUp).subscribe(response => {
-       const isValidatedResponse = this.isValidated(response)
+      const isValidatedResponse = this.isValidated(response)
       console.log('isValidatedResponse', isValidatedResponse)
-      if (!isValidatedResponse){
+      if (!isValidatedResponse) {
         this.toster.error(response.message, response.errorCode, { positionClass: 'toast-top-right' });
-        return};
-      
+        return
+      };
       this.vendorsignup = !this.vendorsignup;
       localStorage.setItem('practitionerPasswordEmail', this.userEmail);
       console.log('Signup successful', response);
-       }, error => {
+    }, error => {
       // Handle login error here
       if (error.status == 400) {
         this.showEmptyEmail = !this.showEmptyEmail
@@ -111,11 +102,10 @@ export class VendorSignUpComponent implements OnInit {
       this.isloading = false;
     })
   }
- handleUserNotConfirmedError() {
+  handleUserNotConfirmedError() {
     // Make your API call or perform other actions here
     console.log('User is not confirmed. Handling the error...');
   }
-
   ConfirmSignUp() {
     this.isloading = true;
     this.confirmSignUp.password = this.signUp.password
@@ -127,7 +117,6 @@ export class VendorSignUpComponent implements OnInit {
           localStorage.setItem('userData', JSON.stringify(response.result[0]))
           this.router.navigate(['/ProfileDetailing']);
         }
-
       }
       else {
         alert(response.message)
@@ -185,7 +174,6 @@ export class VendorSignUpComponent implements OnInit {
   // navigatetoprofiledetailing() {
   // this.router.navigate(['/ProfileDetailing']);
   // }
-
   refreshPage() {
     window.location.reload();
   }

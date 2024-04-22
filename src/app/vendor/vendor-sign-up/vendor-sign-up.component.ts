@@ -3,9 +3,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { apiService } from 'src/app/Service/apiService';
 import { ToastrService } from 'ngx-toastr';
-
-
-
 @Component({
   selector: 'app-vendor-sign-up',
   templateUrl: './vendor-sign-up.component.html',
@@ -94,12 +91,7 @@ export class VendorSignUpComponent implements OnInit {
     this.signUp.selectedCategoryIds = this.selectedCategoryIds;
 
     this.apiService.SignUp(this.signUp).subscribe(response => {
-      
-      
-        
-      
-      const isValidatedResponse = this.isValidated(response)
-      
+       const isValidatedResponse = this.isValidated(response)
       console.log('isValidatedResponse', isValidatedResponse)
       if (!isValidatedResponse){
         this.toster.error(response.message, response.errorCode, { positionClass: 'toast-top-right' });
@@ -108,11 +100,7 @@ export class VendorSignUpComponent implements OnInit {
       this.vendorsignup = !this.vendorsignup;
       localStorage.setItem('practitionerPasswordEmail', this.userEmail);
       console.log('Signup successful', response);
-      
-    
-        
-      
-    }, error => {
+       }, error => {
       // Handle login error here
       if (error.status == 400) {
         this.showEmptyEmail = !this.showEmptyEmail
@@ -123,8 +111,7 @@ export class VendorSignUpComponent implements OnInit {
       this.isloading = false;
     })
   }
-
-  handleUserNotConfirmedError() {
+ handleUserNotConfirmedError() {
     // Make your API call or perform other actions here
     console.log('User is not confirmed. Handling the error...');
   }

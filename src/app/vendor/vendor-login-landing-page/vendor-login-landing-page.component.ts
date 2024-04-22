@@ -14,4 +14,15 @@ export class VendorLoginLandingPageComponent {
   navigatetohome(){
     this.router.navigate(['']);
   }
+  imageUrl: string | undefined;
+  onFileSelected(event:any): void {
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e: any) => {
+      this.imageUrl = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  }
 }

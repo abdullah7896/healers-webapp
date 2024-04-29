@@ -10,6 +10,8 @@ import { apiService } from 'src/app/Service/apiService';
 })
 export class VendorLoginLandingPageComponent {
   @ViewChild('fileInput') fileInput: ElementRef | undefined;
+  // showProfileSection: boolean | undefined;
+  showProfileSection: boolean = false;
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
 
   navigatetohome(){
@@ -33,16 +35,16 @@ export class VendorLoginLandingPageComponent {
   }
 
   selectedImages: string[] = [];
-
-  selectImage(event: any) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-  
-    reader.onload = () => {
-      this.selectedImages.push(reader.result as string);
-    };
-  
-    reader.readAsDataURL(file);
+ selectImage(event: any) {
+    const files: File[] = Array.from(event.target.files);
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.selectedImages.push(reader.result as string);
+        this.toogletext();
+      };
+      reader.readAsDataURL(file);
+    });
   }
 
   showimage = true;
@@ -54,6 +56,20 @@ export class VendorLoginLandingPageComponent {
   toogletext(){
     this.showtext =!this.showtext
   }
-  
+  toggleProfileSection(show: boolean): void {
+    // this.showProfileSection = show;
+    this.showProfileSection = show;
+    this.showdashbord = false;
+
+}
+showdashbord: boolean = true;
+toggledashbordsection(show: boolean): void {
+  // this.toggleProfileSection(true);
+  // this.showdashbord = show;
+  // this.toggleProfileSection(true);
+  this.showProfileSection = false; // Hide profile section
+  this.showdashbord = show;
+}
+
  
 }

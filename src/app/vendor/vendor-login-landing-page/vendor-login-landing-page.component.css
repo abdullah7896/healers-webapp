@@ -1,3 +1,9 @@
 .bordered-element {
     border: 1px solid black; /* Add your border style here */
   }
+  a:hover {
+    border-radius: 8px;
+    background-color: rgba(197, 197, 197, 0.2); /* #C5C5C5 at 20% opacity */
+    width: 260px;
+    height: 60%;
+  }

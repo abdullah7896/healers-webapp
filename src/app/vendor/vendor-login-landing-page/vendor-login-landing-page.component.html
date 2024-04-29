@@ -25,189 +25,272 @@
     </nav>
 </section>
 <section class=" body-font  ">
-    <div class="flex  ">
-        <div class="  w-[20%] bg-[#F9FBFC] h-screen fixed top-[90px]">
-            <div class="">
-                <aside id="default-sidebar" class="gap-[40px] relative top-[42px] left-[15px]  w-64 "
-                    aria-label="Sidebar">
-                    <!-- <div class="px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"> -->
-                    <ul class="space-y-2 font-medium ">
-                        <li>
-                            <a class="flex items-center p-2 ">
-                                <img src="assets/category.svg" alt="">
-                                <span class=" flex-1 ms-3 whitespace-nowrap text-[#262626]">Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center p-2 ">
-                                <img src="assets/calendar.svg" alt="">
-                                <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Schedule</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center p-2">
-                                <img src="assets/clipboard-tick.svg" alt="">
-                                <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Appointments</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center p-2 ">
-                                <img src="assets/Vector.svg" alt="">
-                                <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Services</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center p-2">
-                                <img src="assets/sms.svg" alt="">
-                                <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Inbox</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center p-2">
-                                <img src="assets/profile.svg" alt="">
-                                <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Profile</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- </div> -->
-                </aside>
-                <div class="flex" style="border-left: 1px solid #C5C5C5 "></div>
-            </div>
 
-        </div>
-
-        <div class="flex pt-10 pl-[350px]  z-[-50]">
-            <div class="w-[964px] h-[78px]  border-radius">
-                <div class="pt-[70px]">
-                    <p class="font-bold text-[32px] leading-[48px] text-[#000000]">Profile</p>
-                    <p class="text-[12px] leading-[22px] font-normal">Customize you profile here</p>
-                </div>
-                <div class="w-[964px] h-[396px] ">
-                    <form class="">
-                        <div class="parent flex gap-20 pt-[23px]">
-                            <div class="relative">
-                                <img id='preview_img' class="w-[200px] h-[200px] object-cover rounded-full"
-                                [src]="imageUrl || 'assets/by default image.png'" alt="Current profile photo" (click)="selectProfilePhoto()" />
-                                <img id="imageClick" src="assets/mini.png" alt="Click to choose profile photo"
-                                    class="absolute top-[170px] left-[165px] cursor-pointer"
-                                    (click)="selectProfilePhoto()" />
-                                <input #fileInput type="file" (change)="onFileSelected($event)" accept="image/*"
-                                    class="hidden" />
-                            </div>
-                            <div class="">
-
-
-                                <form class="max-w-md mx-auto">
-                                    <div class="grid md:grid-cols-2 md:gap-6">
-                                        <div class="relative z-0 w-full mb-5 group">
-                                            <input type="text" name="floating_first_name" id="floating_first_name"
-                                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                                placeholder=" " required />
-                                            <label for="floating_first_name"
-                                                class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full
-                                                Name</label>
-                                        </div>
-                                        <div class="relative z-0 w-full mb-5 group">
-                                            <input type="email" name="floating_last_name" id="floating_last_name"
-                                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                                placeholder=" " required />
-                                            <label for="floating_last_name"
-                                                class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="grid md:grid-cols-2 md:gap-6">
-                                        <div class="relative z-0 w-full mb-5 group">
-                                            <input type="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                                name="floating_phone" id="floating_phone"
-                                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                                placeholder=" " required />
-                                            <label for="floating_phone"
-                                                class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contact
-                                                No</label>
-                                        </div>
-                                        <div class="relative z-0 w-full mb-5 group">
-                                            <input type="text" name="floating_company" id="floating_company"
-                                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                                placeholder=" " required />
-                                            <label for="floating_company"
-                                                class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Services
-                                                categories</label>
-                                        </div>
-                                    </div>
-                                    <div class="relative z-0 w-full mb-5 group">
-                                        <input type="text" name="floating_email" id="floating_email"
-                                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                            placeholder=" " required />
-                                        <label for="floating_email"
-                                            class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Address</label>
-                                    </div>
-                                    <div class="relative z-0 w-full mb-5 group">
-                                        <input type="time zone" name="floating_password" id="floating_password"
-                                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                            placeholder=" " required />
-                                        <label for="floating_password"
-                                            class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Time
-                                            Zone</label>
-                                    </div>
-
-
-                                    <button class="bg-[#04A3A3] text-[#ffffff] w-[40%] h-[40px] mr-[8px] cursor-pointer"
-                                        style="border-radius: 100px; border: none;">Save Changes</button>
-                                </form>
-
-                            </div>
-
-
-                        </div>
-                    </form>
-
-
-
-
-                    <!-- <div class="w-[964px] h-[50px]  " >
-                        <p class="text-[#000000] font-bold text-[20px] mt-[10px] leading-[30px]">Gallery</p>
-                        <div style="display: flex; justify-content: flex-end;" class="mt-[-42px]">
-                        <button class="primary circle large normal " style=" width: 50px; height: 50px; border-radius: 96px; border: 1px solid #FFFFFF; padding: 8px; margin: 3px; background-color: #FFFFFF;  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);" >
-                            <img src="assets/image 234.png" class="w-6 h-6 items-center" alt="">
-                        </button>
-                     
-                    </div>
-                    <div class="flex gap-40"> 
-                        <img id='preview_img' class="w-[200px] h-[200px] object-cover  bordered-element "
-                        [src]="imageUrl" alt="Current profile photo" (click)="selectProfilePhoto()" />
-                        <img id='preview_img' class="w-[200px] h-[200px] object-cover  bordered-element "
-                        [src]="imageUrl" alt="Current profile photo" (click)="selectProfilePhoto()" />
-                        <img id='preview_img' class="w-[200px] h-[200px] object-cover  bordered-element "
-                        [src]="imageUrl" alt="Current profile photo" (click)="selectProfilePhoto()" />
-                        
-                    </div>
-                    </div> -->
-                    <div class="w-[964px] h-[50px]">
-                        <p class="text-[#000000] font-bold text-[20px] mt-[10px] leading-[30px]">Gallery</p>
-                        <div style="display: flex; justify-content: flex-end;" class="mt-[-42px]">
-                          <button class="primary circle large normal" (click)="toggleimg() ; toogletext()"   style="width: 50px; height: 50px; border-radius: 96px; border: 1px solid #FFFFFF; padding: 8px; margin: 3px; background-color: #FFFFFF; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);">
-                            <label for="fileInput" style="cursor: pointer;">
-                              <img src="assets/image 234.png" class="w-6 h-6 items-center" alt="">
-                            </label>
-                            <input type="file" id="fileInput" style="display: none;" (change)="selectImage($event)">
-                          </button>
-                        </div>
-                        <div class="flex gap-40"  *ngIf="!showimage" >
-                         <img class="w-[200px] h-[200px] object-cover bg-gray-200" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAwAB/6+F8gAAAABJRU5ErkJggg==" [src]="selectedImages[0]" />
-                          <img class="w-[200px] h-[200px] object-cover bg-gray-200" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAwAB/6+F8gAAAABJRU5ErkJggg==" [src]="selectedImages[1]" />
-                          <img class="w-[200px] h-[200px] object-cover bg-gray-200" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAwAB/6+F8gAAAABJRU5ErkJggg==" [src]="selectedImages[2]" />
-
-                        </div>
-
-                      </div>
-                      <p  *ngIf="showimage" class="font-roboto font-normal text-base leading-normal tracking-tight text-center  h-5">Gallery is empty. Let's showcase your work and impress your clients!</p>
-                      
-                      
-                </div>
-            </div>
-
-
+    <div class="  w-[20%] bg-[#F9FBFC] h-screen fixed top-[90px]">
+        <div class="">
+            <aside id="default-sidebar" class="gap-[40px] relative top-[42px] left-[15px]  w-64 " aria-label="Sidebar">
+                <!-- <div class="px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"> -->
+                <ul class="space-y-2 font-medium ">
+                    <li>
+                        <a class="flex items-center p-2 " style="cursor: pointer;"
+                            (click)="toggledashbordsection(true)">
+                            <img src="assets/category.svg" alt="">
+                            <span class=" flex-1 ms-3 whitespace-nowrap text-[#262626]">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex items-center p-2 " style="cursor: pointer;"
+                            (click)="toggleProfileSection(false)">
+                            <img src="assets/calendar.svg" alt="">
+                            <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Schedule</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex items-center p-2" style="cursor: pointer;" (click)="toggleProfileSection(false)">
+                            <img src="assets/clipboard-tick.svg" alt="" style="cursor: pointer;">
+                            <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Appointments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex items-center p-2 " style="cursor: pointer;"
+                            (click)="toggleProfileSection(false)">
+                            <img src="assets/Vector.svg" alt="">
+                            <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex items-center p-2" style="cursor: pointer;" (click)="toggleProfileSection(false)">
+                            <img src="assets/sms.svg" alt="">
+                            <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Inbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex items-center p-2" style="cursor: pointer;" (click)="toggleProfileSection(true)">
+                            <img src="assets/profile.svg" alt="">
+                            <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- </div> -->
+            </aside>
+            <div class="flex" style="border-left: 1px solid #C5C5C5 "></div>
         </div>
 
     </div>
+    <div class=" pt-[150px] pl-[350px]" *ngIf="showdashbord">
+        <div class="w-[964px] h-[78px] ">
+            <p class=" font-bold text-[32px] text-[#000000] leading-[48px]">Dashboard</p>
+            <p class="text-[14px] font-normal leading-[22px] text-[#000000]">Appointments, insights and more</p>
+        </div>
+        <div class="w-[80%] h-14  rounded-lg border border-gray-300 p-5 mt-10 gap-5 bg-white">
+        </div>
+        <p class="w-[206px] h-[30px] font-bold text-[20px] leading-[30px] text-[#000000] mt-3">Appointments Today</p>
+        <div class="w-[80%] h-[286px]   flex gap-[40px]">
+
+            <div
+                class="w-[350px] h-[240px]  mt-10 rounded-[12px] border-1 border border-gray-300  flex justify-center items-center ">
+                <div class="w-[302px] h-[148px] gap-[16px]">
+                    <div class="w-[302px] h-[24px]   ">
+                        <p class="font-semibold text-[16px] leading-[24px] text-[#434343] ">Feb 23, 2024</p>
+                    </div>
+                    <div class="w-[302px] h-[70px]  p-0 pb-16 mt-4  flex gap-[8px]">
+                        <div class="w-[254px] h-[54px]  ">
+                            <div class="flex">
+                                <img src="assets/dot.svg" alt="" class="w-[12px] h-[30px]">
+                                <p class="text-[20px] leading-[30px] font-bold ml-[12px]">Nathan Thompson</p>
+                            </div>
+                            <p class="font-semibold text-[16px] leading-[24px] ml-[24px]">Yoga</p>
+                            <hr style="border-top: 1px solid #F0F0F0;" class="w-[300px] mt-[6px]">
+
+                        </div>
+                        <div class="w-[48px] h-[48px] ">
+                            <img src="assets/Ellipse 202.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="w-fill h-hug  flex place-content-around">
+                        <img src="assets/clock.svg" alt="" class="">
+                        <p class="TEXT-[14px] leading-[22px] font-normal">12:30 PM to 1:00 PM</p> <img
+                            src="assets/Icons t.svg" alt="" class="pl-[65px]">
+                        <p class="font-normal text-[14px] leading-[22px]">Online</p>
+                    </div>
+
+                    <button class="mt-[20px]  w-[111px] h-[28px] ml-[200px] ">
+                       <p class="text-[#FF4D4F] text-[14px] leading-[20px] font-medium">Cancel Booking</p>
+                    </button>
+                  
+                </div>
+
+
+            </div>
+            <div
+                class="w-[350px] h-[240px] mt-10 rounded-[12px] border-1 border border-gray-300 flex justify-center items-center">
+                <div class="w-[302px] h-[148px] gap-[16px] ">
+                    <div class="w-[302px] h-[24px]   ">
+                        <p class="font-semibold text-[16px] leading-[24px] text-[#434343] ">Feb 23, 2024</p>
+                    </div>
+                    <div class="w-[302px] h-[70px]  p-0 pb-16 mt-4  flex gap-[8px]">
+                        <div class="w-[254px] h-[54px]  ">
+                            <div class="flex">
+                                <img src="assets/dot.svg" alt="" class="w-[12px] h-[30px]">
+                                <p class="text-[20px] leading-[30px] font-bold ml-[12px]">Nathan Thompson</p>
+                            </div>
+                            <p class="font-semibold text-[16px] leading-[24px] ml-[24px]">Yoga</p>
+                            <hr style="border-top: 1px solid #F0F0F0;" class="w-[300px] mt-[6px]">
+
+                        </div>
+                        <div class="w-[48px] h-[48px] ">
+                            <img src="assets/Ellipse 202.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="w-fill h-hug  flex place-content-around">
+                        <img src="assets/clock.svg" alt="" class="">
+                        <p class="TEXT-[14px] leading-[22px] font-normal">12:30 PM to 1:00 PM</p> <img
+                            src="assets/Icons t.svg" alt="" class="pl-[65px]">
+                        <p class="font-normal text-[14px] leading-[22px]">Online</p>
+                    </div>
+                    <button class="mt-[20px]  w-[111px] h-[28px] ml-[200px] ">
+                        <p class="text-[#FF4D4F] text-[14px] leading-[20px] font-medium">Cancel Booking</p>
+                    </button>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+    <div class="flex pt-10 pl-[350px]  z-[-50] w-[80%] h-screen" *ngIf="showProfileSection && !showdashbord">
+
+
+        <!-- <div class="pt-[70px]">
+                    <p class="font-bold text-[32px] leading-[48px] text-[#000000]">Profile</p>
+                    <p class="text-[12px] leading-[22px] font-normal">Customize you profile here</p>
+                </div> -->
+        <div class=" ">
+            <div class="pt-[70px]">
+                <p class="font-bold text-[32px] leading-[48px] text-[#000000]">Profile</p>
+                <p class="text-[12px] leading-[22px] font-normal">Customize you profile here</p>
+
+            </div>
+            <form class="">
+                <div class="parent flex gap-20 pt-[23px]">
+                    <div class="relative">
+                        <img id='preview_img' class="w-[200px] h-[200px] object-cover rounded-full"
+                            [src]="imageUrl || 'assets/by default image.png'" alt="Current profile photo"
+                            (click)="selectProfilePhoto()" />
+                        <img id="imageClick" src="assets/img of cam.svg" alt="Click to choose profile photo"
+                            class="absolute top-[170px] left-[165px] cursor-pointer" (click)="selectProfilePhoto()" />
+                        <input #fileInput type="file" (change)="onFileSelected($event)" accept="image/*"
+                            class="hidden" />
+                    </div>
+                    <div class="">
+
+
+                        <form class="max-w-md mx-auto">
+                            <div class="grid md:grid-cols-2 md:gap-6">
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="text" name="floating_first_name" id="floating_first_name"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
+                                        placeholder=" " required />
+                                    <label for="floating_first_name"
+                                        class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full
+                                        Name</label>
+                                </div>
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="email" name="floating_last_name" id="floating_last_name"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
+                                        placeholder=" " required />
+                                    <label for="floating_last_name"
+                                        class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 md:gap-6">
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone"
+                                        id="floating_phone"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
+                                        placeholder=" " required />
+                                    <label for="floating_phone"
+                                        class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contact
+                                        No</label>
+                                </div>
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <input type="text" name="floating_company" id="floating_company"
+                                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
+                                        placeholder=" " required />
+                                    <label for="floating_company"
+                                        class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Services
+                                        categories</label>
+                                </div>
+
+                            </div>
+                            <div class="w-[447px] h-[48px]">
+                                <p class="font-medium text-md leading-16 tracking-[0.5px] text-black">Services
+                                    Type:</p>
+                                <div class="flex gap-10 mt-[8px]">
+                                    <div class="flex items-center mt-1 ">
+                                        <input id="default-checkbox" type="checkbox" value=""
+                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        <label for="default-checkbox"
+                                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Online</label>
+                                    </div>
+                                    <div class="flex items-center  mt-1">
+                                        <input checked id="checked-checkbox" type="checkbox" value=""
+                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        <label for="checked-checkbox"
+                                            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Onsite</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative z-0 w-full mt-4 group">
+                                <input type="text" name="floating_email" id="floating_email"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
+                                    placeholder=" " required />
+                                <label for="floating_email"
+                                    class="peer-focus:font-medium absolute text-sm text-[#000000] dark:text-[#000000] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Address</label>
+                            </div>
+                            <button class="bg-[#04A3A3] text-[#ffffff] w-[40%] h-[40px] mr-[8px] mt-8 cursor-pointer"
+                                style="border-radius: 100px; border: none;">Save Changes</button>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </form>
+            <div class="w-[964px] h-[50px]">
+                <p class="text-[#000000] font-bold text-[20px] mt-[10px] leading-[30px]">Gallery</p>
+                <div style="display: flex; justify-content: flex-end;" class="mt-[-42px]">
+                    <button class="primary circle large normal"
+                        style="width: 50px; height: 50px; border-radius: 96px; border: 1px solid #FFFFFF; padding: 8px; margin: 3px; background-color: #FFFFFF; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);">
+                        <label for="fileInput" style="cursor: pointer;">
+                            <img src="assets/Imag 212.svg" class="w-6 h-6 items-center" alt="">
+                        </label>
+                        <input type="file" id="fileInput" style="display: none;" (change)="selectImage($event)"
+                            multiple>
+                    </button>
+                </div>
+                <div class="flex gap-40" *ngIf="showimage">
+
+                    <img *ngFor="let image of selectedImages" class="w-[200px] h-[200px] object-cover bg-gray-200 "
+                        [src]="image" />
+
+                </div>
+
+            </div>
+            <p *ngIf="showtext"
+                class="font-roboto font-normal text-base leading-normal tracking-tight text-center  h-5">Gallery
+                is empty. Let's showcase your work and impress your clients!</p>
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
 </section>

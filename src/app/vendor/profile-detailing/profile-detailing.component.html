@@ -184,7 +184,7 @@
                     <div class="w-[652px] h-[140px] gap-[16px]">
                         <p class="w-[652px] h-[24px] text-[16px] leading-[24px] font-medium">Logo</p>
                         <div class="w-[652px] h-[110px] gap-[20px] flex ">
-                            <div class="w-[100px] h-[100px] "><img src="assets/Component Placeholder Image.png" alt="">
+                            <div class="w-[100px] h-[100px] "><img [src]="previewImageUrl || 'assets/Component Placeholder Image.png'" alt="">
                             </div>
                             <div class="w-[341px] h-[94px] gap-[10px] ">
                                 <label for="formFile"
@@ -215,7 +215,7 @@
                             <p class="text-[16px] leading-[24px] text-[#000000]">Gallery Images</p>
                         </div>
                         <div class=" gap-[16px]">
-                            <div class=" relative border-2 border-gray-300 border-dashed rounded-lg p-[10px]"
+                            <!-- <div class=" relative border-2 border-gray-300 border-dashed rounded-lg p-[10px]"
                                 id="dropzone">
                                 <input type="file" class="absolute inset-0 w-full h-full opacity-0 z-50">
                                 <div class="text-center">
@@ -236,13 +236,32 @@
                                 </div>
 
                                 <img src="" class="mt-4 mx-auto max-h-40 hidden" id="preview" [src]="previewImageUrl">
+                            </div> -->
+                            <div class="relative border-2 border-gray-300 border-dashed rounded-lg p-[10px]" id="dropzone">
+                                <input type="file" class="absolute inset-0 w-full h-full opacity-0 z-50" (change)="onFileSelecteds($event)" multiple>
+                                <div class="text-center">
+                                    <h3 class="mt-2 text-sm font-normal text-gray-900">
+                                        <span>Drag and drop</span>
+                                        <span class="text-indigo-600"> or browse</span>
+                                    </h3>
+                                    <p class="mt-1 text-xs text-gray-500">
+                                        PNG, JPG, GIF up to 10MB
+                                    </p>
+                                </div>
+                            
+                                <div class="mt-4 w-[100%] flex" *ngIf="selectedImages.length > 0">
+                                    <div *ngFor="let image of selectedImages">
+                                        <img class="h-20 mx-2" [src]="image.url" alt="">
+                                    </div>
+                                </div>
                             </div>
+                            
 
                             <div class="w-[652px] h-[60px] pt-[24px]">
                                 <button class="w-[50px] h-[50px] rounded-[96px] gap-[8px] text-[#ffffff]" (click)="togglesecondsection()" >
                                     <img src="assets/arrow back.png" alt="" class="pl-[5px]">
                                 </button>
-                                <button type="submit" (click)="uploaduserimage()"
+                                <button type="submit" (click)="uploaduserimage() ;navigatetosignin()" 
                                     class="w-[92%] h-[40px] justify-center rounded-md    font-semibold leading-6 text-white shadow-sm hover: focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-[#006A6A] ">
                                     Next</button>
                             </div>

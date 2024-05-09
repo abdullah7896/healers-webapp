@@ -152,7 +152,7 @@ export class VendorsigninComponent {
         return;
       }
       console.log('Login successful', response);
-      this.router.navigate(['/VendorLoginLandingPage']);
+      this.router.navigate(['/Practitioners']);
     }, error => {
       this.isloading = false;
       console.error('Login failed', error);

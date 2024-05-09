@@ -145,18 +145,24 @@ export class ProfileDetailingComponent {
       console.error('No file selected');
       return;
     }
+   
 
     const file: File = fileInput.files[0];
 
     const formData = new FormData();
-    formData.append('ProfileImage', file, file.name);
+     formData.append('ProfileImage', file, file.name);
+     
+   
+    
+
     formData.append('userId', userId);
 
     console.log(formData);
-
+    const imageUrls = this.selectedImages.map(image => image.url);
+    formData.append('images', JSON.stringify(imageUrls));
     this.apiService.PractitionerUploadUserImg(formData).subscribe(
       (response) => {
-
+        localStorage.setItem('sessionType', 'true');
         console.log('ParctitionerPreferences API Response:', response);
 
       },
@@ -191,5 +197,24 @@ firstsection = false;
  navigatetohome() {
     this.router.navigate(['']);
   }
+  navigatetosignin(){
+    this.router.navigate(['/vendorsignin']);
+  }
+  selectedImages: any[] = [];
+
+    onFileSelecteds(event: any) {
+        if (event.target.files) {
+            for (let i = 0; i < event.target.files.length; i++) {
+                const file = event.target.files[i];
+                const reader = new FileReader();
+                reader.onload = (e: any) => {
+                    this.selectedImages.push({ url: e.target.result });
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    }
+
+    
 
 }

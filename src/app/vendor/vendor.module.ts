@@ -12,6 +12,11 @@ import { VendorLoginLandingPageComponent } from './vendor-login-landing-page/ven
 import { NgOtpInputModule } from 'ng-otp-input';
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileComponent } from './profile/profile.component';
+import { DashbordNavbarComponent } from './dashbord-navbar/dashbord-navbar.component';
+import { DashbordSidebarComponent } from './dashbord-sidebar/dashbord-sidebar.component';
+import { ServicesComponent } from './services/services.component';
+import { AddServicesComponent } from './Services/add-services/add-services.component';
 
 
 
@@ -24,7 +29,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
   VendorSignUpComponent,
     ProfileDetailingComponent,
-    VendorLoginLandingPageComponent
+    VendorLoginLandingPageComponent,
+    ProfileComponent,
+    DashbordNavbarComponent,
+    DashbordSidebarComponent,
+    ServicesComponent,
+    AddServicesComponent
     
   ],
   imports: [

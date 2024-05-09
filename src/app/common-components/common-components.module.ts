@@ -7,12 +7,14 @@ import { MobileAppSectionComponent } from './mobile-app-section/mobile-app-secti
 
 
 
+
 @NgModule({
   declarations: [
     FooterComponentComponent,
     HeroComponentComponent,
     ChooseUsComponent,
-    MobileAppSectionComponent
+    MobileAppSectionComponent,
+    
   ],
   imports: [
     CommonModule

@@ -45,11 +45,16 @@ export class apiService extends BaseHttpService {
     PractitionerBussinessPrefrences(PractitionerBussinessPrefrences: any): Observable<any> {
         return this.post(`${this.apiEndPoints.Url_PractitionerBussinessPrefrences}`, PractitionerBussinessPrefrences)
     };
-
-
-    PractitionerUploadUserImg(PractitionerUploadUserImg: any): Observable<any> {
+     PractitionerUploadUserImg(PractitionerUploadUserImg: any): Observable<any> {
         return this.postFile(`${this.apiEndPoints.Url_PractitionerUploadUserImg}`,PractitionerUploadUserImg)
     };
+    PractitionergetById(userId: any): Observable<any> {
+        return this.get(`${this.apiEndPoints.Url_PractitionergetById}?UserId=${userId}`)
+    };
+    ParctitionerAddService(ParctitionerAddService: any): Observable<any> {
+        return this.post(`${this.apiEndPoints.Url_PractitionerAddService}`, ParctitionerAddService)
+    };
+
 
 
 }

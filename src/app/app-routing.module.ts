@@ -12,6 +12,11 @@ import { VendorSignUpComponent } from './vendor/vendor-sign-up/vendor-sign-up.co
 import { ConsumerPreferencesComponent } from './consumer/consumer-preferences/consumer-preferences.component';
 import { ProfileDetailingComponent } from './vendor/profile-detailing/profile-detailing.component';
 import { VendorLoginLandingPageComponent } from './vendor/vendor-login-landing-page/vendor-login-landing-page.component';
+import { authGuardGuard } from './guards/auth-guard.guard';
+import { ProfileComponent } from './vendor/profile/profile.component';
+import { ServicesComponent } from './vendor/services/services.component';
+import { AddServicesComponent } from './vendor/Services/add-services/add-services.component';
+
 
 
 
@@ -24,9 +29,12 @@ const routes: Routes = [
   {path:'consumersignin', component:SigninComponent},
   {path:'consumersignup', component:SignUpComponent},
   {path:'Vendorsignup', component:VendorSignUpComponent},
-  {path:'Preferences',component:ConsumerPreferencesComponent},
-  {path:'ProfileDetailing', component:ProfileDetailingComponent},
-  {path:'VendorLoginLandingPage', component:VendorLoginLandingPageComponent},
+  {path:'Preferences',component:ConsumerPreferencesComponent, canActivate:[authGuardGuard]},
+  {path:'ProfileDetailing', component:ProfileDetailingComponent, canActivate:[authGuardGuard]},
+  {path:'Practitioners', component:VendorLoginLandingPageComponent ,canActivate:[authGuardGuard]},
+  {path:'Practitioners-Profile', component:ProfileComponent ,canActivate:[authGuardGuard]},
+  {path:'Services', component:ServicesComponent},
+  {path:'AddServices', component:AddServicesComponent},
   {path:'',component:HomeComponent}
   
  

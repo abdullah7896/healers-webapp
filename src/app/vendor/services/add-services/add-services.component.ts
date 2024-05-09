@@ -1,14 +1,22 @@
-import { Component,ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { apiService } from 'src/app/Service/apiService';
 
 @Component({
-  selector: 'app-vendor-login-landing-page',
-  templateUrl: './vendor-login-landing-page.component.html',
-  styleUrls: ['./vendor-login-landing-page.component.css']
+  selector: 'app-add-services',
+  templateUrl: './add-services.component.html',
+  styleUrls: ['./add-services.component.css']
 })
-export class VendorLoginLandingPageComponent {
+export class AddServicesComponent {
+ 
+  description: string = '';
+  characterCount: number = 0;
+  
+
+  updateCharacterCount(): void {
+    this.characterCount = this.description.length;
+  }
   @ViewChild('fileInput') fileInput: ElementRef | undefined;
   // showProfileSection: boolean = false;
   isOnlineChecked: boolean = false;
@@ -18,9 +26,9 @@ export class VendorLoginLandingPageComponent {
   // showProfileSection: boolean | undefined;
   showProfileSection: boolean = false;
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
-
+  
   navigatetohome(){
-    this.router.navigate(['']);
+  this.router.navigate(['']);
   }
   imageUrl: string | undefined;
   selectProfilePhoto(): void {
@@ -167,10 +175,78 @@ GetAllCategory() {
     });
 }
 
+// 
+serviceName: string = '';
+descriptions:string ='';
+cost: number = 0;
+costString = this.cost.toString();
+onServiceNameInput(event: any) {
+  this.serviceName = event.target.value;
+  
+}
+onServicedescription(event: any) {
+  this.descriptions = event.target.value;
+  }
+  onServicecost(event: any) {
+    this.costString = event.target.value;
+    }
 
-navigatetoprofile(){
-  this.router.navigate(['/Practitioners-Profile']);
+    isOnSite: boolean = false;
+    isOnline: boolean = false;
+    sessiontypes: number | undefined;
+
+    onSessionTypeChanges(event: any) {
+      if (this.isOnline && this.isOnSite) {
+        this.sessiontypes = 2;
+      } else if (this.isOnline) {
+        this.sessiontypes = 0;
+      } else if (this.isOnSite) {
+        this.sessiontypes = 1;
+      } 
+    } 
+apiaddservice() {
+  
+  const userData = JSON.parse(localStorage.getItem('userData') ?? '');
+    const userId = userData?.user?.id?.toString() ?? '';
+    const lastSelectedCategoryId = this.selectedCategoryIds[this.selectedCategoryIds.length - 1];
+    const categoryIdString = typeof lastSelectedCategoryId === 'object' ? lastSelectedCategoryId.id : lastSelectedCategoryId.toString();
+  
+  const payload = {
+    userId: userId,
+    name: this.serviceName,
+    description:this.descriptions,
+    cost:this.costString,
+    type: this.sessiontypes,
+    categoryId: categoryIdString 
+  
+    
+  };
+
+  this.apiService.ParctitionerAddService(payload).subscribe(
+    response => {
+      console.log('Service added successfully', response);
+      //this.router.navigate(['/dashboard']); // Example redirect to dashboard
+    },
+    error => {
+      console.error('Failed to add service', error);
+    }
+  );
 }
 
- 
+navigatetoservices(){
+  this.router.navigate(['/Services']);
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
 }

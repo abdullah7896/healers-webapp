@@ -1,0 +1,52 @@
+<div class="  w-[20%] bg-[#F9FBFC] h-screen fixed top-[90px]">
+    <div class="">
+        <aside id="default-sidebar" class="gap-[40px] relative top-[42px] left-[15px]  w-64 " aria-label="Sidebar">
+            <!-- <div class="px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"> -->
+            <ul class="space-y-2 font-medium ">
+                <li>
+                    <a class="flex items-center p-2 " style="cursor: pointer;"
+                        (click)="toggledashbordsection(true) ; navigatetodashbord()">
+                        <img src="assets/category.svg" alt="">
+                        <span class=" flex-1 ms-3 whitespace-nowrap text-[#262626]">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="flex items-center p-2 " style="cursor: pointer;"
+                        (click)="toggleProfileSection(false)">
+                        <img src="assets/calendar.svg" alt="">
+                        <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Schedule</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="flex items-center p-2" style="cursor: pointer;" (click)="toggleProfileSection(false)">
+                        <img src="assets/clipboard-tick.svg" alt="" style="cursor: pointer;">
+                        <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Appointments</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="flex items-center p-2 " style="cursor: pointer;"
+                        (click)="toggleProfileSection(false)">
+                        <img src="assets/Vector.svg" alt="">
+                        <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]" (click)="navigatetoservice()">Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="flex items-center p-2" style="cursor: pointer;" (click)="toggleProfileSection(false)">
+                        <img src="assets/sms.svg" alt="">
+                        <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Inbox</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="flex items-center p-2" style="cursor: pointer;"
+                        (click)="toggleProfileSection(true); apicall(); navigatetoprofile()" >
+                        <img src="assets/profile.svg" alt="">
+                        <span class="flex-1 ms-3 whitespace-nowrap text-[#262626]">Profile</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- </div> -->
+        </aside>
+        <div class="flex" style="border-left: 1px solid #C5C5C5 "></div>
+    </div>
+
+</div>

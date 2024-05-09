@@ -1,14 +1,14 @@
-import { Component,ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { apiService } from 'src/app/Service/apiService';
 
 @Component({
-  selector: 'app-vendor-login-landing-page',
-  templateUrl: './vendor-login-landing-page.component.html',
-  styleUrls: ['./vendor-login-landing-page.component.css']
+  selector: 'app-dashbord-sidebar',
+  templateUrl: './dashbord-sidebar.component.html',
+  styleUrls: ['./dashbord-sidebar.component.css']
 })
-export class VendorLoginLandingPageComponent {
+export class DashbordSidebarComponent {
   @ViewChild('fileInput') fileInput: ElementRef | undefined;
   // showProfileSection: boolean = false;
   isOnlineChecked: boolean = false;
@@ -171,6 +171,11 @@ GetAllCategory() {
 navigatetoprofile(){
   this.router.navigate(['/Practitioners-Profile']);
 }
+navigatetodashbord(){
+  this.router.navigate(['//Practitioners']);
+}
+navigatetoservice(){
+  this.router.navigate(['/Services']);
+}
 
- 
 }

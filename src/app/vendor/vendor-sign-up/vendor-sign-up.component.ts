@@ -115,6 +115,8 @@ export class VendorSignUpComponent implements OnInit {
       if (response.status) {
         if (response.result) {
           localStorage.setItem('userData', JSON.stringify(response.result[0]))
+
+          localStorage.setItem('sessionType', 'true');
           this.router.navigate(['/ProfileDetailing']);
         }
       }

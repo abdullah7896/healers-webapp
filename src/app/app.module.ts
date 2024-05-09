@@ -16,10 +16,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthInterceptor } from './Http/authInterceptor';
 import { TagInputModule } from 'ngx-chips';
 import { ToastrModule} from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
+    
   
     
   ],

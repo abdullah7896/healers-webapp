@@ -1,14 +1,14 @@
+// import { Component } from '@angular/core';
 import { Component,ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { apiService } from 'src/app/Service/apiService';
-
 @Component({
-  selector: 'app-vendor-login-landing-page',
-  templateUrl: './vendor-login-landing-page.component.html',
-  styleUrls: ['./vendor-login-landing-page.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class VendorLoginLandingPageComponent {
+export class ProfileComponent {
   @ViewChild('fileInput') fileInput: ElementRef | undefined;
   // showProfileSection: boolean = false;
   isOnlineChecked: boolean = false;
@@ -165,11 +165,6 @@ GetAllCategory() {
     error => {
       console.error('Login failed', error);
     });
-}
-
-
-navigatetoprofile(){
-  this.router.navigate(['/Practitioners-Profile']);
 }
 
  

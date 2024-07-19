@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 import { apiService } from 'src/app/Service/apiService';
 
 @Component({
@@ -25,7 +26,7 @@ export class AddServicesComponent {
   isOnsiteDisabled: boolean = true;
   // showProfileSection: boolean | undefined;
   showProfileSection: boolean = false;
-  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
+  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService,private spineer:NgxSpinnerService) { }
   
   navigatetohome(){
   this.router.navigate(['']);
@@ -125,6 +126,7 @@ updateCheckboxStatus(sessionType: number): void {
 
 public categories: any[] = [];
 public selectedCategoryIds: any[] = [];
+
 placeholder: string = 'Select upto 2 categories'
 dropdownSettings = {
   singleSelection: false, // Allow multiple selections
@@ -148,13 +150,18 @@ ngOnInit(): void {
   this.GetAllCategory();
   this.apicall();
   
+  
+  
 }
 onCategorySelect(event: any) {
   this.selectedCategoryIds.push(event.id)
+ 
+
 }
 
 onCategoryUnselect(event: any) {
   this.selectedCategoryIds = this.selectedCategoryIds.filter((id) => id != event.id)
+  
 }
 GetAllCategory() {
   this.apiService.GetAllCategory().subscribe(response => {
@@ -204,8 +211,9 @@ onServicedescription(event: any) {
         this.sessiontypes = 1;
       } 
     } 
+   
 apiaddservice() {
-  
+  this.spineer.show();
   const userData = JSON.parse(localStorage.getItem('userData') ?? '');
     const userId = userData?.user?.id?.toString() ?? '';
     const lastSelectedCategoryId = this.selectedCategoryIds[this.selectedCategoryIds.length - 1];
@@ -225,10 +233,14 @@ apiaddservice() {
   this.apiService.ParctitionerAddService(payload).subscribe(
     response => {
       console.log('Service added successfully', response);
+      this.spineer.hide();
+      this.router.navigate(['/FeatureServices']);
+      
       //this.router.navigate(['/dashboard']); // Example redirect to dashboard
     },
     error => {
       console.error('Failed to add service', error);
+      this.spineer.hide();
     }
   );
 }
@@ -236,6 +248,8 @@ apiaddservice() {
 navigatetoservices(){
   this.router.navigate(['/Services']);
   }
+
+  
 
   
 

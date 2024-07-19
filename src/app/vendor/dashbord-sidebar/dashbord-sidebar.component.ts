@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { apiService } from 'src/app/Service/apiService';
 
 @Component({
@@ -17,7 +18,7 @@ export class DashbordSidebarComponent {
   isOnsiteDisabled: boolean = true;
   // showProfileSection: boolean | undefined;
   showProfileSection: boolean = false;
-  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
+  constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService,private spineer:NgxSpinnerService) { }
 
   navigatetohome(){
     this.router.navigate(['']);
@@ -78,6 +79,7 @@ address: string | undefined;
 apiAddress:string|undefined
 
 apicall(){
+  this.spineer.show();
   const userData = JSON.parse(localStorage.getItem('userData') ?? '');
     const userId = userData?.user?.id?.toString() ?? '';
   this.apiService.PractitionergetById(userId).subscribe(
@@ -100,11 +102,13 @@ apicall(){
           const sessionType = response?.result[0]?.bussinessDetail?.sessionType ?? 0;
         this.updateCheckboxStatus(sessionType);
       console.log('ParctitionerPreferences user id:', response);
-
+      this.spineer.hide();
+      // this.router.navigate(['/Practitioners-Profile']);
     },
     (error) => {
       // this.toster.error('forbidden','Error',{ positionClass: 'toast-top-right' });
       console.error('ParctitionerPreferences id API Error:', error);
+      this.spineer.hide();
     }
   );
 }
@@ -172,7 +176,7 @@ navigatetoprofile(){
   this.router.navigate(['/Practitioners-Profile']);
 }
 navigatetodashbord(){
-  this.router.navigate(['//Practitioners']);
+  this.router.navigate(['/Practitioners']);
 }
 navigatetoservice(){
   this.router.navigate(['/Services']);

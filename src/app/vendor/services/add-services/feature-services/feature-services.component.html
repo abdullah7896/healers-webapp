@@ -1,0 +1,56 @@
+<app-dashbord-navbar></app-dashbord-navbar>
+<app-dashbord-sidebar></app-dashbord-sidebar>
+<div class="flex pt-10 pl-[350px]   z-[-50] w-[80%] h-screen">
+    <div class=" ">
+        <div class="pt-[80px]">
+            <p class="font-bold text-[32px] leading-[48px] text-[#000000]">Services</p>
+            <p class="text-[12px] leading-[22px] font-normal">Manage All your Services here</p>
+
+        </div>
+        <div *ngFor="let item of service | paginate: { itemsPerPage: pageSize, currentPage: pageNo, totalItems: service.length }" 
+            class="mb-[15px] flex flex-col justify-center items-center w-[964px] h-[196px] rounded-4 gap-[1rem] bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div class="w-[932px] h-[124px] gap-[4px]">
+                <div class="w-[932px] h-[64px]">
+                    <div class="w-[932px] h-[42px] flex flex-row justify-between">
+                        <div class="w-[897px] h-[42px]">
+                            <p class="font-normal text-[12px] leading-[18px] text-[#262626] mt-1">{{ item.name }}</p>
+                            <p class="font-bold text-[18px] leading-[28px] text-[#262626]mt-1">{{ item.categoryName }}</p>
+                        </div>
+                        <div class="w-[35px] h-[42px]">
+                            <p class="font-semibold text-[18px] leading-[28px] text-[#262626]">${{ item.cost }}</p>
+                            
+                        </div>
+                        
+                    </div>
+                <div class="img w-[56px] h-[18px] flex mt-2">
+                    <!-- <img src="assets/onlinesvg.svg" alt="" class="w-[35px] h-[24px] mt-1"> -->
+                    <img *ngIf="item.type === 0" src="assets/onlinesvg.svg" alt=""><span *ngIf="item.type=== 0" class="  text-[12px] leading-[18px] font-normal text-[#595959]">Online</span>
+                    <img *ngIf="item.type === 1" src="assets/onlinesvg.svg" alt="" ><span *ngIf="item.type === 1" class=" text-[12px] leading-[18px] font-normal text-[#595959]">Offline</span>
+                    
+                    
+
+                </div>
+                </div>
+                <div class="w-[932px] h-[56px]  ">
+                <p class="font-normal text-[18px] leading-[22px] text-[#262626] mt-1">{{ item.description }}</p>
+                </div>
+            </div>
+            <div class=" w-[933px] h-[24px] flex justify-between">
+                <div class="inline-flex items-center justify-center gap-4 bg-[#FA541C] text-[10px] text-white rounded-full  px-4">
+                    {{ item.isActive ? 'Active' : 'Inactive' }}
+                </div>
+              <button><img src="assets/more_vert.svg" alt="" (click)="navigatetoaddservice()"></button>  
+            </div>
+        </div>
+
+
+
+
+        <pagination-controls (pageChange)="pageNo = $event"></pagination-controls>
+    </div>
+    
+</div>
+
+
+  
+  

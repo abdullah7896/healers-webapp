@@ -16,6 +16,7 @@ import { authGuardGuard } from './guards/auth-guard.guard';
 import { ProfileComponent } from './vendor/profile/profile.component';
 import { ServicesComponent } from './vendor/services/services.component';
 import { AddServicesComponent } from './vendor/Services/add-services/add-services.component';
+import { FeatureServicesComponent } from './vendor/Services/Add-Services/feature-services/feature-services.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:'Practitioners-Profile', component:ProfileComponent ,canActivate:[authGuardGuard]},
   {path:'Services', component:ServicesComponent},
   {path:'AddServices', component:AddServicesComponent},
+  {path:'FeatureServices', component:FeatureServicesComponent},
   {path:'',component:HomeComponent}
   
  

@@ -138,28 +138,24 @@ export class ProfileDetailingComponent {
       console.error('User ID not found');
       return;
     }
-
     const fileInput = document.getElementById('file-upload') as HTMLInputElement;
     if (!fileInput.files || !fileInput.files[0]) {
       this.toster.error('No file selected','Error',{ positionClass: 'toast-top-right' });
       console.error('No file selected');
       return;
     }
-   
-
     const file: File = fileInput.files[0];
-
-    const formData = new FormData();
-     formData.append('ProfileImage', file, file.name);
-     
-   
-    
-
+     const formData = new FormData();
+    formData.append('ProfileImage', file, file.name);
     formData.append('userId', userId);
-
+    this.selectedImages.forEach((image, index) => {
+      const file: File = image.file;
+      formData.append(`Images[${index}]`, file, file.name);
+  });
+    
     console.log(formData);
-    const imageUrls = this.selectedImages.map(image => image.url);
-    formData.append('images', JSON.stringify(imageUrls));
+    // const imageUrls = this.selectedImages.map(image => image.url);  
+    // formData.append('Images', JSON.stringify(imageUrls));
     this.apiService.PractitionerUploadUserImg(formData).subscribe(
       (response) => {
         localStorage.setItem('sessionType', 'true');
@@ -172,6 +168,11 @@ export class ProfileDetailingComponent {
       }
     );
   }
+  
+ 
+
+ 
+
   previewImageUrl: string = '';
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
@@ -208,7 +209,7 @@ firstsection = false;
                 const file = event.target.files[i];
                 const reader = new FileReader();
                 reader.onload = (e: any) => {
-                    this.selectedImages.push({ url: e.target.result });
+                  this.selectedImages.push({ url: e.target.result, file: file });
                 };
                 reader.readAsDataURL(file);
             }

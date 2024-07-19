@@ -17,6 +17,10 @@ import { DashbordNavbarComponent } from './dashbord-navbar/dashbord-navbar.compo
 import { DashbordSidebarComponent } from './dashbord-sidebar/dashbord-sidebar.component';
 import { ServicesComponent } from './services/services.component';
 import { AddServicesComponent } from './Services/add-services/add-services.component';
+import { FeatureServicesComponent } from './Services/Add-Services/feature-services/feature-services.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 
 
@@ -34,7 +38,9 @@ import { AddServicesComponent } from './Services/add-services/add-services.compo
     DashbordNavbarComponent,
     DashbordSidebarComponent,
     ServicesComponent,
-    AddServicesComponent
+    AddServicesComponent,
+    FeatureServicesComponent,
+    
     
   ],
   imports: [
@@ -46,7 +52,9 @@ import { AddServicesComponent } from './Services/add-services/add-services.compo
     TagInputModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+    NgxSpinnerModule
   ],
   
 })

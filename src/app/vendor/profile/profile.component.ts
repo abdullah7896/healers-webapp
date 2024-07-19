@@ -17,6 +17,8 @@ export class ProfileComponent {
   isOnsiteDisabled: boolean = true;
   // showProfileSection: boolean | undefined;
   showProfileSection: boolean = false;
+  FirstName: any;
+  lastName: any;
   constructor(private router: Router, private httpClient: HttpClient, private apiService: apiService) { }
 
   navigatetohome(){
@@ -140,6 +142,7 @@ ngOnInit(): void {
   this.GetAllCategory();
   this.apicall();
   
+  
 }
 onCategorySelect(event: any) {
   this.selectedCategoryIds.push(event.id)
@@ -166,6 +169,45 @@ GetAllCategory() {
       console.error('Login failed', error);
     });
 }
+tempFullName: string = '';
+updateProfile(): void {
+  const userData = JSON.parse(localStorage.getItem('userData') ?? '');
+  const userId = userData?.user?.id?.toString() ?? '';
+  // const fullName = `${this.firstName} ${this.lastName}`;
+  const [firstName, lastName] = this.tempFullName.split(' ');
+  const fullName = `${firstName} ${lastName}`;
+  
+  const formData = {
+
+    userId:userId,
+    fullName:fullName,
+    email: this.email,
+    firstName: firstName,
+    lastName: lastName,
+    phone: this.phone,
+    address: this.address,
+    imageUrl: this.imageUrl,
+    selectedCategoryIds: this.selectedCategoryIds,
+    isOnlineChecked: this.isOnlineChecked,
+    isOnsiteChecked: this.isOnsiteChecked
+  };
+  this.apiService.PractitionerUpdateprofileapi(formData).subscribe(response => {
+    this.categories = response.map((category: { id: any; name: any; parentId: any; displayName: any; }) => {
+      return {
+        
+        
+      };
+    });
+    console.log('Categories:', this.categories);
+   
+  },
+    error => {
+      console.error('Login failed', error);
+    });
+ 
+}
+
+
 
  
 }

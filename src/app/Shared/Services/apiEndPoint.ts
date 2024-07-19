@@ -19,7 +19,12 @@ export class apiEndPoint {
     Url_PractitionerBussinessPrefrences:string='';
     Url_PractitionerUploadUserImg:string='';
     Url_PractitionergetById:string='';
+    Url_PractitionerUpdateprofileapi:string='';
     Url_PractitionerAddService:string='';
+    Url_PractitionerAddedServicebyid:string='';
+   
+
+
 
     constructor() {
         this.initializeMembers()
@@ -39,8 +44,10 @@ export class apiEndPoint {
         this.Url_PractitionerPrefrences=`${this.URL_APIBase}Practitioner/AddPractitionerTag`;
         this.Url_PractitionerBussinessPrefrences=`${this.URL_APIBase}Practitioner/AddPractitionerBussinessDetail`;
         this.Url_PractitionerUploadUserImg=`${this.URL_APIBase}Practitioner/UploadUserImages`;
+        this.Url_PractitionerUpdateprofileapi=`${this.URL_APIBase}Practitioner/UpdatePractitionerProfile`;
         this.Url_PractitionergetById = `${this.URL_APIBase}Practitioner/GetById`;
         this.Url_PractitionerAddService = `${this.URL_APIBase}OfferedServices/AddService`;
+        this.Url_PractitionerAddedServicebyid = `${this.URL_APIBase}OfferedServices/GetByPractitionerId`;
 
 
 

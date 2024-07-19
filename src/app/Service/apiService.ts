@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseHttpService } from '../Http/baseHttpService';
 import { Observable } from 'rxjs';
+// import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root',
@@ -51,9 +52,18 @@ export class apiService extends BaseHttpService {
     PractitionergetById(userId: any): Observable<any> {
         return this.get(`${this.apiEndPoints.Url_PractitionergetById}?UserId=${userId}`)
     };
+    PractitionerUpdateprofileapi(PractitionerUpdateprofileapi: any): Observable<any> {
+        return this.put(`${this.apiEndPoints.Url_PractitionerUpdateprofileapi}`,PractitionerUpdateprofileapi)
+    };
     ParctitionerAddService(ParctitionerAddService: any): Observable<any> {
         return this.post(`${this.apiEndPoints.Url_PractitionerAddService}`, ParctitionerAddService)
     };
+    PractitionerAddedServicebyid(modal: any): Observable<any> {
+        return this.get(`${this.apiEndPoints.Url_PractitionerAddedServicebyid}?practitionerId=${modal.userId}&pageSize=${modal.pageSize}&pageNumber=${modal.pageNo}`)
+    };
+    
+ 
+    
 
 
 
